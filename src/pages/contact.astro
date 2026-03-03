@@ -1,0 +1,248 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Contact | Sam's Joinery"
+  description="Get in touch to discuss your joinery project in South East London."
+>
+
+  <div class="contact-wrap">
+
+    <!-- ===========================
+         LEFT: heading + details
+    ============================ -->
+    <div class="contact-left">
+
+      <h1>Contact Us</h1>
+
+      <p class="contact-intro">
+        If you would like to discuss your next project with us, or receive a no obligation quote, please contact us via the contact details below:
+      </p>
+
+      <div class="contact-details">
+
+        <div class="contact-item">
+          <p class="item-label">Email</p>
+          <!-- Replace with your actual email -->
+          <a href="mailto:hello@samsjoinery.co.uk">hello@samsjoinery.co.uk</a>
+        </div>
+
+        <div class="contact-item">
+          <p class="item-label">Phone</p>
+          <!-- Replace with your actual numbers -->
+          <a href="tel:+447700000000">+44 7700 000 000</a>
+        </div>
+
+        <div class="contact-item">
+          <p class="item-label">Address</p>
+          <!-- Replace with your actual address -->
+          <p>South East London</p>
+        </div>
+
+      </div>
+
+      <!-- Social icons row -->
+      <div class="social-row">
+        <a href="#" aria-label="Instagram">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.5" cy="6.5" r="0.6" fill="currentColor" stroke="none"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+          </svg>
+        </a>
+        <a href="mailto:hello@samsjoinery.co.uk" aria-label="Email">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- ===========================
+         RIGHT: Map
+    ============================ -->
+    <div class="contact-map">
+      <!--
+        TO ADD YOUR MAP:
+        1. Go to Google Maps and search for your address
+        2. Click Share → Embed a map → Copy HTML
+        3. Replace the <div class="map-placeholder"> below with the <iframe> tag
+        4. The iframe will automatically be styled to fill this column
+
+        Example:
+          <iframe
+            src="https://www.google.com/maps/embed?pb=..."
+            width="100%" height="100%" style="border:0;" allowfullscreen
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+      -->
+      <div class="map-placeholder">
+        <p>Your map will appear here.<br />Replace this with a Google Maps embed.</p>
+      </div>
+    </div>
+
+  </div>
+
+</Layout>
+
+<style>
+  .contact-wrap {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    min-height: calc(100svh - var(--header-h));
+    padding-top: var(--header-h);
+  }
+
+  /* ===========================
+     LEFT COLUMN
+  ============================ */
+  .contact-left {
+    padding: 4rem var(--site-gutter) 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-left h1 {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: clamp(2rem, 7vw, 6rem);
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    margin-bottom: 1.75rem;
+  }
+
+  .contact-intro {
+    font-size: 1rem;
+    line-height: 1.75;
+    color: var(--color-black);
+    font-weight: 300;
+    max-width: 38ch;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.75rem;
+    width: 100%;
+  }
+
+  .item-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-black);
+    margin-bottom: 0.2rem;
+    letter-spacing: 0;
+  }
+
+  .contact-item a,
+  .contact-item p:not(.item-label) {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--color-black);
+    text-decoration: none;
+    line-height: 1.6;
+  }
+
+  .contact-item a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .contact-item a:hover {
+    opacity: 0.55;
+  }
+
+  /* Social icons */
+  .social-row {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .social-row a {
+    color: var(--color-black);
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    margin: -8px;
+    transition: opacity 0.2s;
+  }
+
+  .social-row a:hover {
+    opacity: 0.45;
+  }
+
+  /* ===========================
+     RIGHT COLUMN — Map
+  ============================ */
+  .contact-map {
+    position: relative;
+    overflow: hidden;
+    background: #ddd;
+  }
+
+  .contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+    filter: grayscale(100%);
+  }
+
+  .map-placeholder {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(145deg, #d8d4ce 0%, #c8c4be 100%);
+    color: var(--color-mid);
+    text-align: center;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* ===========================
+     RESPONSIVE
+  ============================ */
+  @media (max-width: 768px) {
+    .contact-wrap {
+      grid-template-columns: 1fr;
+    }
+
+    .contact-map {
+      min-height: 320px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .contact-map {
+      min-height: 260px;
+    }
+
+    .map-placeholder {
+      min-height: 260px;
+    }
+  }
+</style>

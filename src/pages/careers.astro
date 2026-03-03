@@ -1,0 +1,205 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Careers | Sam's Joinery"
+  description="Join the team at Sam's Joinery — bespoke joinery in South East London."
+>
+
+  <!-- ===========================
+       PAGE HEADER
+  ============================ -->
+  <div class="page-header">
+    <h1>Careers</h1>
+  </div>
+
+  <!-- ===========================
+       JOIN THE TEAM
+  ============================ -->
+  <section class="join">
+    <div class="join-inner">
+
+      <div class="join-text">
+        <h2>Join the Team</h2>
+        <p class="join-quote">"A business is only as good as its people"</p>
+        <p>
+          A bold statement, but one we truly hold paramount to the growth, success and future of Sam's Joinery. Whether you're at the start of your career in woodworking or you come with oodles of experience, we're always on the hunt for like-minded, hard-working people. So, if you fancy working where you'll feel truly valued, then get in touch and send us your CV.
+        </p>
+        <a href="mailto:hello@samsjoinery.co.uk?subject=Job Application" class="btn-join">Join Us</a>
+      </div>
+
+      <div class="join-images">
+        <!--
+          TO ADD PHOTOS:
+          Replace each placeholder with an <img> tag or set background-image:
+            style="background-image: url('/images/[photo].jpg'); background-size: cover; background-position: center;"
+        -->
+        <div class="img-square" style="background: linear-gradient(145deg, #1c1c1c 0%, #3a3a3a 100%);"></div>
+        <div class="img-circle" style="background: radial-gradient(circle at 38% 38%, #666 0%, #2a2a2a 55%, #111 100%);"></div>
+        <div class="img-photo" style="background: linear-gradient(155deg, #3a2e1e 0%, #5a4528 50%, #2a1e10 100%);"></div>
+      </div>
+
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* ===========================
+     PAGE HEADER
+  ============================ */
+  .page-header {
+    padding: calc(var(--header-h) + 3rem) var(--site-gutter) 3rem;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: clamp(2rem, 14vw, 11rem);
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+  }
+
+  /* ===========================
+     JOIN THE TEAM
+  ============================ */
+  .join {
+    padding: 4rem var(--site-gutter) 7rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .join-inner {
+    max-width: var(--site-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: start;
+  }
+
+  .join-text h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3.25rem);
+    font-weight: 400;
+    margin-bottom: 1.25rem;
+    line-height: 1.1;
+  }
+
+  .join-quote {
+    font-family: var(--font-heading);
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-weight: 400;
+    font-style: italic;
+    color: var(--color-black);
+    margin-bottom: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .join-text p:not(.join-quote) {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Pill-style "Join Us" button — outline, matches reference */
+  .btn-join {
+    display: inline-block;
+    padding: 0.9rem 3rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    font-weight: 400;
+    text-decoration: none;
+    border-radius: 999px;
+    border: 1.5px solid var(--color-black);
+    color: var(--color-black);
+    background: transparent;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn-join:hover {
+    background: var(--color-black);
+    color: var(--color-white);
+  }
+
+  /* ── Overlapping image collage ── */
+  .join-images {
+    position: relative;
+    height: 520px;
+  }
+
+  /* Dark square — top-left */
+  .img-square {
+    position: absolute;
+    top: 0;
+    left: 4%;
+    width: 52%;
+    aspect-ratio: 1 / 1;
+    border-radius: 6px;
+  }
+
+  /* Dark circle — top-right, overlapping square */
+  .img-circle {
+    position: absolute;
+    top: -3%;
+    right: 0;
+    width: 46%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+  }
+
+  /* Photo — lower-centre, overlapping both */
+  .img-photo {
+    position: absolute;
+    bottom: 0;
+    left: 28%;
+    width: 50%;
+    aspect-ratio: 3 / 4;
+    border-radius: 6px;
+    background-size: cover;
+    background-position: center;
+  }
+
+  @media (max-width: 768px) {
+    .join-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .join-images {
+      height: 420px;
+    }
+
+    .btn-join {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 520px) {
+    /* On small phones, collapse the overlapping collage into a simple vertical stack */
+    .join-images {
+      position: static;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      height: auto;
+    }
+
+    .img-square,
+    .img-circle,
+    .img-photo {
+      position: static;
+      width: 100%;
+      border-radius: 6px;
+    }
+
+    .img-square  { aspect-ratio: 4 / 3; }
+    .img-circle  { aspect-ratio: 1 / 1; border-radius: 999px; }
+    .img-photo   { aspect-ratio: 4 / 3; }
+  }
+</style>

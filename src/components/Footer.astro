@@ -1,0 +1,145 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <p class="footer-logo">Sam's Joinery</p>
+      <p class="footer-tagline">
+        Beautiful, practical spaces<br />built with care.
+      </p>
+    </div>
+
+    <div class="footer-links">
+      <div class="footer-col">
+        <p class="col-title">Projects</p>
+        <a href="/residential">Residential</a>
+        <a href="/hospitality">Hospitality</a>
+        <a href="/retail">Retail</a>
+        <a href="/workspace">Workspace</a>
+      </div>
+
+      <div class="footer-col">
+        <p class="col-title">Company</p>
+        <a href="/services">Our Services</a>
+        <a href="/cnc-cutting">CNC Cutting</a>
+        <a href="/about">About</a>
+        <a href="/careers">Careers</a>
+        <a href="/contact">Contact</a>
+      </div>
+
+      <div class="footer-col">
+        <p class="col-title">Get in touch</p>
+        <!-- Replace with your actual contact details -->
+        <a href="mailto:hello@samsjoinery.co.uk">hello@samsjoinery.co.uk</a>
+        <a href="tel:+447700000000">+44 (0) 7700 000 000</a>
+        <p class="footer-address">South East London</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; {year} Sam's Joinery. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-black);
+    color: var(--color-white);
+    padding: 5rem var(--site-gutter) 0;
+  }
+
+  .footer-inner {
+    max-width: var(--site-max);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+  }
+
+  .footer-logo {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  .footer-tagline {
+    color: rgba(255, 255, 255, 0.45);
+    font-size: 0.9rem;
+    line-height: 1.65;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .col-title {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.35);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-col a {
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.2s;
+  }
+
+  .footer-col a:hover {
+    color: var(--color-white);
+  }
+
+  .footer-address {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin-top: 0.25rem;
+  }
+
+  .footer-bottom {
+    max-width: var(--site-max);
+    margin: 0 auto;
+    padding: 1.5rem 0 2rem;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.25);
+  }
+
+  @media (max-width: 600px) {
+    .site-footer {
+      padding-top: 3.5rem;
+    }
+
+    .footer-inner {
+      gap: 2rem;
+    }
+
+    .footer-links {
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .footer-links {
+      flex-direction: column;
+      gap: 1.75rem;
+    }
+  }
+</style>

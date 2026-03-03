@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import CategoryPage from '../components/CategoryPage.astro';
+
+const projects = [
+  {
+    title: 'Nunhead Boutique',
+    description: 'Full shop fit-out with bespoke clothes rails, display shelving, and a service counter.',
+    bg: 'linear-gradient(155deg, #2a1e2c 0%, #3e2e44 100%)',
+  },
+  {
+    title: 'Lordship Lane Deli',
+    description: 'Display joinery, service counter, and wall shelving for an independent food shop.',
+    bg: 'linear-gradient(155deg, #1e2c1e 0%, #304830 100%)',
+  },
+  {
+    title: 'Peckham Record Store',
+    description: 'Custom record browsing units, display wall, and a built-in listening station.',
+    bg: 'linear-gradient(155deg, #1a1a1a 0%, #333333 100%)',
+  },
+  {
+    title: 'Brockley Florist',
+    description: 'Service counter with integrated sink, display shelving, and a bespoke plant stand.',
+    bg: 'linear-gradient(155deg, #1e2c20 0%, #2e4432 100%)',
+  },
+  {
+    title: 'Greenwich Jeweller',
+    description: 'Display cabinets, wall-mounted showcases, and a bespoke sales counter in dark oak.',
+    bg: 'linear-gradient(155deg, #28201c 0%, #403428 100%)',
+  },
+  {
+    title: 'Sydenham Bookshop',
+    description: 'Floor-to-ceiling shelving throughout and a freestanding display table in the window.',
+    bg: 'linear-gradient(155deg, #241c10 0%, #3c2e18 100%)',
+  },
+];
+---
+
+<Layout
+  title="Retail Projects | Sam's Joinery"
+  description="Bespoke retail joinery in London — shop fit-outs, display units, counters, and shelving for independent retailers."
+>
+  <CategoryPage
+    category="Retail"
+    headline="Retail spaces worth lingering in."
+    intro="We help independent retailers make the most of their space with bespoke joinery that reflects their brand. From full shop fit-outs to a single statement counter, we build retail furniture designed to draw people in — and keep them there."
+    heroBg="linear-gradient(160deg, #1a1520 0%, #2a2030 55%, #12101a 100%)"
+    projects={projects}
+  />
+</Layout>

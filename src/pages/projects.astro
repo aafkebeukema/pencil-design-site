@@ -1,0 +1,258 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const projects = [
+  {
+    title: 'Peckham Kitchen Renovation',
+    category: 'Kitchens',
+    description: 'Full bespoke kitchen with handleless cabinetry and an integrated island.',
+    bg: 'linear-gradient(155deg, #7a5c2e 0%, #a07840 100%)',
+  },
+  {
+    title: 'Brixton Living Room',
+    category: 'Living Spaces',
+    description: 'Built-in alcove shelving and media unit with hidden cable management.',
+    bg: 'linear-gradient(155deg, #2d4a38 0%, #4a6e52 100%)',
+  },
+  {
+    title: 'Dulwich Master Bedroom',
+    category: 'Bedrooms',
+    description: 'Floor-to-ceiling fitted wardrobes with soft-close drawers and internal lighting.',
+    bg: 'linear-gradient(155deg, #2c3552 0%, #3f4f73 100%)',
+  },
+  {
+    title: 'Herne Hill Home Office',
+    category: 'Living Spaces',
+    description: 'Custom desk, shelving, and storage designed for a productive work-from-home setup.',
+    bg: 'linear-gradient(155deg, #3a2515 0%, #5c3e20 100%)',
+  },
+  {
+    title: 'Camberwell Restaurant',
+    category: 'Commercial',
+    description: 'Banquette seating, bar front, and bespoke shelving for a 40-cover restaurant.',
+    bg: 'linear-gradient(155deg, #1a1a1a 0%, #3a3a3a 100%)',
+  },
+  {
+    title: 'Forest Hill Kitchen',
+    category: 'Kitchens',
+    description: 'Shaker-style kitchen with hand-painted cabinetry and open shelving.',
+    bg: 'linear-gradient(155deg, #4a3820 0%, #6e5530 100%)',
+  },
+];
+---
+
+<Layout
+  title="Projects | Sam's Joinery"
+  description="A selection of residential and commercial joinery projects across South East London."
+>
+  <div class="page-hero">
+    <div class="page-hero-inner">
+      <p class="page-label">Our work</p>
+      <h1>Selected projects</h1>
+      <p class="page-intro">
+        A collection of residential and commercial joinery projects from across South East London. Every one bespoke — built to fit the space and the people in it.
+      </p>
+    </div>
+  </div>
+
+  <section class="projects-section">
+    <div class="projects-grid">
+      {projects.map(project => (
+        <div class="project-card" style={`background: ${project.bg};`}>
+          <!--
+            TO ADD A PHOTO:
+            Add this to the <div> above:
+            style="background-image: url('/images/[photo.jpg]'); background-size: cover; background-position: center;"
+          -->
+          <div class="project-overlay"></div>
+          <div class="project-content">
+            <p class="project-category">{project.category}</p>
+            <h3>{project.title}</h3>
+            <p>{project.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="projects-cta">
+    <div class="projects-cta-inner">
+      <h2>Have a project in mind?</h2>
+      <p>We'd love to hear about it. Get in touch and let's talk it through.</p>
+      <a href="/contact" class="btn">Get in touch</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Page hero */
+  .page-hero {
+    padding: calc(var(--header-h) + 4rem) var(--site-gutter) 4rem;
+    background: var(--color-off-white);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .page-hero-inner {
+    max-width: var(--site-max);
+    margin: 0 auto;
+  }
+
+  .page-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    margin-bottom: 1.25rem;
+  }
+
+  .page-hero h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1.08;
+    margin-bottom: 1.5rem;
+  }
+
+  .page-intro {
+    font-size: 1.05rem;
+    color: var(--color-mid);
+    max-width: 60ch;
+    line-height: 1.75;
+    font-weight: 300;
+  }
+
+  /* Projects grid */
+  .projects-section {
+    padding: 0;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .project-card {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    color: var(--color-white);
+  }
+
+  .project-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.8) 0%,
+      rgba(0, 0, 0, 0.1) 60%,
+      transparent 100%
+    );
+    transition: opacity 0.3s;
+  }
+
+  .project-card:hover .project-overlay {
+    opacity: 0.75;
+  }
+
+  .project-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.75rem;
+    z-index: 1;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+  }
+
+  .project-card:hover .project-content {
+    transform: translateY(-6px);
+  }
+
+  .project-category {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 0.4rem;
+  }
+
+  .project-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 0.5rem;
+    line-height: 1.15;
+  }
+
+  .project-content p {
+    font-size: 0.85rem;
+    opacity: 0.65;
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  @media (max-width: 900px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .project-card {
+      aspect-ratio: 3 / 2;
+    }
+  }
+
+  /* Bottom CTA */
+  .projects-cta {
+    background: var(--color-off-white);
+    padding: 6rem var(--site-gutter);
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .projects-cta-inner {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .projects-cta h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .projects-cta p {
+    color: var(--color-mid);
+    margin-bottom: 2.25rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.9rem 1.9rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    background: var(--color-black);
+    color: var(--color-white);
+    border: 1px solid var(--color-black);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn:hover {
+    background: transparent;
+    color: var(--color-black);
+  }
+</style>
