@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import CategoryPage from '../components/CategoryPage.astro';
+import Header from '../components/Header.astro';
 
 const projects = [
   {
@@ -40,11 +40,173 @@ const projects = [
   title="Projects | Sam's Joinery"
   description="Bespoke joinery projects across South East London — kitchens, wardrobes, alcove shelving, and fitted furniture."
 >
-  <CategoryPage
-    category="Projects"
-    headline="Built for the way you live."
-    intro="We work with homeowners across South East London to create fitted furniture that genuinely improves how a home works and feels. Kitchens, wardrobes, living room joinery, home offices — everything is designed and made to fit your space and your life. No off-the-shelf solutions."
-    heroBg="linear-gradient(160deg, #1e1408 0%, #2e1e0a 55%, #180f05 100%)"
-    projects={projects}
-  />
+  <Header />
+
+  <main class="projects-main">
+    <div class="page-intro">
+      <p class="page-label">Our work</p>
+      <h1>Projects</h1>
+    </div>
+
+    <section class="projects-grid-section">
+      <div class="projects-grid">
+        {projects.map(project => (
+          <div class="project-item">
+            <div
+              class="project-image"
+              style={`background: ${project.bg};`}
+            ></div>
+            <div class="project-caption">
+              <p class="caption-title">{project.title}</p>
+              <p class="caption-desc">{project.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="projects-cta">
+      <div class="projects-cta-inner">
+        <h2>Have a project in mind?</h2>
+        <p>Get in touch and we'll arrange a free consultation to talk through what you're looking for.</p>
+        <a href="/pencil-design-site/contact" class="btn">Get in touch</a>
+      </div>
+    </section>
+  </main>
 </Layout>
+
+<style>
+  .projects-main {
+    background: var(--color-white);
+  }
+
+  /* ── Page intro ── */
+  .page-intro {
+    padding: calc(var(--header-h) + 3.5rem) var(--site-gutter) 2.5rem;
+    max-width: var(--site-max);
+    margin: 0 auto;
+  }
+
+  .page-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    margin-bottom: 0.75rem;
+  }
+
+  .page-intro h1 {
+    font-family: var(--font-heading);
+    font-size: clamp(2.5rem, 6vw, 5rem);
+    font-weight: 400;
+    line-height: 1.05;
+  }
+
+  /* ── Grid ── */
+  .projects-grid-section {
+    padding: 0 var(--site-gutter) 5rem;
+    max-width: var(--site-max);
+    margin: 0 auto;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .project-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .project-image {
+    aspect-ratio: 1 / 1;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+  }
+
+  .project-caption {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .caption-title {
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-black);
+    font-weight: 500;
+  }
+
+  .caption-desc {
+    font-size: 0.78rem;
+    color: var(--color-mid);
+    line-height: 1.55;
+    font-weight: 300;
+  }
+
+  /* ── CTA ── */
+  .projects-cta {
+    background: var(--color-off-white);
+    padding: 6rem var(--site-gutter);
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .projects-cta-inner {
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .projects-cta h2 {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 400;
+    margin-bottom: 1rem;
+  }
+
+  .projects-cta p {
+    color: var(--color-mid);
+    margin-bottom: 2.25rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .btn {
+    display: inline-block;
+    padding: 0.9rem 1.9rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    background: var(--color-black);
+    color: var(--color-white);
+    border: 1px solid var(--color-black);
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .btn:hover {
+    background: transparent;
+    color: var(--color-black);
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .projects-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+  }
+</style>
