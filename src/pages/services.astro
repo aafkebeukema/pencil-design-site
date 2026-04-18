@@ -3,25 +3,25 @@ import Layout from '../layouts/Layout.astro';
 
 const serviceImageSets = {
   design: [
-    "url('/pencil-design-site/images/service-circle-01.jpg')",
-    "url('/pencil-design-site/images/service-circle-02.jpg')",
-    "url('/pencil-design-site/images/service-circle-03.jpg')",
-    "url('/pencil-design-site/images/service-circle-04.jpg')",
-    "url('/pencil-design-site/images/service-circle-05.png')",
+    { src: '/pencil-design-site/images/service-circle-01.png' },
+    { src: '/pencil-design-site/images/service-circle-02.jpg' },
+    { src: '/pencil-design-site/images/service-circle-03.jpg' },
+    { src: '/pencil-design-site/images/service-circle-04.jpg' },
+    { src: '/pencil-design-site/images/service-circle-05.jpg' },
   ],
   build: [
-    "url('/pencil-design-site/images/hackney-road-built-01.jpg')",
-    "url('/pencil-design-site/images/hackney-road-built-02.jpg')",
-    "url('/pencil-design-site/images/hackney-road-built-03.jpg')",
-    "url('/pencil-design-site/images/hackney-road-built-04.jpg')",
-    "url('/pencil-design-site/images/hackney-road-built-05.jpg')",
+    { src: '/pencil-design-site/images/service-build-01.jpg', size: '118%', position: 'center' },
+    { src: '/pencil-design-site/images/service-build-02.jpg', size: '118%', position: 'center' },
+    { src: '/pencil-design-site/images/service-build-03.jpg', size: '118%', position: 'center' },
+    { src: '/pencil-design-site/images/service-build-04.jpg', size: '118%', position: 'center' },
+    { src: '/pencil-design-site/images/service-build-05.jpg', size: '118%', position: 'center' },
   ],
   finish: [
-    "url('/pencil-design-site/images/paddock-close-bathroom-built-01.jpg')",
-    "url('/pencil-design-site/images/paddock-close-bathroom-built-02.jpg')",
-    "url('/pencil-design-site/images/paddock-close-bathroom-built-03.jpg')",
-    "url('/pencil-design-site/images/paddock-close-bathroom-built-04.jpg')",
-    "url('/pencil-design-site/images/paddock-close-bathroom-built-05.jpg')",
+    { src: '/pencil-design-site/images/paddock-close-bathroom-built-01.jpg' },
+    { src: '/pencil-design-site/images/paddock-close-bathroom-built-02.jpg' },
+    { src: '/pencil-design-site/images/paddock-close-bathroom-built-03.jpg' },
+    { src: '/pencil-design-site/images/paddock-close-bathroom-built-04.jpg' },
+    { src: '/pencil-design-site/images/paddock-close-bathroom-built-05.jpg' },
   ],
 };
 
@@ -80,7 +80,7 @@ const services = [
           <div class="service-circles">
             {service.images.map((image) => (
               <div class="service-img service-img--circle"
-                   style={`background-image: ${image};`}>
+                   style={`background-image: url('${image.src}'); background-size: ${image.size ?? 'cover'}; background-position: ${image.position ?? 'center'};`}>
               </div>
             ))}
           </div>
@@ -189,7 +189,7 @@ const services = [
 
   /* ---- Images ---- */
   .service-img {
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     overflow: hidden;
