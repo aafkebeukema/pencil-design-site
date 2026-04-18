@@ -50,9 +50,7 @@ const projects = [
               class="project-image"
               style={`background: ${project.bg};`}
             ></div>
-            <div class="project-caption">
-              <p class="caption-title">{project.title}</p>
-            </div>
+            <p class="caption-title">{project.title}</p>
           </div>
         ))}
       </div>
@@ -102,16 +100,22 @@ const projects = [
     margin: 0 auto;
   }
 
+  /*
+   * row-gap: 0 so the grid itself adds no vertical space between rows.
+   * The caption's padding-bottom (20px) becomes the sole gap between
+   * the caption text and the top of the next image row — matching the
+   * column-gap (20px) exactly.
+   */
   .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    column-gap: 20px;
+    row-gap: 0;
   }
 
   .project-item {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
   }
 
   .project-image {
@@ -121,18 +125,19 @@ const projects = [
     width: 100%;
   }
 
-  .project-caption {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
-  }
-
   .caption-title {
+    padding-top: 10px;
+    padding-bottom: 20px;
     font-size: 0.8rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--color-black);
     font-weight: 500;
+  }
+
+  /* Last row: no padding-bottom after final captions */
+  .project-item:nth-last-child(-n+3) .caption-title {
+    padding-bottom: 0;
   }
 
   /* ── CTA ── */
@@ -185,14 +190,17 @@ const projects = [
   @media (max-width: 900px) {
     .projects-grid {
       grid-template-columns: repeat(2, 1fr);
-      gap: 14px;
+      column-gap: 14px;
     }
+    .caption-title { padding-bottom: 14px; }
+    .project-item:nth-last-child(-n+2) .caption-title { padding-bottom: 0; }
   }
 
   @media (max-width: 520px) {
     .projects-grid {
       grid-template-columns: 1fr;
-      gap: 12px;
     }
+    .caption-title { padding-bottom: 12px; }
+    .project-item:last-child .caption-title { padding-bottom: 0; }
   }
 </style>
