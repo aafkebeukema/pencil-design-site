@@ -1,34 +1,48 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const serviceImageSets = {
+  design: [
+    "url('/pencil-design-site/images/service-circle-01.jpg')",
+    "url('/pencil-design-site/images/service-circle-02.jpg')",
+    "url('/pencil-design-site/images/service-circle-03.jpg')",
+    "url('/pencil-design-site/images/service-circle-04.jpg')",
+    "url('/pencil-design-site/images/service-circle-05.png')",
+  ],
+  build: [
+    "url('/pencil-design-site/images/hackney-road-built-01.jpg')",
+    "url('/pencil-design-site/images/hackney-road-built-02.jpg')",
+    "url('/pencil-design-site/images/hackney-road-built-03.jpg')",
+    "url('/pencil-design-site/images/hackney-road-built-04.jpg')",
+    "url('/pencil-design-site/images/hackney-road-built-05.jpg')",
+  ],
+  finish: [
+    "url('/pencil-design-site/images/paddock-close-bathroom-built-01.jpg')",
+    "url('/pencil-design-site/images/paddock-close-bathroom-built-02.jpg')",
+    "url('/pencil-design-site/images/paddock-close-bathroom-built-03.jpg')",
+    "url('/pencil-design-site/images/paddock-close-bathroom-built-04.jpg')",
+    "url('/pencil-design-site/images/paddock-close-bathroom-built-05.jpg')",
+  ],
+};
+
 const services = [
   {
     label: 'Design it',
     headline: 'We start with a conversation.',
     body: 'Every project begins with a site visit and a proper conversation about what you need. We measure up, talk through materials and finishes, and produce detailed drawings before anything is built. You won\'t be committing to anything until you\'re happy with the plan.',
-    bg: 'linear-gradient(160deg, #2a2010 0%, #4a3818 100%)',
-    circle: true,
+    images: serviceImageSets.design,
   },
   {
-    label: 'Make it',
+    label: 'Build it',
     headline: 'Made by hand in our workshop.',
     body: 'Everything we build is made from scratch in our South East London workshop. We use solid timber, high-quality sheet materials, and proven joinery methods. No flat-pack components, no outsourcing — just proper joinery, built to last.',
-    bg: 'linear-gradient(160deg, #1c2815 0%, #2e4020 100%)',
-    circle: true,
+    images: serviceImageSets.build,
   },
   {
     label: 'Finish it',
     headline: 'The details make the difference.',
     body: 'We offer a complete painting and finishing service in-house — hand-painted cabinetry, spray finishes, oiled and lacquered solid wood, and a full range of hardware. We can also supply pieces unfinished if you\'re working with your own decorator.',
-    bg: 'linear-gradient(160deg, #1e2030 0%, #2e3048 100%)',
-    circle: true,
-  },
-  {
-    label: 'Install it',
-    headline: 'We handle the fitting too.',
-    body: 'Our team manages delivery and installation ourselves — no subcontractors. We take care to protect your home or business during fitting, and we won\'t leave until every drawer closes perfectly. Most residential installations are done in one to two days.',
-    bg: 'linear-gradient(160deg, #1a1a1a 0%, #323232 100%)',
-    circle: true,
+    images: serviceImageSets.finish,
   },
 ];
 ---
@@ -47,25 +61,28 @@ const services = [
   </div>
 
   <!-- ===========================
-       FOUR-COLUMN SERVICES
+       THREE-COLUMN SERVICES
   ============================ -->
   <section class="services-section">
     <div class="services-cols">
       {services.map(service => (
         <div class="service-col">
+          <div class="service-body">
+            <p class="service-label">{service.label}</p>
+            <p class="service-desc">{service.body}</p>
+          </div>
 
           <!--
             TO ADD A PHOTO:
             Replace background with:
               style="background-image: url('/images/design.jpg'); background-size: cover; background-position: center;"
           -->
-          <div class="service-img service-img--circle"
-               style={`background: ${service.bg};`}>
-          </div>
-
-          <div class="service-body">
-            <p class="service-label">{service.label}</p>
-            <p class="service-desc">{service.body}</p>
+          <div class="service-circles">
+            {service.images.map((image) => (
+              <div class="service-img service-img--circle"
+                   style={`background-image: ${image};`}>
+              </div>
+            ))}
           </div>
 
         </div>
@@ -156,24 +173,27 @@ const services = [
 
   .services-cols {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
   }
 
   .service-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-items: center;
+    align-items: start;
     padding: 2.5rem 1.75rem 3.5rem;
     text-align: center;
   }
 
   /* ---- Images ---- */
   .service-img {
-    background-size: cover;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
     overflow: hidden;
     flex-shrink: 0;
-    margin-bottom: 2rem;
   }
 
   .service-img--circle {
@@ -182,11 +202,20 @@ const services = [
     border-radius: 50%;
   }
 
+  .service-circles {
+    display: grid;
+    gap: 1.25rem;
+    width: 100%;
+    justify-items: center;
+    margin-top: 2.5rem;
+  }
+
   /* ---- Text below image ---- */
   .service-body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-self: center;
     max-width: 34ch;
   }
 
@@ -209,31 +238,14 @@ const services = [
   }
 
   /* Tablet: 2 columns */
-  @media (max-width: 768px) {
+  @media (max-width: 640px) {
     .services-cols {
       grid-template-columns: repeat(2, 1fr);
-    }
-
-    .service-col:nth-child(2) {
-      border-right: none;
-    }
-
-    .service-col:nth-child(1),
-    .service-col:nth-child(2) {
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .service-col:nth-child(3) {
-      border-right: 1px solid var(--color-border);
-    }
-
-    .service-col:last-child {
-      border-right: none;
     }
   }
 
   /* Mobile: 1 column */
-  @media (max-width: 520px) {
+  @media (max-width: 420px) {
     .services-cols {
       grid-template-columns: 1fr;
     }
