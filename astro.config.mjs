@@ -3,6 +3,5 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://aafkebeukema.github.io',
-  base: '/pencil-design-site/',
+  site: 'https://www.pencil-design.co.uk',
 });

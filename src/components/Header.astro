@@ -6,18 +6,18 @@ interface Props {
 const { transparent = false } = Astro.props;
 
 const mainLinks = [
-  { label: 'Home', href: '/pencil-design-site/' },
-  { label: 'Projects', href: '/pencil-design-site/projects' },
-  { label: 'Our Services', href: '/pencil-design-site/services' },
-  { label: 'About Us', href: '/pencil-design-site/about' },
-  { label: 'What Clients Say', href: '/pencil-design-site/what-clients-say' },
-  { label: 'Contact', href: '/pencil-design-site/contact' },
+  { label: 'Home', href: '/' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Our Services', href: '/services' },
+  { label: 'About Us', href: '/about' },
+  { label: 'What Clients Say', href: '/what-clients-say' },
+  { label: 'Contact', href: '/contact' },
 ];
 ---
 
 <header class:list={['site-header', { 'header--transparent': transparent }]}>
   <div class="header-inner">
-    <a href="/pencil-design-site/" class="logo">Pencil Design</a>
+    <a href="/" class="logo">Pencil Design</a>
 
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
       <span></span>
