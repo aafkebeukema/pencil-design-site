@@ -33,27 +33,50 @@ const mainLinks = [
 </header>
 
 <script>
-  // ── Hamburger toggle ──────────────────────────────────
-  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
-  const nav    = document.getElementById('site-nav');
+  const headers = document.querySelectorAll<HTMLElement>('.site-header');
 
-  toggle?.addEventListener('click', () => {
-    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!isOpen));
-    toggle.setAttribute('aria-label', isOpen ? 'Open menu' : 'Close menu');
-    nav?.classList.toggle('is-open', !isOpen);
+  headers.forEach((header) => {
+    const toggle = header.querySelector<HTMLButtonElement>('.menu-toggle');
+    const nav = header.querySelector<HTMLElement>('.site-nav');
+
+    const setMenuState = (isOpen: boolean) => {
+      toggle?.setAttribute('aria-expanded', String(isOpen));
+      toggle?.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+      nav?.classList.toggle('is-open', isOpen);
+    };
+
+    toggle?.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      setMenuState(!isOpen);
+    });
+
+    nav?.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 900) setMenuState(false);
+      });
+    });
+
+    if (header.classList.contains('header--transparent')) {
+      const update = () => {
+        header.classList.toggle('header--scrolled', window.scrollY > 60);
+      };
+
+      window.addEventListener('scroll', update, { passive: true });
+      update();
+    }
   });
 
-  // ── Transparent → solid on scroll ────────────────────
-  const header = document.querySelector<HTMLElement>('.site-header');
-
-  if (header?.classList.contains('header--transparent')) {
-    const update = () => {
-      header.classList.toggle('header--scrolled', window.scrollY > 60);
-    };
-    window.addEventListener('scroll', update, { passive: true });
-    update(); // run once on load
-  }
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      headers.forEach((header) => {
+        const toggle = header.querySelector<HTMLButtonElement>('.menu-toggle');
+        const nav = header.querySelector<HTMLElement>('.site-nav');
+        toggle?.setAttribute('aria-expanded', 'false');
+        toggle?.setAttribute('aria-label', 'Open menu');
+        nav?.classList.remove('is-open');
+      });
+    }
+  });
 </script>
 
 <style>
