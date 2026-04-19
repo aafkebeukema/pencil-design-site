@@ -6,6 +6,7 @@ interface Props {
 const { transparent = false } = Astro.props;
 
 const mainLinks = [
+  { label: 'Home', href: '/pencil-design-site/' },
   { label: 'Projects', href: '/pencil-design-site/projects' },
   { label: 'Our Services', href: '/pencil-design-site/services' },
   { label: 'About', href: '/pencil-design-site/about' },
@@ -120,7 +121,7 @@ const mainLinks = [
   /* ── Nav links ── */
   .site-nav {
     display: flex;
-    gap: 2rem;
+    gap: clamp(1rem, 1.8vw, 2rem);
     align-items: center;
   }
 

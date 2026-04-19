@@ -30,3 +30,12 @@ test('services page CTA routes to the contact page', async ({ page }) => {
   await expect(page).toHaveURL(new RegExp(`${basePath}/contact/?$`));
   await expect(page.getByRole('heading', { name: 'Contact Us' })).toBeVisible();
 });
+
+test('desktop navigation includes a home link back to the homepage', async ({ page }) => {
+  await page.goto(`${basePath}/projects`);
+
+  await page.locator('#site-nav').getByRole('link', { name: 'Home', exact: true }).click();
+
+  await expect(page).toHaveURL(new RegExp(`${basePath}/?$`));
+  await expect(page.getByRole('heading', { name: /Not your average/i })).toBeVisible();
+});
