@@ -1,0 +1,140 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const testimonials = [
+  {
+    label: 'Design process',
+    quote:
+      'Replace this placeholder with a short client quote about how the project felt from the first conversation through to sign-off.',
+    name: 'Client name',
+    detail: 'Project location or room',
+  },
+  {
+    label: 'Craftsmanship',
+    quote:
+      'Replace this placeholder with feedback about the finish, the materials, or the quality of the fitted joinery.',
+    name: 'Client name',
+    detail: 'Project location or room',
+  },
+  {
+    label: 'Installation',
+    quote:
+      'Replace this placeholder with a quote about communication, tidiness on site, or how the final install came together.',
+    name: 'Client name',
+    detail: 'Project location or room',
+  },
+];
+---
+
+<Layout
+  title="What Clients Say | Pencil Design"
+  description="Client testimonials and feedback for Pencil Design."
+>
+  <div class="page-header">
+    <p class="page-label">Client feedback</p>
+    <h1>What Clients Say</h1>
+    <p class="page-intro">
+      A dedicated page for testimonials, project reflections, and the kind of feedback that helps new clients understand what it is like to work with Pencil Design.
+    </p>
+  </div>
+
+  <section class="testimonials">
+    <div class="testimonials-inner">
+      {testimonials.map((testimonial) => (
+        <article class="testimonial-card">
+          <p class="testimonial-label">{testimonial.label}</p>
+          <blockquote>{testimonial.quote}</blockquote>
+          <p class="testimonial-name">{testimonial.name}</p>
+          <p class="testimonial-detail">{testimonial.detail}</p>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-header {
+    padding: calc(var(--header-h) + 3rem) var(--site-gutter) 3rem;
+    text-align: center;
+  }
+
+  .page-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    margin-bottom: 1rem;
+  }
+
+  .page-header h1 {
+    font-family: var(--font-body);
+    font-weight: 800;
+    font-size: clamp(2rem, 12vw, 9rem);
+    text-transform: uppercase;
+    letter-spacing: -0.03em;
+    line-height: 0.95;
+    margin-bottom: 1.5rem;
+  }
+
+  .page-intro {
+    max-width: 42rem;
+    margin: 0 auto;
+    font-size: clamp(1rem, 2.2vw, 1.35rem);
+    line-height: 1.65;
+    color: #4f4f4f;
+  }
+
+  .testimonials {
+    padding: 1rem var(--site-gutter) 6rem;
+  }
+
+  .testimonials-inner {
+    max-width: var(--site-max);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+
+  .testimonial-card {
+    border: 1px solid var(--color-border);
+    padding: 2rem;
+    background: var(--color-off-white);
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+  }
+
+  .testimonial-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    margin-bottom: 1rem;
+  }
+
+  .testimonial-card blockquote {
+    font-family: var(--font-heading);
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    line-height: 1.2;
+    margin-bottom: 2rem;
+  }
+
+  .testimonial-name {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-top: auto;
+  }
+
+  .testimonial-detail {
+    font-size: 0.88rem;
+    color: var(--color-mid);
+    margin-top: 0.35rem;
+  }
+
+  @media (max-width: 900px) {
+    .testimonials-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
