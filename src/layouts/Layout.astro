@@ -17,6 +17,25 @@ const {
 
 const baseUrl = import.meta.env.BASE_URL;
 const googleAnalyticsId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const canonicalUrl = Astro.url;
+const socialImageUrl = new URL(`${baseUrl}images/home-hero-main.jpg`, Astro.site ?? Astro.url);
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'HomeAndConstructionBusiness',
+  '@id': `${new URL(baseUrl, Astro.site ?? Astro.url)}#business`,
+  name: 'Pencil Design',
+  url: new URL(baseUrl, Astro.site ?? Astro.url).toString(),
+  image: socialImageUrl.toString(),
+  description,
+  telephone: '+44 20 8016 4163',
+  email: 'contact@pencil-design.co.uk',
+  areaServed: 'South East London',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'South East London',
+    addressCountry: 'GB',
+  },
+};
 ---
 
 <!doctype html>
@@ -25,6 +44,7 @@ const googleAnalyticsId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
     <link rel="icon" href={`${baseUrl}favicon.ico`} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -33,7 +53,18 @@ const googleAnalyticsId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;700;800&display=swap"
       rel="stylesheet"
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Pencil Design" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={socialImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImageUrl} />
     <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
   </head>
   <body>
     <Header transparent={transparentHeader} />

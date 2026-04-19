@@ -3,25 +3,25 @@ import Layout from '../layouts/Layout.astro';
 
 const serviceImageSets = {
   design: [
-    { src: '/pencil-design-site/images/service-circle-01.png' },
-    { src: '/pencil-design-site/images/service-circle-02.jpg' },
-    { src: '/pencil-design-site/images/service-circle-03.jpg' },
-    { src: '/pencil-design-site/images/service-circle-04.jpg' },
-    { src: '/pencil-design-site/images/service-circle-05.jpg' },
+    { src: '/pencil-design-site/images/service-circle-01.png', alt: 'Joinery design concept illustration' },
+    { src: '/pencil-design-site/images/service-circle-02.jpg', alt: 'Measured joinery design drawing and planning work' },
+    { src: '/pencil-design-site/images/service-circle-03.jpg', alt: 'Bespoke joinery design materials and samples' },
+    { src: '/pencil-design-site/images/service-circle-04.jpg', alt: 'Joinery design detailing for a fitted project' },
+    { src: '/pencil-design-site/images/service-circle-05.jpg', alt: 'Design development for bespoke fitted furniture' },
   ],
   build: [
-    { src: '/pencil-design-site/images/service-build-01.jpg', size: '118%', position: 'center' },
-    { src: '/pencil-design-site/images/service-build-02.jpg', size: '118%', position: 'center' },
-    { src: '/pencil-design-site/images/service-build-03.jpg', size: '118%', position: 'center' },
-    { src: '/pencil-design-site/images/service-build-04.jpg', size: '118%', position: 'center' },
-    { src: '/pencil-design-site/images/service-build-05.jpg', size: '118%', position: 'center' },
+    { src: '/pencil-design-site/images/service-build-01.jpg', alt: 'Joinery work in progress in the workshop', size: '118%', position: 'center' },
+    { src: '/pencil-design-site/images/service-build-02.jpg', alt: 'Bespoke furniture being built by hand', size: '118%', position: 'center' },
+    { src: '/pencil-design-site/images/service-build-03.jpg', alt: 'Custom joinery assembly in the workshop', size: '118%', position: 'center' },
+    { src: '/pencil-design-site/images/service-build-04.jpg', alt: 'Joinery craftsmanship and cabinet construction', size: '118%', position: 'center' },
+    { src: '/pencil-design-site/images/service-build-05.jpg', alt: 'Workshop build stage for fitted furniture', size: '118%', position: 'center' },
   ],
   finish: [
-    { src: '/pencil-design-site/images/service-finish-01.jpg' },
-    { src: '/pencil-design-site/images/service-finish-02.jpg' },
-    { src: '/pencil-design-site/images/service-finish-03.jpg' },
-    { src: '/pencil-design-site/images/service-finish-04.jpg' },
-    { src: '/pencil-design-site/images/service-finish-05.jpg' },
+    { src: '/pencil-design-site/images/service-finish-01.jpg', alt: 'Finished bespoke joinery detail and paintwork' },
+    { src: '/pencil-design-site/images/service-finish-02.jpg', alt: 'Completed fitted joinery with final finish applied' },
+    { src: '/pencil-design-site/images/service-finish-03.jpg', alt: 'Completed cabinetry with finished hardware details' },
+    { src: '/pencil-design-site/images/service-finish-04.jpg', alt: 'Finished bespoke timber detail in a completed project' },
+    { src: '/pencil-design-site/images/service-finish-05.jpg', alt: 'Final joinery finish and installation detail' },
   ],
 };
 
@@ -79,8 +79,15 @@ const services = [
           -->
           <div class="service-circles">
             {service.images.map((image) => (
-              <div class="service-img service-img--circle"
-                   style={`background-image: url('${image.src}'); background-size: ${image.size ?? 'cover'}; background-position: ${image.position ?? 'center'};`}>
+              <div class="service-img-wrap service-img-wrap--circle">
+                <img
+                  class="service-img"
+                  src={image.src}
+                  alt={image.alt}
+                  loading="lazy"
+                  decoding="async"
+                  style={`object-position: ${image.position ?? 'center'}; --image-scale: ${image.size ? Number.parseFloat(image.size) / 100 : 1};`}
+                />
               </div>
             ))}
           </div>
@@ -189,17 +196,20 @@ const services = [
 
   /* ---- Images ---- */
   .service-img {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(var(--image-scale, 1));
+    transform-origin: center;
   }
 
-  .service-img--circle {
+  .service-img-wrap--circle {
     width: min(85%, 270px);
     aspect-ratio: 1 / 1;
     border-radius: 50%;
+    overflow: hidden;
+    background: var(--color-off-white);
   }
 
   .service-circles {
@@ -260,7 +270,7 @@ const services = [
       border-bottom: none;
     }
 
-    .service-img--circle {
+    .service-img-wrap--circle {
       width: min(60%, 220px);
     }
   }

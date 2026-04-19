@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aafkebeukema.github.io/pencil-design-site/sitemap-index.xml
