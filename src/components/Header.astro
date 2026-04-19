@@ -33,32 +33,34 @@ const mainLinks = [
 </header>
 
 <script>
+  import {
+    closeMenuOnMobileLinkClick,
+    MOBILE_MENU_MAX_WIDTH,
+    resetHeaderMenu,
+    setMenuState,
+    updateTransparentHeader,
+  } from '../lib/header-menu';
+
   const headers = document.querySelectorAll<HTMLElement>('.site-header');
 
   headers.forEach((header) => {
     const toggle = header.querySelector<HTMLButtonElement>('.menu-toggle');
     const nav = header.querySelector<HTMLElement>('.site-nav');
 
-    const setMenuState = (isOpen: boolean) => {
-      toggle?.setAttribute('aria-expanded', String(isOpen));
-      toggle?.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
-      nav?.classList.toggle('is-open', isOpen);
-    };
-
     toggle?.addEventListener('click', () => {
       const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-      setMenuState(!isOpen);
+      setMenuState(toggle, nav, !isOpen);
     });
 
     nav?.querySelectorAll('a').forEach((link) => {
       link.addEventListener('click', () => {
-        if (window.innerWidth <= 900) setMenuState(false);
+        closeMenuOnMobileLinkClick(toggle, nav, window.innerWidth);
       });
     });
 
     if (header.classList.contains('header--transparent')) {
       const update = () => {
-        header.classList.toggle('header--scrolled', window.scrollY > 60);
+        updateTransparentHeader(header, window.scrollY);
       };
 
       window.addEventListener('scroll', update, { passive: true });
@@ -67,13 +69,11 @@ const mainLinks = [
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) {
+    if (window.innerWidth > MOBILE_MENU_MAX_WIDTH) {
       headers.forEach((header) => {
         const toggle = header.querySelector<HTMLButtonElement>('.menu-toggle');
         const nav = header.querySelector<HTMLElement>('.site-nav');
-        toggle?.setAttribute('aria-expanded', 'false');
-        toggle?.setAttribute('aria-label', 'Open menu');
-        nav?.classList.remove('is-open');
+        resetHeaderMenu(toggle, nav);
       });
     }
   });
