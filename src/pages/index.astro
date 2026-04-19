@@ -1,27 +1,30 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+const baseUrl = import.meta.env.BASE_URL;
+const heroImage = `${baseUrl}images/home-hero-main.jpg`;
+
 const featureSections = [
   {
     title: 'Custom build.',
-    image: '/pencil-design-site/images/home-hero-custom-build.jpg',
+    image: `${baseUrl}images/home-hero-custom-build.jpg`,
     align: 'right',
   },
   {
     title: 'Tailor made.',
-    image: '/pencil-design-site/images/home-hero-tailor-made.jpg',
+    image: `${baseUrl}images/home-hero-tailor-made.jpg`,
     align: 'left',
-    href: '/pencil-design-site/projects',
+    href: `${baseUrl}projects`,
     linkLabel: 'View projects',
   },
   {
     title: 'Bespoke.',
-    image: '/pencil-design-site/images/home-hero-bespoke.jpg',
+    image: `${baseUrl}images/home-hero-bespoke.jpg`,
     align: 'right',
   },
   {
     title: 'Unique.',
-    image: '/pencil-design-site/images/home-hero-unique.jpg',
+    image: `${baseUrl}images/home-hero-unique.jpg`,
     align: 'left',
   },
 ];
@@ -33,7 +36,7 @@ const featureSections = [
        HERO
   ====================== -->
   <section class="hero">
-    <div class="hero-bg"></div>
+    <div class="hero-bg" style={`background-image: url('${heroImage}')`}></div>
 
     <div class="hero-content">
       <h1>Not your average<br />construction company.</h1>
@@ -79,7 +82,6 @@ const featureSections = [
   .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('/pencil-design-site/images/home-hero-main.jpg');
     background-size: cover;
     background-position: center;
   }
