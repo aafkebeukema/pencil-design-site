@@ -1,6 +1,44 @@
 import { expect, test } from '@playwright/test';
 
 const basePath = '/pencil-design-site';
+const gaMeasurementId = 'G-TEST123456';
+
+test('cookie banner reject keeps analytics off and stays hidden on reload', async ({ page }) => {
+  await page.goto(`${basePath}/`);
+
+  const banner = page.locator('[data-cookie-banner]');
+
+  await expect(banner).toBeVisible();
+  await page.getByRole('button', { name: 'Reject' }).click();
+  await expect(banner).toBeHidden();
+  await expect
+    .poll(() => page.evaluate(() => document.cookie))
+    .toContain('pencil_analytics_consent=rejected');
+  await expect(page.locator(`script[src*="${gaMeasurementId}"]`)).toHaveCount(0);
+  expect(await page.evaluate(() => window.__pencilAnalyticsLoaded === true)).toBe(false);
+
+  await page.reload();
+  await expect(banner).toBeHidden();
+});
+
+test('cookie banner accept enables analytics consent and loads the GA script', async ({ page }) => {
+  await page.goto(`${basePath}/`);
+
+  const banner = page.locator('[data-cookie-banner]');
+
+  await expect(banner).toBeVisible();
+  await page.getByRole('button', { name: 'Accept' }).click();
+  await expect(banner).toBeHidden();
+  await expect
+    .poll(() => page.evaluate(() => document.cookie))
+    .toContain('pencil_analytics_consent=accepted');
+  expect(await page.evaluate(() => window.__pencilAnalyticsLoaded === true)).toBe(true);
+  await expect(page.locator(`script[src*="${gaMeasurementId}"]`)).toHaveCount(1);
+
+  await page.reload();
+  await expect(banner).toBeHidden();
+  expect(await page.evaluate(() => window.__pencilAnalyticsLoaded === true)).toBe(true);
+});
 
 test('mobile menu opens and closes on small screens', async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });

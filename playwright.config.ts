@@ -1,5 +1,7 @@
 import { defineConfig, devices } from '@playwright/test';
 
+const gaMeasurementId = 'G-TEST123456';
+
 export default defineConfig({
   testDir: './tests',
   testMatch: ['**/*.spec.ts'],
@@ -10,6 +12,10 @@ export default defineConfig({
   },
   webServer: {
     command: 'npm run dev -- --host 127.0.0.1 --port 4321',
+    env: {
+      ...process.env,
+      PUBLIC_GA_MEASUREMENT_ID: gaMeasurementId,
+    },
     url: 'http://127.0.0.1:4321/pencil-design-site/',
     reuseExistingServer: !process.env.CI,
   },

@@ -37,6 +37,7 @@ const year = new Date().getFullYear();
 
   <div class="footer-bottom">
     <p>&copy; {year} Pencil Design. All rights reserved.</p>
+    <a href="/pencil-design-site/privacy-cookies">Privacy &amp; Cookies</a>
   </div>
 </footer>
 
@@ -116,6 +117,19 @@ const year = new Date().getFullYear();
     padding: 1.5rem 0 2rem;
     font-size: 0.78rem;
     color: rgba(255, 255, 255, 0.25);
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom a {
+    color: rgba(255, 255, 255, 0.55);
+    text-decoration: none;
+  }
+
+  .footer-bottom a:hover {
+    color: var(--color-white);
   }
 
   @media (max-width: 600px) {

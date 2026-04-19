@@ -1,0 +1,185 @@
+---
+interface Props {
+  measurementId?: string;
+  baseUrl: string;
+}
+
+const { measurementId = '', baseUrl } = Astro.props;
+---
+
+<aside
+  class="cookie-banner"
+  data-cookie-banner
+  data-base-url={baseUrl}
+  data-measurement-id={measurementId}
+  hidden
+>
+  <div class="cookie-banner__copy">
+    <p class="cookie-banner__title">Analytics cookies</p>
+    <p>
+      We use Google Analytics to understand how people use this site. We only switch it on if you accept.
+      <a href={`${baseUrl}privacy-cookies`}>Privacy &amp; cookies</a>
+    </p>
+  </div>
+
+  <div class="cookie-banner__actions">
+    <button type="button" class="cookie-banner__button cookie-banner__button--ghost" data-cookie-reject>
+      Reject
+    </button>
+    <button type="button" class="cookie-banner__button" data-cookie-accept>
+      Accept
+    </button>
+  </div>
+</aside>
+
+<script>
+  import {
+    ANALYTICS_CONSENT_COOKIE,
+    buildConsentCookie,
+    getCookieValue,
+    hasAcceptedAnalytics,
+    hasStoredAnalyticsConsent,
+  } from '../lib/analytics-consent';
+
+  declare global {
+    interface Window {
+      __pencilAnalyticsLoaded?: boolean;
+      dataLayer?: unknown[];
+      gtag?: (...args: unknown[]) => void;
+    }
+  }
+
+  const banner = document.querySelector<HTMLElement>('[data-cookie-banner]');
+  const acceptButton = banner?.querySelector<HTMLButtonElement>('[data-cookie-accept]');
+  const rejectButton = banner?.querySelector<HTMLButtonElement>('[data-cookie-reject]');
+  const measurementId = banner?.dataset.measurementId ?? '';
+  const baseUrl = banner?.dataset.baseUrl ?? '/';
+
+  const loadAnalytics = () => {
+    if (!measurementId || window.__pencilAnalyticsLoaded) return;
+
+    window.__pencilAnalyticsLoaded = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = (...args) => {
+      window.dataLayer?.push(args);
+    };
+
+    const script = document.createElement('script');
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
+    document.head.appendChild(script);
+
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId);
+  };
+
+  const hideBanner = () => {
+    banner?.setAttribute('hidden', '');
+  };
+
+  const showBanner = () => {
+    banner?.removeAttribute('hidden');
+  };
+
+  const saveConsent = (value: 'accepted' | 'rejected') => {
+    document.cookie = buildConsentCookie(value, baseUrl);
+    hideBanner();
+
+    if (value === 'accepted') {
+      loadAnalytics();
+    }
+  };
+
+  if (hasAcceptedAnalytics(document.cookie)) {
+    loadAnalytics();
+    hideBanner();
+  } else if (!hasStoredAnalyticsConsent(document.cookie)) {
+    showBanner();
+  } else if (getCookieValue(document.cookie, ANALYTICS_CONSENT_COOKIE) === 'rejected') {
+    hideBanner();
+  }
+
+  acceptButton?.addEventListener('click', () => {
+    saveConsent('accepted');
+  });
+
+  rejectButton?.addEventListener('click', () => {
+    saveConsent('rejected');
+  });
+</script>
+
+<style>
+  .cookie-banner {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 200;
+    width: min(420px, calc(100vw - 2rem));
+    background: rgba(15, 15, 15, 0.96);
+    color: var(--color-white);
+    padding: 1.1rem;
+    border-radius: 14px;
+    box-shadow: 0 18px 50px rgba(0, 0, 0, 0.22);
+  }
+
+  .cookie-banner__title {
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.55rem;
+  }
+
+  .cookie-banner__copy p:last-child {
+    font-size: 0.92rem;
+    line-height: 1.65;
+    color: rgba(255, 255, 255, 0.8);
+  }
+
+  .cookie-banner__copy a {
+    color: var(--color-white);
+    text-underline-offset: 3px;
+  }
+
+  .cookie-banner__actions {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: flex-end;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .cookie-banner__button {
+    appearance: none;
+    border: 1px solid var(--color-white);
+    background: var(--color-white);
+    color: var(--color-black);
+    padding: 0.72rem 1rem;
+    border-radius: 999px;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  .cookie-banner__button--ghost {
+    background: transparent;
+    color: var(--color-white);
+  }
+
+  @media (max-width: 640px) {
+    .cookie-banner {
+      left: 1rem;
+      right: 1rem;
+      width: auto;
+    }
+
+    .cookie-banner__actions {
+      justify-content: stretch;
+    }
+
+    .cookie-banner__button {
+      flex: 1 1 140px;
+    }
+  }
+</style>
