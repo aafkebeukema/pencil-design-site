@@ -2,186 +2,51 @@
 import Layout from '../layouts/Layout.astro';
 
 const projects = [
-  {
-    title: 'Dulwich Hill',
-    src: '/pencil-design-site/images/dulwich-hill-built-01.jpg',
-  },
-  {
-    title: 'Dulwich Hill',
-    src: '/pencil-design-site/images/dulwich-hill-built-02.jpg',
-  },
-  {
-    title: 'Hackney Road',
-    src: '/pencil-design-site/images/hackney-road-built-01.jpg',
-  },
-  {
-    title: 'Hackney Road',
-    src: '/pencil-design-site/images/hackney-road-built-02.jpg',
-  },
-  {
-    title: 'Hackney Road',
-    src: '/pencil-design-site/images/hackney-road-built-03.jpg',
-  },
-  {
-    title: 'Hackney Road',
-    src: '/pencil-design-site/images/hackney-road-built-04.jpg',
-  },
-  {
-    title: 'Hackney Road',
-    src: '/pencil-design-site/images/hackney-road-built-05.jpg',
-  },
-  {
-    title: 'Hackney Road',
-    src: '/pencil-design-site/images/hackney-road-built-06.jpg',
-  },
-  {
-    title: 'Hackney Road',
-    src: '/pencil-design-site/images/hackney-road-built-07.jpg',
-  },
-  {
-    title: 'Hackney Road',
-    src: '/pencil-design-site/images/hackney-road-built-08.jpg',
-  },
-  {
-    title: 'Hackney Road',
-    src: '/pencil-design-site/images/hackney-road-built-09-3.jpg',
-  },
-  {
-    title: 'Hackney Road Bathroom',
-    src: '/pencil-design-site/images/hackney-road-bathroom-built-01.jpg',
-  },
-  {
-    title: 'Hackney Road Bathroom',
-    src: '/pencil-design-site/images/hackney-road-bathroom-built-02.jpg',
-  },
-  {
-    title: 'Lordship Lane',
-    src: '/pencil-design-site/images/lordship-lane-built-01.jpg',
-  },
-  {
-    title: 'Lordship Lane',
-    src: '/pencil-design-site/images/lordship-lane-built-02.jpg',
-  },
-  {
-    title: 'Lordship Lane',
-    src: '/pencil-design-site/images/lordship-lane-built-03.jpg',
-  },
-  {
-    title: 'Lordship Lane',
-    src: '/pencil-design-site/images/lordship-lane-built-04.jpg',
-  },
-  {
-    title: 'Lordship Lane Kitchen',
-    src: '/pencil-design-site/images/lordship-lane-kitchen-built-01.jpg',
-  },
-  {
-    title: 'Lordship Lane Lounge',
-    src: '/pencil-design-site/images/lordship-lane-lounge-built-01.jpg',
-  },
-  {
-    title: 'Napier Road',
-    src: '/pencil-design-site/images/napier-road-built-01.jpg',
-  },
-  {
-    title: 'Paddock Close Bathroom',
-    src: '/pencil-design-site/images/paddock-close-bathroom-built-01.jpg',
-  },
-  {
-    title: 'Paddock Close Bathroom',
-    src: '/pencil-design-site/images/paddock-close-bathroom-built-02.jpg',
-  },
-  {
-    title: 'Paddock Close Bathroom',
-    src: '/pencil-design-site/images/paddock-close-bathroom-built-03.jpg',
-  },
-  {
-    title: 'Paddock Close Bathroom',
-    src: '/pencil-design-site/images/paddock-close-bathroom-built-04.jpg',
-  },
-  {
-    title: 'Paddock Close Bathroom',
-    src: '/pencil-design-site/images/paddock-close-bathroom-built-05.jpg',
-  },
-  {
-    title: 'Paddock Close Kitchen',
-    src: '/pencil-design-site/images/paddock-close-kitchen-built-01.jpg',
-  },
-  {
-    title: 'Paddock Close Kitchen',
-    src: '/pencil-design-site/images/paddock-close-kitchen-built-02.jpg',
-  },
-  {
-    title: 'Paddock Close Shower',
-    src: '/pencil-design-site/images/paddock-close-shower-crafted-01.jpg',
-  },
-  {
-    title: 'Paddock Close Stairs',
-    src: '/pencil-design-site/images/paddock-close-stairs-built-01.jpg',
-  },
-  {
-    title: 'Paddock Close Stairs',
-    src: '/pencil-design-site/images/paddock-close-stairs-built-02.jpg',
-  },
-  {
-    title: 'Queensville Road',
-    src: '/pencil-design-site/images/queensville-road-built-01.jpg',
-  },
-  {
-    title: 'Queensville Road',
-    src: '/pencil-design-site/images/queensville-road-built-02.jpg',
-  },
-  {
-    title: 'Queensville Road',
-    src: '/pencil-design-site/images/queensville-road-built-03.jpg',
-  },
-  {
-    title: 'Reigate Road Bathroom',
-    src: '/pencil-design-site/images/reigate-road-bathroom-built-01.jpg',
-  },
-  {
-    title: 'Reigate Road Bunkbed',
-    src: '/pencil-design-site/images/reigate-road-bunkbed-built-01.jpg',
-  },
-  {
-    title: 'Reigate Road Bunkbed',
-    src: '/pencil-design-site/images/reigate-road-bunkbed-built-02.jpg',
-  },
-  {
-    title: 'Reigate Road Bunkbed',
-    src: '/pencil-design-site/images/reigate-road-bunkbed-built-03.jpg',
-  },
-  {
-    title: 'Reigate Road Bunkbed',
-    src: '/pencil-design-site/images/reigate-road-bunkbed-built-04.jpg',
-  },
-  {
-    title: 'Reigate Road Garden Workshop',
-    src: '/pencil-design-site/images/reigate-road-garden-workshop-built-01.jpg',
-  },
-  {
-    title: 'Reigate Road Table',
-    src: '/pencil-design-site/images/reigate-road-table-built-01.jpg',
-  },
-  {
-    title: 'Saint Stephens',
-    src: '/pencil-design-site/images/saint-stephens-built-01.jpg',
-  },
-  {
-    title: 'Saint Stephens',
-    src: '/pencil-design-site/images/saint-stephens-built-02.jpg',
-  },
-  {
-    title: 'Saint Stephens',
-    src: '/pencil-design-site/images/saint-stephens-built-03.jpg',
-  },
-  {
-    title: 'Saint Stephens',
-    src: '/pencil-design-site/images/saint-stephens-built-04.jpg',
-  },
-  {
-    title: 'Saint Stephens',
-    src: '/pencil-design-site/images/saint-stephens-built-05.jpg',
-  },
+  { title: 'Dulwich Hill', src: '/pencil-design-site/images/dulwich-hill-built-01.jpg', alt: 'Bespoke fitted kitchen, Dulwich Hill, South East London' },
+  { title: 'Dulwich Hill', src: '/pencil-design-site/images/dulwich-hill-built-02.jpg', alt: 'Fitted kitchen detail, Dulwich Hill, South East London' },
+  { title: 'Hackney Road', src: '/pencil-design-site/images/hackney-road-built-01.jpg', alt: 'Bespoke fitted kitchen with custom joinery, Hackney Road' },
+  { title: 'Hackney Road', src: '/pencil-design-site/images/hackney-road-built-02.jpg', alt: 'Custom joinery kitchen, Hackney Road' },
+  { title: 'Hackney Road', src: '/pencil-design-site/images/hackney-road-built-03.jpg', alt: 'Fitted kitchen with custom joinery detail, Hackney Road' },
+  { title: 'Hackney Road', src: '/pencil-design-site/images/hackney-road-built-04.jpg', alt: 'Bespoke kitchen cabinetry, Hackney Road' },
+  { title: 'Hackney Road', src: '/pencil-design-site/images/hackney-road-built-05.jpg', alt: 'Custom fitted kitchen, Hackney Road' },
+  { title: 'Hackney Road', src: '/pencil-design-site/images/hackney-road-built-06.jpg', alt: 'Kitchen joinery and cabinetry, Hackney Road' },
+  { title: 'Hackney Road', src: '/pencil-design-site/images/hackney-road-built-07.jpg', alt: 'Bespoke kitchen construction, Hackney Road' },
+  { title: 'Hackney Road', src: '/pencil-design-site/images/hackney-road-built-08.jpg', alt: 'Custom kitchen with integrated joinery, Hackney Road' },
+  { title: 'Hackney Road', src: '/pencil-design-site/images/hackney-road-built-09-3.jpg', alt: 'Fitted kitchen with custom joinery, Hackney Road' },
+  { title: 'Hackney Road Bathroom', src: '/pencil-design-site/images/hackney-road-bathroom-built-01.jpg', alt: 'Bespoke fitted bathroom, Hackney Road' },
+  { title: 'Hackney Road Bathroom', src: '/pencil-design-site/images/hackney-road-bathroom-built-02.jpg', alt: 'Custom bathroom detail, Hackney Road' },
+  { title: 'Lordship Lane', src: '/pencil-design-site/images/lordship-lane-built-01.jpg', alt: 'Full house renovation, lounge and living room, Lordship Lane' },
+  { title: 'Lordship Lane', src: '/pencil-design-site/images/lordship-lane-built-02.jpg', alt: 'Renovated living room with new flooring and decoration, Lordship Lane' },
+  { title: 'Lordship Lane', src: '/pencil-design-site/images/lordship-lane-built-03.jpg', alt: 'House renovation, painted lounge with new flooring, Lordship Lane' },
+  { title: 'Lordship Lane', src: '/pencil-design-site/images/lordship-lane-built-04.jpg', alt: 'Bespoke fitted kitchen, Lordship Lane' },
+  { title: 'Lordship Lane Kitchen', src: '/pencil-design-site/images/lordship-lane-kitchen-built-01.jpg', alt: 'Custom fitted kitchen detail, Lordship Lane' },
+  { title: 'Lordship Lane Lounge', src: '/pencil-design-site/images/lordship-lane-lounge-built-01.jpg', alt: 'Finished lounge with built-in alcove shelving and cupboards, Lordship Lane' },
+  { title: 'Napier Road', src: '/pencil-design-site/images/napier-road-built-01.jpg', alt: 'Custom timber front garden fence and gate, Napier Road' },
+  { title: 'Paddock Close Bathroom', src: '/pencil-design-site/images/paddock-close-bathroom-built-01.jpg', alt: 'Custom bathroom with bespoke tiling and copper welded pipework, Paddock Close' },
+  { title: 'Paddock Close Bathroom', src: '/pencil-design-site/images/paddock-close-bathroom-built-02.jpg', alt: 'Bespoke bathroom with custom copper pipework and shower, Paddock Close' },
+  { title: 'Paddock Close Bathroom', src: '/pencil-design-site/images/paddock-close-bathroom-built-03.jpg', alt: 'Custom designed bathroom with copper welded taps and fittings, Paddock Close' },
+  { title: 'Paddock Close Bathroom', src: '/pencil-design-site/images/paddock-close-bathroom-built-04.jpg', alt: 'Bespoke tiling and copper pipework bathroom detail, Paddock Close' },
+  { title: 'Paddock Close Bathroom', src: '/pencil-design-site/images/paddock-close-bathroom-built-05.jpg', alt: 'Custom bathroom construction with bespoke copper fittings, Paddock Close' },
+  { title: 'Paddock Close Kitchen', src: '/pencil-design-site/images/paddock-close-kitchen-built-01.jpg', alt: 'Custom fitted kitchen, Paddock Close' },
+  { title: 'Paddock Close Kitchen', src: '/pencil-design-site/images/paddock-close-kitchen-built-02.jpg', alt: 'Bespoke fitted kitchen detail, Paddock Close' },
+  { title: 'Paddock Close Shower', src: '/pencil-design-site/images/paddock-close-shower-crafted-01.jpg', alt: 'Custom crafted shower with bespoke tiling and copper pipework, Paddock Close' },
+  { title: 'Paddock Close Stairs', src: '/pencil-design-site/images/paddock-close-stairs-built-01.jpg', alt: 'Custom timber staircase, Paddock Close' },
+  { title: 'Paddock Close Stairs', src: '/pencil-design-site/images/paddock-close-stairs-built-02.jpg', alt: 'Bespoke timber staircase detail, Paddock Close' },
+  { title: 'Queensville Road', src: '/pencil-design-site/images/queensville-road-built-01.jpg', alt: 'Full house renovation with custom joinery, Queensville Road' },
+  { title: 'Queensville Road', src: '/pencil-design-site/images/queensville-road-built-02.jpg', alt: 'House renovation with bespoke joinery detail, Queensville Road' },
+  { title: 'Queensville Road', src: '/pencil-design-site/images/queensville-road-built-03.jpg', alt: 'Completed house renovation and custom joinery, Queensville Road' },
+  { title: 'Reigate Road Bathroom', src: '/pencil-design-site/images/reigate-road-bathroom-built-01.jpg', alt: 'Bespoke fitted bathroom, Reigate Road' },
+  { title: 'Reigate Road Bunkbed', src: '/pencil-design-site/images/reigate-road-bunkbed-built-01.jpg', alt: 'Custom built bunkbed with walnut details, Reigate Road' },
+  { title: 'Reigate Road Bunkbed', src: '/pencil-design-site/images/reigate-road-bunkbed-built-02.jpg', alt: 'Bespoke bunkbed joinery with walnut detailing, Reigate Road' },
+  { title: 'Reigate Road Bunkbed', src: '/pencil-design-site/images/reigate-road-bunkbed-built-03.jpg', alt: 'Custom bunkbed with walnut joinery detail, Reigate Road' },
+  { title: 'Reigate Road Bunkbed', src: '/pencil-design-site/images/reigate-road-bunkbed-built-04.jpg', alt: 'Fitted bunkbed with bespoke walnut details, Reigate Road' },
+  { title: 'Reigate Road Garden Workshop', src: '/pencil-design-site/images/reigate-road-garden-workshop-built-01.jpg', alt: 'Custom designed and built garden workshop and office, Reigate Road' },
+  { title: 'Reigate Road Table', src: '/pencil-design-site/images/reigate-road-table-built-01.jpg', alt: 'Custom concrete, steel and wood dining table made from a tree slab, Reigate Road' },
+  { title: 'Saint Stephens', src: '/pencil-design-site/images/saint-stephens-built-01.jpg', alt: 'Loft conversion with bathroom, Saint Stephens' },
+  { title: 'Saint Stephens', src: '/pencil-design-site/images/saint-stephens-built-02.jpg', alt: 'Loft conversion bathroom detail, Saint Stephens' },
+  { title: 'Saint Stephens', src: '/pencil-design-site/images/saint-stephens-built-03.jpg', alt: 'Bespoke loft conversion with fitted bathroom, Saint Stephens' },
+  { title: 'Saint Stephens', src: '/pencil-design-site/images/saint-stephens-built-04.jpg', alt: 'Loft conversion construction detail, Saint Stephens' },
+  { title: 'Saint Stephens', src: '/pencil-design-site/images/saint-stephens-built-05.jpg', alt: 'Completed loft conversion with bathroom, Saint Stephens' },
 ];
 ---
 
@@ -202,7 +67,7 @@ const projects = [
             <div class="project-image">
               <img
                 src={project.src}
-                alt={`${project.title} bespoke joinery project by Pencil Design`}
+                alt={project.alt}
                 loading={index < 6 ? 'eager' : 'lazy'}
                 decoding="async"
               />
