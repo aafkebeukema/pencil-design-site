@@ -6,9 +6,5 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://aafkebeukema.github.io',
   base: '/pencil-design-site/',
-  integrations: [
-    sitemap({
-      filter: (page) => !page.endsWith('/careers/'),
-    }),
-  ],
+  integrations: [sitemap()],
 });
