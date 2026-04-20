@@ -6,8 +6,8 @@ const heroImage = `${baseUrl}images/home-hero-main.jpg`;
 
 const featureSections = [
   {
-    title: 'Custom build.',
-    image: `${baseUrl}images/home-hero-custom-build.jpg`,
+    title: 'Design centric.',
+    image: `${baseUrl}images/home-hero-design-centric.jpg`,
     align: 'right',
   },
   {
@@ -40,6 +40,18 @@ const featureSections = [
 
     <div class="hero-content">
       <h1>Not your average<br />construction company.</h1>
+      <div class="hero-copy">
+        <p>
+          Pencil Design is a design-led construction and renovation company based in South East London, working across
+          the South East to create bespoke joinery, fitted furniture, and carefully crafted interiors for homes and
+          businesses.
+        </p>
+        <p>
+          From full house renovations and new-build projects to bathrooms, kitchens, wardrobes, built-in shelving,
+          cabinetry, and one-off pieces, we design, make, and build work that is tailored to the space, built
+          properly, and made to last.
+        </p>
+      </div>
       <div class="hero-actions">
         <a href="/pencil-design-site/services" class="btn-pill">Our Services</a>
       </div>
@@ -113,7 +125,21 @@ const featureSections = [
     font-weight: 300;
     line-height: 1.0;
     letter-spacing: -0.02em;
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-copy {
+    max-width: 44rem;
+    display: grid;
+    gap: 0.95rem;
+    font-size: clamp(1rem, 1.6vw, 1.3rem);
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.88);
+    margin-bottom: 3rem;
+  }
+
+  .hero-copy p {
+    max-width: 40rem;
   }
 
   .hero-actions {
