@@ -55,7 +55,9 @@ const testimonials = [
 <style>
   .page-header {
     padding: calc(var(--header-h) + 3rem) var(--site-gutter) 3rem;
-    text-align: center;
+    max-width: var(--site-max);
+    margin: 0 auto;
+    text-align: left;
   }
 
   .page-label {
@@ -78,7 +80,7 @@ const testimonials = [
 
   .page-intro {
     max-width: 42rem;
-    margin: 0 auto;
+    margin: 0;
     font-size: clamp(1rem, 2.2vw, 1.35rem);
     line-height: 1.65;
     color: #4f4f4f;
