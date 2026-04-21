@@ -42,11 +42,7 @@ const featureSections = [
       <h1>Not your average<br />construction company.</h1>
       <div class="hero-copy">
         <p>
-          Pencil Design is a design-led construction and renovation company with a strong foundation in architecture
-          and design, based in South East London, creating bespoke joinery, fitted furniture, and meticulously crafted
-          interiors for homeowners and businesses. From home renovations and new-build projects to bathrooms,
-          kitchens, wardrobes, built-in shelving, cabinetry, and one-off pieces, we design, make, and build work that
-          is tailored to the space, built properly, and made to last.
+          Pencil Design is a design-led construction and renovation company with a strong foundation in architecture, joinery and design. We create meticulously crafted spaces for homeowners and businesses. From home renovations and new-build projects to bathrooms, kitchens, wardrobes, built-in shelving, cabinetry, and one-off pieces, we design, make, and build work that is tailored to the space, built properly, and made to last.
         </p>
       </div>
       <div class="hero-actions">
@@ -85,7 +81,7 @@ const featureSections = [
     min-height: 100svh;
     display: flex;
     align-items: flex-end;
-    padding: 0 var(--site-gutter) 5rem;
+    padding: calc(var(--header-h) + 2.5rem) var(--content-rail) 5rem;
   }
 
   .hero-bg {
@@ -112,27 +108,27 @@ const featureSections = [
     position: relative;
     z-index: 1;
     color: var(--color-white);
-    max-width: 1000px;
+    max-width: min(1400px, calc(100vw - (var(--site-gutter) * 2)));
   }
 
   .hero-content h1 {
     /* Large, light — matching the reference's airy, confident style */
     font-family: var(--font-heading);
-    font-size: clamp(2.25rem, 9vw, 8.5rem);
+    font-size: clamp(2.5rem, 7vw, 7.4rem);
     font-weight: 300;
-    line-height: 1.0;
+    line-height: 0.95;
     letter-spacing: -0.02em;
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .hero-copy {
-    max-width: 44rem;
+    max-width: 42rem;
     display: grid;
     gap: 0.95rem;
-    font-size: clamp(1rem, 1.6vw, 1.3rem);
+    font-size: clamp(1rem, 1.35vw, 1.2rem);
     line-height: 1.75;
     color: rgba(255, 255, 255, 0.88);
-    margin-bottom: 3rem;
+    margin-bottom: 2.5rem;
   }
 
   .hero-copy p {
@@ -175,7 +171,7 @@ const featureSections = [
     min-height: 78vh;
     display: flex;
     align-items: flex-end;
-    padding: 0 var(--site-gutter) 4.5rem;
+    padding: 0 var(--content-rail) 4.5rem;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -232,6 +228,10 @@ const featureSections = [
     .hero,
     .feature-panel {
       min-height: 72svh;
+    }
+
+    .hero {
+      padding-top: calc(var(--header-h) + 1.75rem);
     }
 
     .hero-actions {
