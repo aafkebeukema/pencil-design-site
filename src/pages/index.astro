@@ -14,6 +14,7 @@ const featureSections = [
     title: 'Tailor made.',
     image: `${baseUrl}images/home-hero-tailor-made.jpg`,
     align: 'left',
+    body: 'Our roots are in design, shaped by a simple belief: great ideas deserve better delivery. That is why we put so much emphasis on the design stage, developing projects with care so they can be built properly, realistically, and with integrity. By balancing design ambition with practical knowledge of materials, suppliers, and cost, we create projects that are distinctive, achievable, and tailored to your budget.',
     href: `${baseUrl}projects`,
     linkLabel: 'View projects',
   },
@@ -60,6 +61,7 @@ const featureSections = [
         <div class="feature-panel__overlay"></div>
         <div class="feature-panel__content">
           <h2>{section.title}</h2>
+          {section.body && <p class="feature-panel__copy">{section.body}</p>}
           {section.href && (
             <a href={section.href} class="btn-pill">
               {section.linkLabel}
@@ -222,6 +224,13 @@ const featureSections = [
     letter-spacing: -0.04em;
     text-transform: uppercase;
     max-width: 8ch;
+  }
+
+  .feature-panel__copy {
+    max-width: 42rem;
+    font-size: clamp(1rem, 1.35vw, 1.2rem);
+    line-height: 1.75;
+    color: rgba(255, 255, 255, 0.88);
   }
 
   @media (max-width: 700px) {
