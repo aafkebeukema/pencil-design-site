@@ -29,37 +29,6 @@ import Layout from '../layouts/Layout.astro';
   </section>
 
   <!-- ===========================
-       TEAM
-  ============================ -->
-  <section class="team">
-    <div class="team-inner">
-      <div class="team-grid">
-
-        <div class="team-member">
-          <!--
-            TO ADD A PHOTO:
-            Replace the <div class="member-img"> below with:
-            <img src="/images/sam-portrait.jpg" alt="Sam Fathi, founder of Pencil Design" />
-          -->
-          <div class="member-img" style="background: linear-gradient(155deg, #2a2010 0%, #4a3818 100%);"></div>
-          <h2>Sam — Founder &amp; Lead Joiner</h2>
-          <p>
-            Sam has been working in joinery and furniture making for over a decade, starting out on a design and craft course before spending several years working for other workshops across South London. He set up Pencil Design to do things his own way — with more attention to the details, and more honest communication with clients from start to finish.
-          </p>
-          <p>
-            When he's not in the workshop, he's most likely found hunting for interesting secondhand tools, or arguing about the best way to finish solid oak.
-          </p>
-        </div>
-
-        <!--
-          To add more team members, copy the block above and paste it here.
-        -->
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===========================
        CTA
   ============================ -->
   <section class="cta">
@@ -112,69 +81,6 @@ import Layout from '../layouts/Layout.astro';
     line-height: 1.85;
     color: var(--color-black);
     font-weight: 300;
-  }
-
-  /* ===========================
-     TEAM
-  ============================ */
-  .team {
-    padding: 5rem var(--site-gutter) 6rem;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .team-inner {
-    max-width: var(--site-max);
-    margin: 0 auto;
-  }
-
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 4rem;
-  }
-
-  .member-img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    margin-bottom: 1.5rem;
-    background-size: cover;
-    background-position: center;
-  }
-
-  /* Replace with <img> when you have photos */
-  .team-member img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    display: block;
-    margin-bottom: 1.5rem;
-  }
-
-  .team-member h2 {
-    font-family: var(--font-heading);
-    font-size: clamp(1.5rem, 2.5vw, 2.25rem);
-    font-weight: 400;
-    margin-bottom: 1rem;
-    line-height: 1.15;
-  }
-
-  .team-member p {
-    font-size: 0.925rem;
-    color: #555;
-    line-height: 1.85;
-    font-weight: 300;
-    margin-bottom: 0.9rem;
-  }
-
-  .team-member p:last-child {
-    margin-bottom: 0;
-  }
-
-  @media (max-width: 768px) {
-    .team-grid {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-    }
   }
 
   /* ===========================
