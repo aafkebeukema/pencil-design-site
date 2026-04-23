@@ -16,7 +16,7 @@ export default defineConfig({
       ...process.env,
       PUBLIC_GA_MEASUREMENT_ID: gaMeasurementId,
     },
-    url: 'http://127.0.0.1:4321/pencil-design-site/',
+    url: 'http://127.0.0.1:4321/',
     reuseExistingServer: !process.env.CI,
   },
   projects: [

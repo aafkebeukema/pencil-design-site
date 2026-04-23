@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-const basePath = '/pencil-design-site';
+const basePath = '';
 const gaMeasurementId = 'G-TEST123456';
 
 test('cookie banner reject keeps analytics off and stays hidden on reload', async ({ page }) => {
