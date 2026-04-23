@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/with-base';
+
 interface Props {
   transparent?: boolean;
 }
@@ -6,17 +8,17 @@ interface Props {
 const { transparent = false } = Astro.props;
 
 const mainLinks = [
-  { label: 'Home', href: '/pencil-design-site/' },
-  { label: 'Projects', href: '/pencil-design-site/projects' },
-  { label: 'Our Services', href: '/pencil-design-site/services' },
-  { label: 'About Us', href: '/pencil-design-site/about' },
-  { label: 'Contact', href: '/pencil-design-site/contact' },
+  { label: 'Home', href: withBase('/') },
+  { label: 'Projects', href: withBase('/projects') },
+  { label: 'Our Services', href: withBase('/services') },
+  { label: 'About Us', href: withBase('/about') },
+  { label: 'Contact', href: withBase('/contact') },
 ];
 ---
 
 <header class:list={['site-header', { 'header--transparent': transparent }]}>
   <div class="header-inner">
-    <a href="/pencil-design-site/" class="logo">Pencil Design</a>
+    <a href={withBase('/')} class="logo">Pencil Design</a>
 
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
       <span></span>

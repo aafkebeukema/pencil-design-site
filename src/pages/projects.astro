@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { withBase } from '../lib/with-base';
 
 const projects = [
   { title: 'Dulwich Hill', src: '/pencil-design-site/images/dulwich-hill-built-01.jpg', alt: 'Bespoke fitted kitchen, Dulwich Hill, South East London' },
@@ -48,6 +49,10 @@ const projects = [
   { title: 'Saint Stephens', src: '/pencil-design-site/images/saint-stephens-built-04.jpg', alt: 'Loft conversion construction detail, Saint Stephens' },
   { title: 'Saint Stephens', src: '/pencil-design-site/images/saint-stephens-built-05.jpg', alt: 'Completed loft conversion with bathroom, Saint Stephens' },
 ];
+
+projects.forEach((project) => {
+  project.src = withBase(project.src);
+});
 ---
 
 <Layout
@@ -82,7 +87,7 @@ const projects = [
       <div class="projects-cta-inner">
         <h2>Have a project in mind?</h2>
         <p>Get in touch and we'll arrange a free consultation to talk through what you're looking for.</p>
-        <a href="/pencil-design-site/contact" class="btn">Get in touch</a>
+        <a href={withBase('/contact')} class="btn">Get in touch</a>
       </div>
     </section>
   </div>

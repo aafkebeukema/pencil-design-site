@@ -4,7 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://aafkebeukema.github.io',
-  base: '/pencil-design-site/',
+  site: 'https://www.pencil-design.co.uk',
   integrations: [sitemap()],
 });

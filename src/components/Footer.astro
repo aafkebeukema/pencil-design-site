@@ -1,4 +1,6 @@
 ---
+import { withBase } from '../lib/with-base';
+
 const year = new Date().getFullYear();
 ---
 
@@ -14,14 +16,14 @@ const year = new Date().getFullYear();
     <div class="footer-links">
       <div class="footer-col">
         <p class="col-title">Projects</p>
-        <a href="/pencil-design-site/projects">View Projects</a>
+        <a href={withBase('/projects')}>View Projects</a>
       </div>
 
       <div class="footer-col">
         <p class="col-title">Company</p>
-        <a href="/pencil-design-site/services">Our Services</a>
-        <a href="/pencil-design-site/about">About Us</a>
-        <a href="/pencil-design-site/contact">Contact</a>
+        <a href={withBase('/services')}>Our Services</a>
+        <a href={withBase('/about')}>About Us</a>
+        <a href={withBase('/contact')}>Contact</a>
       </div>
 
       <div class="footer-col">
@@ -35,7 +37,7 @@ const year = new Date().getFullYear();
 
   <div class="footer-bottom">
     <p>&copy; {year} Pencil Design. All rights reserved.</p>
-    <a href="/pencil-design-site/privacy-cookies">Privacy &amp; Cookies</a>
+    <a href={withBase('/privacy-cookies')}>Privacy &amp; Cookies</a>
   </div>
 </footer>
 

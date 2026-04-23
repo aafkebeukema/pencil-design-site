@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aafkebeukema.github.io/pencil-design-site/sitemap-index.xml
+Sitemap: https://www.pencil-design.co.uk/sitemap-index.xml
