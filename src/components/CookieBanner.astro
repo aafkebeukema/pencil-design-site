@@ -60,9 +60,7 @@ const { measurementId = '', baseUrl } = Astro.props;
 
     window.__pencilAnalyticsLoaded = true;
     window.dataLayer = window.dataLayer || [];
-    window.gtag = (...args) => {
-      window.dataLayer?.push(args);
-    };
+    window.gtag = function() { window.dataLayer?.push(arguments); };
 
     const script = document.createElement('script');
     script.async = true;
