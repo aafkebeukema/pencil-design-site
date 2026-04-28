@@ -114,16 +114,18 @@ import Layout from '../layouts/Layout.astro';
                 </svg>
                 <span>I&rsquo;m looking for bespoke fitted furniture</span>
               </button>
-              <button type="button" class="prompt-button" data-prompt="I&rsquo;m considering buying a property">
+              <button type="button" class="prompt-button" data-prompt="I&rsquo;m not sure yet">
                 <svg class="prompt-icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 5l1.45 4.05L17.5 10.5l-4.05 1.45L12 16l-1.45-4.05L6.5 10.5l4.05-1.45L12 5z"/>
                   <path d="M18.5 4.5v3"/>
                   <path d="M20 6h-3"/>
                 </svg>
-                <span>I&rsquo;m considering buying a property</span>
+                <span>I&rsquo;m not sure yet</span>
               </button>
             </div>
           </div>
+
+          <div id="chat-status" class="chat-status" aria-live="polite"></div>
 
           <div class="assistant-composer">
             <input
@@ -156,6 +158,227 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </div>
 </Layout>
+
+<script>
+  const messagesContainer = document.querySelector('#chat-messages');
+  const input = document.querySelector('#chat-input');
+  const sendButton = document.querySelector('#chat-send');
+  const promptButtons = Array.from(document.querySelectorAll('.prompt-button'));
+  const assistantCard = document.querySelector('.assistant-card');
+  const statusContainer = document.querySelector('#chat-status');
+  const starterPrompts = document.querySelector('.starter-prompts');
+
+  const initialAssistantMessage = [
+    'Hello. I can help you send a project enquiry to Pencil Design.',
+    'Tell me what you have in mind, and I’ll ask a few quick questions so the team can get back to you.',
+  ].join('\n\n');
+  const fallbackErrorMessage =
+    'Sorry, I’m having trouble replying right now. Please try again, or email contact@pencil-design.co.uk if you’d rather speak directly.';
+
+  const conversation = [
+    {
+      role: 'assistant',
+      content: initialAssistantMessage,
+    },
+  ];
+
+  let isLoading = false;
+
+  const clearStatus = () => {
+    if (statusContainer) {
+      statusContainer.replaceChildren();
+    }
+  };
+
+  const showStatus = (message, options = {}) => {
+    if (!statusContainer) return;
+
+    const statusMessage = document.createElement('p');
+    statusMessage.className = 'chat-status-message';
+
+    if (options.error) {
+      statusMessage.classList.add('chat-status-message--error');
+    }
+
+    statusMessage.textContent = message;
+    statusContainer.replaceChildren(statusMessage);
+  };
+
+  const setLoading = (nextLoading) => {
+    isLoading = nextLoading;
+    assistantCard?.classList.toggle('is-loading', nextLoading);
+
+    if (input instanceof HTMLInputElement) {
+      input.disabled = nextLoading;
+    }
+
+    if (sendButton instanceof HTMLButtonElement) {
+      sendButton.disabled = nextLoading;
+    }
+
+    promptButtons.forEach((button) => {
+      if (button instanceof HTMLButtonElement) {
+        button.disabled = nextLoading;
+      }
+    });
+  };
+
+  const createAvatar = () => {
+    const avatar = document.createElement('div');
+    avatar.className = 'message-avatar';
+    avatar.setAttribute('aria-hidden', 'true');
+    avatar.innerHTML = `
+      <svg class="spark-icon" viewBox="0 0 24 24">
+        <path d="M12 3l1.9 5.2L19 10l-5.1 1.8L12 17l-1.9-5.2L5 10l5.1-1.8L12 3z"/>
+        <path d="M19 3v4"/>
+        <path d="M21 5h-4"/>
+        <path d="M5 17v3"/>
+        <path d="M6.5 18.5h-3"/>
+      </svg>
+    `;
+
+    return avatar;
+  };
+
+  const appendMessage = (role, content, options = {}) => {
+    if (!messagesContainer) return null;
+
+    const message = document.createElement('div');
+    message.className = `message message--${role}`;
+
+    if (options.error) {
+      message.classList.add('message--error');
+    }
+
+    if (role === 'assistant') {
+      message.append(createAvatar());
+    }
+
+    const bubble = document.createElement('div');
+    bubble.className = 'message-bubble';
+
+    content
+      .split(/\n{2,}/)
+      .map((paragraph) => paragraph.trim())
+      .filter(Boolean)
+      .forEach((paragraph) => {
+        const text = document.createElement('p');
+        text.textContent = paragraph;
+        bubble.append(text);
+      });
+
+    message.append(bubble);
+    messagesContainer.append(message);
+    message.scrollIntoView({ block: 'nearest' });
+
+    return message;
+  };
+
+  const appendThinkingMessage = () => {
+    if (!messagesContainer) return null;
+
+    const message = document.createElement('div');
+    message.className = 'message message--assistant message--thinking';
+    message.setAttribute('aria-label', 'Assistant is thinking');
+    message.append(createAvatar());
+
+    const bubble = document.createElement('div');
+    bubble.className = 'message-bubble';
+
+    const dots = document.createElement('span');
+    dots.className = 'thinking-dots';
+    dots.setAttribute('aria-hidden', 'true');
+
+    for (let index = 0; index < 3; index += 1) {
+      dots.append(document.createElement('span'));
+    }
+
+    bubble.append(dots);
+    message.append(bubble);
+    messagesContainer.append(message);
+    message.scrollIntoView({ block: 'nearest' });
+
+    return message;
+  };
+
+  const sendMessage = async (rawMessage) => {
+    const message = rawMessage.trim();
+
+    if (!message || isLoading) return;
+
+    clearStatus();
+    starterPrompts?.remove();
+    conversation.push({ role: 'user', content: message });
+    appendMessage('user', message);
+
+    if (input instanceof HTMLInputElement) {
+      input.value = '';
+    }
+
+    const thinkingMessage = appendThinkingMessage();
+    setLoading(true);
+
+    try {
+      const response = await fetch('/api/contact-assistant', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({ messages: conversation }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok || typeof data.reply !== 'string') {
+        throw new Error(typeof data.error === 'string' ? data.error : 'Assistant request failed');
+      }
+
+      const reply = data.reply.trim();
+      thinkingMessage?.remove();
+      conversation.push({ role: 'assistant', content: reply });
+      appendMessage('assistant', reply);
+    } catch (error) {
+      thinkingMessage?.remove();
+
+      const statusMessage =
+        error instanceof Error && error.message === 'The assistant is not configured yet.'
+          ? 'The assistant is not configured in this environment yet. Please email contact@pencil-design.co.uk if you’d rather speak directly.'
+          : fallbackErrorMessage;
+
+      showStatus(
+        statusMessage,
+        { error: true },
+      );
+    } finally {
+      setLoading(false);
+
+      if (input instanceof HTMLInputElement) {
+        input.focus();
+      }
+    }
+  };
+
+  promptButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!(button instanceof HTMLButtonElement)) return;
+      sendMessage(button.dataset.prompt ?? button.textContent ?? '');
+    });
+  });
+
+  sendButton?.addEventListener('click', () => {
+    if (!(input instanceof HTMLInputElement)) return;
+    sendMessage(input.value);
+  });
+
+  input?.addEventListener('keydown', (event) => {
+    if (!(input instanceof HTMLInputElement)) return;
+
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      sendMessage(input.value);
+    }
+  });
+</script>
 
 <style>
   .contact-wrap {
@@ -359,6 +582,10 @@ import Layout from '../layouts/Layout.astro';
     justify-content: flex-end;
   }
 
+  .message--user .message-bubble {
+    margin-left: calc(2rem + 0.75rem);
+  }
+
   .message-avatar {
     display: grid;
     place-items: center;
@@ -398,6 +625,48 @@ import Layout from '../layouts/Layout.astro';
   .message--thinking .message-bubble {
     width: auto;
     min-width: 4.2rem;
+  }
+
+  .message--error .message-bubble {
+    background: #f7f7f7;
+    border: 1px solid rgba(15, 15, 15, 0.14);
+  }
+
+  .thinking-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 1.2rem;
+  }
+
+  .thinking-dots span {
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: #2a2a2a;
+    animation: assistant-thinking 1s ease-in-out infinite;
+  }
+
+  .thinking-dots span:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  .thinking-dots span:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes assistant-thinking {
+    0%,
+    80%,
+    100% {
+      opacity: 0.35;
+      transform: translateY(0);
+    }
+
+    40% {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
   }
 
   .starter-prompts {
@@ -441,6 +710,116 @@ import Layout from '../layouts/Layout.astro';
     border-color: rgba(15, 15, 15, 0.36);
   }
 
+  .prompt-button:disabled,
+  #chat-input:disabled,
+  #chat-send:disabled {
+    cursor: wait;
+    opacity: 0.55;
+  }
+
+  .chat-status {
+    min-height: 0;
+    padding: 0 clamp(1.05rem, 2vw, 1.45rem);
+  }
+
+  .chat-status:has(.chat-status-message) {
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  :global(.assistant-card .message) {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  :global(.assistant-card .message--assistant) {
+    justify-content: flex-start;
+  }
+
+  :global(.assistant-card .message--user) {
+    justify-content: flex-end;
+  }
+
+  :global(.assistant-card .message--user .message-bubble) {
+    margin-left: calc(2rem + 0.75rem);
+    background: var(--color-black);
+    color: var(--color-white);
+  }
+
+  :global(.assistant-card .message-avatar) {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    flex: 0 0 auto;
+    border: 1px solid rgba(15, 15, 15, 0.13);
+    border-radius: 50%;
+    color: #4e4e4e;
+    background: #fafafa;
+  }
+
+  :global(.assistant-card .message-avatar .spark-icon) {
+    width: 1rem;
+    height: 1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.65;
+  }
+
+  :global(.assistant-card .message-bubble) {
+    width: min(100%, 32rem);
+    background: #f4f4f4;
+    color: var(--color-black);
+    border-radius: 6px;
+    padding: 0.95rem 1.05rem;
+    font-size: clamp(0.9rem, 1vw, 0.95rem);
+    line-height: 1.65;
+  }
+
+  :global(.assistant-card .message-bubble p + p) {
+    margin-top: 0.7rem;
+  }
+
+  :global(.assistant-card .message--thinking .message-bubble) {
+    width: auto;
+    min-width: 4.2rem;
+  }
+
+  :global(.assistant-card .thinking-dots) {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 1.2rem;
+  }
+
+  :global(.assistant-card .thinking-dots span) {
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: #2a2a2a;
+    animation: assistant-thinking 1s ease-in-out infinite;
+  }
+
+  :global(.assistant-card .thinking-dots span:nth-child(2)) {
+    animation-delay: 0.15s;
+  }
+
+  :global(.assistant-card .thinking-dots span:nth-child(3)) {
+    animation-delay: 0.3s;
+  }
+
+  :global(.assistant-card .chat-status-message) {
+    background: #f7f7f7;
+    border: 1px solid rgba(15, 15, 15, 0.14);
+    color: var(--color-black);
+    font-size: 0.86rem;
+    line-height: 1.6;
+    padding: 0.85rem 0.95rem;
+  }
+
   .assistant-composer {
     display: flex;
     gap: 0.6rem;
@@ -465,6 +844,12 @@ import Layout from '../layouts/Layout.astro';
     color: #8b8b8b;
   }
 
+  #chat-input:focus {
+    outline: none;
+    border-color: rgba(15, 15, 15, 0.46);
+    box-shadow: 0 0 0 1px rgba(15, 15, 15, 0.16);
+  }
+
   #chat-send {
     display: grid;
     place-items: center;
@@ -480,6 +865,12 @@ import Layout from '../layouts/Layout.astro';
 
   #chat-send:hover {
     background: #2a2a2a;
+  }
+
+  #chat-send:focus-visible,
+  .prompt-button:focus-visible {
+    outline: 1px solid rgba(15, 15, 15, 0.5);
+    outline-offset: 2px;
   }
 
   #chat-send svg {
