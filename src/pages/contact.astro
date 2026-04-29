@@ -122,10 +122,25 @@ import Layout from '../layouts/Layout.astro';
                 </svg>
                 <span>I&rsquo;m not sure yet</span>
               </button>
+              <button type="button" class="prompt-button" data-prompt="Something else">
+                <svg class="prompt-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 5l1.45 4.05L17.5 10.5l-4.05 1.45L12 16l-1.45-4.05L6.5 10.5l4.05-1.45L12 5z"/>
+                  <path d="M18.5 4.5v3"/>
+                  <path d="M20 6h-3"/>
+                </svg>
+                <span>Something else</span>
+              </button>
             </div>
           </div>
 
           <div id="chat-status" class="chat-status" aria-live="polite"></div>
+
+          <div id="send-prompt" class="send-prompt" hidden>
+            <p class="send-prompt-label">Ready to send to the Pencil Design team.</p>
+            <button id="send-enquiry" type="button" class="send-enquiry-button">
+              Send my enquiry
+            </button>
+          </div>
 
           <div class="assistant-composer">
             <input
@@ -148,6 +163,9 @@ import Layout from '../layouts/Layout.astro';
               For quotes or technical advice, the Pencil Design team will follow up directly.
             </p>
             <p>
+              By sharing your contact details you agree to be contacted by Pencil Design regarding your enquiry. Your details will not be shared with third parties.
+            </p>
+            <p>
               Prefer to speak directly? Email
               <a href="mailto:contact@pencil-design.co.uk">contact@pencil-design.co.uk</a> or call
               <a href="tel:+442080164163">+44 20 8016 4163</a>.
@@ -167,6 +185,8 @@ import Layout from '../layouts/Layout.astro';
   const assistantCard = document.querySelector('.assistant-card');
   const statusContainer = document.querySelector('#chat-status');
   const starterPrompts = document.querySelector('.starter-prompts');
+  const sendPrompt = document.querySelector('#send-prompt');
+  const sendEnquiryButton = document.querySelector('#send-enquiry');
 
   const initialAssistantMessage = [
     'Hello. I can help you send a project enquiry to Pencil Design.',
@@ -183,6 +203,7 @@ import Layout from '../layouts/Layout.astro';
   ];
 
   let isLoading = false;
+  let awaitingConfirmation = false;
 
   const clearStatus = () => {
     if (statusContainer) {
@@ -221,6 +242,10 @@ import Layout from '../layouts/Layout.astro';
         button.disabled = nextLoading;
       }
     });
+
+    if (sendEnquiryButton instanceof HTMLButtonElement) {
+      sendEnquiryButton.disabled = nextLoading;
+    }
   };
 
   const createAvatar = () => {
@@ -308,6 +333,15 @@ import Layout from '../layouts/Layout.astro';
 
     clearStatus();
     starterPrompts?.remove();
+    if (sendPrompt instanceof HTMLElement) sendPrompt.hidden = true;
+
+    if (awaitingConfirmation) {
+      awaitingConfirmation = false;
+      appendMessage('user', message);
+      sendEnquiry();
+      return;
+    }
+
     conversation.push({ role: 'user', content: message });
     appendMessage('user', message);
 
@@ -335,8 +369,15 @@ import Layout from '../layouts/Layout.astro';
 
       const reply = data.reply.trim();
       thinkingMessage?.remove();
-      conversation.push({ role: 'assistant', content: reply });
-      appendMessage('assistant', reply);
+
+      if (reply) {
+        conversation.push({ role: 'assistant', content: reply });
+        appendMessage('assistant', reply);
+      }
+
+      if (data.readyToSend || reply.toLowerCase().includes('shall i send this')) {
+        awaitingConfirmation = true;
+      }
     } catch (error) {
       thinkingMessage?.remove();
 
@@ -378,6 +419,53 @@ import Layout from '../layouts/Layout.astro';
       sendMessage(input.value);
     }
   });
+
+  const sendEnquiry = async () => {
+    if (isLoading) return;
+
+    clearStatus();
+    setLoading(true);
+
+    if (sendPrompt instanceof HTMLElement) sendPrompt.hidden = true;
+
+    try {
+      const response = await fetch('/api/contact-assistant', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ messages: conversation, send: true }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok || !data.sent) {
+        throw new Error(typeof data.error === 'string' ? data.error : 'Send failed');
+      }
+
+      appendMessage('assistant', 'Sent — thank you. The Pencil Design team will be in touch shortly.');
+      document.querySelector('.assistant-composer')?.remove();
+
+      const newEnquiryWrap = document.createElement('div');
+      newEnquiryWrap.className = 'new-enquiry-wrap';
+      const newEnquiryBtn = document.createElement('button');
+      newEnquiryBtn.type = 'button';
+      newEnquiryBtn.className = 'new-enquiry-button';
+      newEnquiryBtn.textContent = 'Start a new enquiry';
+      newEnquiryBtn.addEventListener('click', () => location.reload());
+      newEnquiryWrap.append(newEnquiryBtn);
+      document.querySelector('.assistant-body')?.append(newEnquiryWrap);
+    } catch (error) {
+      if (sendPrompt instanceof HTMLElement) sendPrompt.hidden = false;
+      showStatus(
+        error instanceof Error ? error.message : 'The enquiry could not be sent right now. Please try again or email contact@pencil-design.co.uk directly.',
+        { error: true },
+      );
+    } finally {
+      setLoading(false);
+      if (input instanceof HTMLInputElement) input.focus();
+    }
+  };
+
+  sendEnquiryButton?.addEventListener('click', sendEnquiry);
 </script>
 
 <style>
@@ -818,6 +906,74 @@ import Layout from '../layouts/Layout.astro';
     font-size: 0.86rem;
     line-height: 1.6;
     padding: 0.85rem 0.95rem;
+  }
+
+  .new-enquiry-wrap {
+    padding-top: 0.75rem;
+    padding-left: calc(2rem + 0.75rem);
+  }
+
+  .new-enquiry-button {
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    font-size: 0.85rem;
+    color: #4b5563;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .new-enquiry-button:hover {
+    color: var(--color-black);
+  }
+
+  .send-prompt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem clamp(1.05rem, 2vw, 1.45rem);
+    border-top: 1px solid var(--color-border);
+    background: #fafafa;
+  }
+
+  .send-prompt[hidden] {
+    display: none;
+  }
+
+  .send-prompt-label {
+    font-size: 0.88rem;
+    color: #4b5563;
+    line-height: 1.4;
+  }
+
+  .send-enquiry-button {
+    flex: 0 0 auto;
+    height: 2.75rem;
+    padding: 0 1.2rem;
+    border: 1px solid var(--color-black);
+    background: var(--color-black);
+    color: var(--color-white);
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .send-enquiry-button:hover {
+    background: #2a2a2a;
+  }
+
+  .send-enquiry-button:disabled {
+    cursor: wait;
+    opacity: 0.55;
   }
 
   .assistant-composer {
