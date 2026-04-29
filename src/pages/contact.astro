@@ -908,12 +908,12 @@ import Layout from '../layouts/Layout.astro';
     padding: 0.85rem 0.95rem;
   }
 
-  .new-enquiry-wrap {
+  :global(.new-enquiry-wrap) {
     padding-top: 0.75rem;
     padding-left: calc(2rem + 0.75rem);
   }
 
-  .new-enquiry-button {
+  :global(.new-enquiry-button) {
     appearance: none;
     background: none;
     border: none;
@@ -928,7 +928,7 @@ import Layout from '../layouts/Layout.astro';
     text-underline-offset: 3px;
   }
 
-  .new-enquiry-button:hover {
+  :global(.new-enquiry-button:hover) {
     color: var(--color-black);
   }
 
