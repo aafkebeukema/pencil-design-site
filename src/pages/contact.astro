@@ -7,70 +7,487 @@ import Layout from '../layouts/Layout.astro';
   description="Get in touch to discuss your joinery project in South East London."
 >
   <div class="contact-wrap">
-    <!-- ===========================
-         LEFT: heading + details
-    ============================ -->
-    <div class="contact-left">
-      <h1>Contact Us</h1>
-
-      <p class="contact-intro">
-        If you would like to discuss your next project with us, or receive a no obligation quote, please contact us via the contact details below:
-      </p>
-
-      <div class="contact-details">
-
-        <div class="contact-item">
-          <p class="item-label">Email</p>
-          <a href="mailto:contact@pencil-design.co.uk">contact@pencil-design.co.uk</a>
-        </div>
-
-        <div class="contact-item">
-          <p class="item-label">Phone</p>
-          <a href="tel:+442080164163">+44 20 8016 4163</a>
-        </div>
-
-        <div class="contact-item">
-          <p>South East London</p>
-        </div>
-
+    <div class="contact-inner">
+      <div class="contact-heading">
+        <h1>Contact Us</h1>
       </div>
 
-      <div class="social-row">
-        <a href="mailto:contact@pencil-design.co.uk" aria-label="Email">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-            <polyline points="22,6 12,13 2,6"/>
-          </svg>
-        </a>
-        <a href="tel:+442080164163" aria-label="Phone">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.52 19.52 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72l.45 3.09a2 2 0 0 1-.57 1.72L7.1 10.37a16 16 0 0 0 6.53 6.53l1.84-1.84a2 2 0 0 1 1.72-.57l3.09.45A2 2 0 0 1 22 16.92z"/>
-          </svg>
-        </a>
+      <div class="contact-grid">
+        <div class="contact-left">
+          <div class="contact-intro">
+            <p>Want us to contact you about your project?</p>
+            <p>
+              You can call us, email us, or use our AI assistant to tell us a little about what you&rsquo;re
+              planning. We&rsquo;ll use your details to get back to you about your enquiry.
+            </p>
+          </div>
+
+          <div class="contact-details">
+            <div class="contact-item">
+              <p class="item-label">Email</p>
+              <a href="mailto:contact@pencil-design.co.uk">contact@pencil-design.co.uk</a>
+            </div>
+
+            <div class="contact-item">
+              <p class="item-label">Phone</p>
+              <a href="tel:+442080164163">+44 20 8016 4163</a>
+            </div>
+
+            <div class="contact-item">
+              <p class="item-label">Location</p>
+              <p>South East London</p>
+            </div>
+          </div>
+
+          <div class="social-row">
+            <a href="mailto:contact@pencil-design.co.uk" aria-label="Email">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+            </a>
+            <a href="tel:+442080164163" aria-label="Phone">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.52 19.52 0 0 1-6-6A19.8 19.8 0 0 1 2.08 4.18 2 2 0 0 1 4.06 2h3a2 2 0 0 1 2 1.72l.45 3.09a2 2 0 0 1-.57 1.72L7.1 10.37a16 16 0 0 0 6.53 6.53l1.84-1.84a2 2 0 0 1 1.72-.57l3.09.45A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <section class="assistant-card" aria-labelledby="assistant-title">
+          <div class="assistant-header">
+            <h2 id="assistant-title">
+              <svg class="spark-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3l1.9 5.2L19 10l-5.1 1.8L12 17l-1.9-5.2L5 10l5.1-1.8L12 3z"/>
+                <path d="M19 3v4"/>
+                <path d="M21 5h-4"/>
+                <path d="M5 17v3"/>
+                <path d="M6.5 18.5h-3"/>
+              </svg>
+              Project enquiry assistant
+            </h2>
+            <p class="assistant-badge">AI Assistant</p>
+            <p class="assistant-subheading">For renovation, construction and fitted furniture enquiries</p>
+          </div>
+
+          <div class="assistant-body">
+            <div id="chat-messages" class="chat-messages" aria-live="polite">
+              <div class="message message--assistant">
+                <div class="message-avatar" aria-hidden="true">
+                  <svg class="spark-icon" viewBox="0 0 24 24">
+                    <path d="M12 3l1.9 5.2L19 10l-5.1 1.8L12 17l-1.9-5.2L5 10l5.1-1.8L12 3z"/>
+                    <path d="M19 3v4"/>
+                    <path d="M21 5h-4"/>
+                    <path d="M5 17v3"/>
+                    <path d="M6.5 18.5h-3"/>
+                  </svg>
+                </div>
+                <div class="message-bubble">
+                  <p>Hello. I can help you send a project enquiry to Pencil Design.</p>
+                  <p>Tell me what you have in mind, and I&rsquo;ll ask a few quick questions so the team can get back to you.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="starter-prompts" aria-label="Project enquiry starter prompts">
+              <button type="button" class="prompt-button" data-prompt="I&rsquo;m planning a renovation">
+                <svg class="prompt-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 5l1.45 4.05L17.5 10.5l-4.05 1.45L12 16l-1.45-4.05L6.5 10.5l4.05-1.45L12 5z"/>
+                  <path d="M18.5 4.5v3"/>
+                  <path d="M20 6h-3"/>
+                </svg>
+                <span>I&rsquo;m planning a renovation</span>
+              </button>
+              <button type="button" class="prompt-button" data-prompt="I need help with a kitchen or bathroom">
+                <svg class="prompt-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 5l1.45 4.05L17.5 10.5l-4.05 1.45L12 16l-1.45-4.05L6.5 10.5l4.05-1.45L12 5z"/>
+                  <path d="M18.5 4.5v3"/>
+                  <path d="M20 6h-3"/>
+                </svg>
+                <span>I need help with a kitchen or bathroom</span>
+              </button>
+              <button type="button" class="prompt-button" data-prompt="I&rsquo;m looking for bespoke fitted furniture">
+                <svg class="prompt-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 5l1.45 4.05L17.5 10.5l-4.05 1.45L12 16l-1.45-4.05L6.5 10.5l4.05-1.45L12 5z"/>
+                  <path d="M18.5 4.5v3"/>
+                  <path d="M20 6h-3"/>
+                </svg>
+                <span>I&rsquo;m looking for bespoke fitted furniture</span>
+              </button>
+              <button type="button" class="prompt-button" data-prompt="I&rsquo;m not sure yet">
+                <svg class="prompt-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 5l1.45 4.05L17.5 10.5l-4.05 1.45L12 16l-1.45-4.05L6.5 10.5l4.05-1.45L12 5z"/>
+                  <path d="M18.5 4.5v3"/>
+                  <path d="M20 6h-3"/>
+                </svg>
+                <span>I&rsquo;m not sure yet</span>
+              </button>
+              <button type="button" class="prompt-button" data-prompt="Something else">
+                <svg class="prompt-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 5l1.45 4.05L17.5 10.5l-4.05 1.45L12 16l-1.45-4.05L6.5 10.5l4.05-1.45L12 5z"/>
+                  <path d="M18.5 4.5v3"/>
+                  <path d="M20 6h-3"/>
+                </svg>
+                <span>Something else</span>
+              </button>
+            </div>
+          </div>
+
+          <div id="chat-status" class="chat-status" aria-live="polite"></div>
+
+          <div id="send-prompt" class="send-prompt" hidden>
+            <p class="send-prompt-label">Ready to send to the Pencil Design team.</p>
+            <button id="send-enquiry" type="button" class="send-enquiry-button">
+              Send my enquiry
+            </button>
+          </div>
+
+          <div class="assistant-composer">
+            <input
+              id="chat-input"
+              type="text"
+              placeholder="Tell us about your project..."
+              autocomplete="off"
+            />
+            <button id="chat-send" type="button" aria-label="Send project enquiry message">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M22 2L11 13"/>
+                <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+              </svg>
+            </button>
+          </div>
+
+          <div class="assistant-disclaimer">
+            <p>
+              This AI assistant helps collect basic enquiry details. Please don&rsquo;t share sensitive information.
+              For quotes or technical advice, the Pencil Design team will follow up directly.
+            </p>
+            <p>
+              By sharing your contact details you agree to be contacted by Pencil Design regarding your enquiry. Your details will not be shared with third parties.
+            </p>
+            <p>
+              Prefer to speak directly? Email
+              <a href="mailto:contact@pencil-design.co.uk">contact@pencil-design.co.uk</a> or call
+              <a href="tel:+442080164163">+44 20 8016 4163</a>.
+            </p>
+          </div>
+        </section>
       </div>
     </div>
   </div>
 </Layout>
 
+<script>
+  const messagesContainer = document.querySelector('#chat-messages');
+  const input = document.querySelector('#chat-input');
+  const sendButton = document.querySelector('#chat-send');
+  const promptButtons = Array.from(document.querySelectorAll('.prompt-button'));
+  const assistantCard = document.querySelector('.assistant-card');
+  const statusContainer = document.querySelector('#chat-status');
+  const starterPrompts = document.querySelector('.starter-prompts');
+  const sendPrompt = document.querySelector('#send-prompt');
+  const sendEnquiryButton = document.querySelector('#send-enquiry');
+
+  const initialAssistantMessage = [
+    'Hello. I can help you send a project enquiry to Pencil Design.',
+    'Tell me what you have in mind, and I’ll ask a few quick questions so the team can get back to you.',
+  ].join('\n\n');
+  const fallbackErrorMessage =
+    'Sorry, I’m having trouble replying right now. Please try again, or email contact@pencil-design.co.uk if you’d rather speak directly.';
+
+  const conversation = [
+    {
+      role: 'assistant',
+      content: initialAssistantMessage,
+    },
+  ];
+
+  let isLoading = false;
+  let awaitingConfirmation = false;
+
+  const clearStatus = () => {
+    if (statusContainer) {
+      statusContainer.replaceChildren();
+    }
+  };
+
+  const showStatus = (message, options = {}) => {
+    if (!statusContainer) return;
+
+    const statusMessage = document.createElement('p');
+    statusMessage.className = 'chat-status-message';
+
+    if (options.error) {
+      statusMessage.classList.add('chat-status-message--error');
+    }
+
+    statusMessage.textContent = message;
+    statusContainer.replaceChildren(statusMessage);
+  };
+
+  const setLoading = (nextLoading) => {
+    isLoading = nextLoading;
+    assistantCard?.classList.toggle('is-loading', nextLoading);
+
+    if (input instanceof HTMLInputElement) {
+      input.disabled = nextLoading;
+    }
+
+    if (sendButton instanceof HTMLButtonElement) {
+      sendButton.disabled = nextLoading;
+    }
+
+    promptButtons.forEach((button) => {
+      if (button instanceof HTMLButtonElement) {
+        button.disabled = nextLoading;
+      }
+    });
+
+    if (sendEnquiryButton instanceof HTMLButtonElement) {
+      sendEnquiryButton.disabled = nextLoading;
+    }
+  };
+
+  const createAvatar = () => {
+    const avatar = document.createElement('div');
+    avatar.className = 'message-avatar';
+    avatar.setAttribute('aria-hidden', 'true');
+    avatar.innerHTML = `
+      <svg class="spark-icon" viewBox="0 0 24 24">
+        <path d="M12 3l1.9 5.2L19 10l-5.1 1.8L12 17l-1.9-5.2L5 10l5.1-1.8L12 3z"/>
+        <path d="M19 3v4"/>
+        <path d="M21 5h-4"/>
+        <path d="M5 17v3"/>
+        <path d="M6.5 18.5h-3"/>
+      </svg>
+    `;
+
+    return avatar;
+  };
+
+  const appendMessage = (role, content, options = {}) => {
+    if (!messagesContainer) return null;
+
+    const message = document.createElement('div');
+    message.className = `message message--${role}`;
+
+    if (options.error) {
+      message.classList.add('message--error');
+    }
+
+    if (role === 'assistant') {
+      message.append(createAvatar());
+    }
+
+    const bubble = document.createElement('div');
+    bubble.className = 'message-bubble';
+
+    content
+      .split(/\n{2,}/)
+      .map((paragraph) => paragraph.trim())
+      .filter(Boolean)
+      .forEach((paragraph) => {
+        const text = document.createElement('p');
+        text.textContent = paragraph;
+        bubble.append(text);
+      });
+
+    message.append(bubble);
+    messagesContainer.append(message);
+    message.scrollIntoView({ block: 'nearest' });
+
+    return message;
+  };
+
+  const appendThinkingMessage = () => {
+    if (!messagesContainer) return null;
+
+    const message = document.createElement('div');
+    message.className = 'message message--assistant message--thinking';
+    message.setAttribute('aria-label', 'Assistant is thinking');
+    message.append(createAvatar());
+
+    const bubble = document.createElement('div');
+    bubble.className = 'message-bubble';
+
+    const dots = document.createElement('span');
+    dots.className = 'thinking-dots';
+    dots.setAttribute('aria-hidden', 'true');
+
+    for (let index = 0; index < 3; index += 1) {
+      dots.append(document.createElement('span'));
+    }
+
+    bubble.append(dots);
+    message.append(bubble);
+    messagesContainer.append(message);
+    message.scrollIntoView({ block: 'nearest' });
+
+    return message;
+  };
+
+  const sendMessage = async (rawMessage) => {
+    const message = rawMessage.trim();
+
+    if (!message || isLoading) return;
+
+    clearStatus();
+    starterPrompts?.remove();
+    if (sendPrompt instanceof HTMLElement) sendPrompt.hidden = true;
+
+    if (awaitingConfirmation) {
+      awaitingConfirmation = false;
+      appendMessage('user', message);
+      sendEnquiry();
+      return;
+    }
+
+    conversation.push({ role: 'user', content: message });
+    appendMessage('user', message);
+
+    if (input instanceof HTMLInputElement) {
+      input.value = '';
+    }
+
+    const thinkingMessage = appendThinkingMessage();
+    setLoading(true);
+
+    try {
+      const response = await fetch('/api/contact-assistant', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify({ messages: conversation }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok || typeof data.reply !== 'string') {
+        throw new Error(typeof data.error === 'string' ? data.error : 'Assistant request failed');
+      }
+
+      const reply = data.reply.trim();
+      thinkingMessage?.remove();
+
+      if (reply) {
+        conversation.push({ role: 'assistant', content: reply });
+        appendMessage('assistant', reply);
+      }
+
+      if (data.readyToSend || reply.toLowerCase().includes('shall i send this')) {
+        awaitingConfirmation = true;
+      }
+    } catch (error) {
+      thinkingMessage?.remove();
+
+      const statusMessage =
+        error instanceof Error && error.message === 'The assistant is not configured yet.'
+          ? 'The assistant is not configured in this environment yet. Please email contact@pencil-design.co.uk if you’d rather speak directly.'
+          : fallbackErrorMessage;
+
+      showStatus(
+        statusMessage,
+        { error: true },
+      );
+    } finally {
+      setLoading(false);
+
+      if (input instanceof HTMLInputElement) {
+        input.focus();
+      }
+    }
+  };
+
+  promptButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      if (!(button instanceof HTMLButtonElement)) return;
+      sendMessage(button.dataset.prompt ?? button.textContent ?? '');
+    });
+  });
+
+  sendButton?.addEventListener('click', () => {
+    if (!(input instanceof HTMLInputElement)) return;
+    sendMessage(input.value);
+  });
+
+  input?.addEventListener('keydown', (event) => {
+    if (!(input instanceof HTMLInputElement)) return;
+
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      sendMessage(input.value);
+    }
+  });
+
+  const sendEnquiry = async () => {
+    if (isLoading) return;
+
+    clearStatus();
+    setLoading(true);
+
+    if (sendPrompt instanceof HTMLElement) sendPrompt.hidden = true;
+
+    try {
+      const response = await fetch('/api/contact-assistant', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ messages: conversation, send: true }),
+      });
+
+      const data = await response.json().catch(() => ({}));
+
+      if (!response.ok || !data.sent) {
+        throw new Error(typeof data.error === 'string' ? data.error : 'Send failed');
+      }
+
+      appendMessage('assistant', 'Sent — thank you. The Pencil Design team will be in touch shortly.');
+      document.querySelector('.assistant-composer')?.remove();
+
+      const newEnquiryWrap = document.createElement('div');
+      newEnquiryWrap.className = 'new-enquiry-wrap';
+      const newEnquiryBtn = document.createElement('button');
+      newEnquiryBtn.type = 'button';
+      newEnquiryBtn.className = 'new-enquiry-button';
+      newEnquiryBtn.textContent = 'Start a new enquiry';
+      newEnquiryBtn.addEventListener('click', () => location.reload());
+      newEnquiryWrap.append(newEnquiryBtn);
+      document.querySelector('.assistant-body')?.append(newEnquiryWrap);
+    } catch (error) {
+      if (sendPrompt instanceof HTMLElement) sendPrompt.hidden = false;
+      showStatus(
+        error instanceof Error ? error.message : 'The enquiry could not be sent right now. Please try again or email contact@pencil-design.co.uk directly.',
+        { error: true },
+      );
+    } finally {
+      setLoading(false);
+      if (input instanceof HTMLInputElement) input.focus();
+    }
+  };
+
+  sendEnquiryButton?.addEventListener('click', sendEnquiry);
+</script>
+
 <style>
   .contact-wrap {
-    min-height: calc(100svh - var(--header-h));
-    padding-top: var(--header-h);
+    --contact-rail: min(var(--content-rail), clamp(var(--site-gutter), 11vw, 14rem));
+    padding: calc(var(--header-h) + 4rem) var(--site-gutter) 5rem var(--contact-rail);
   }
 
   /* ===========================
-     LEFT COLUMN
+     PAGE INTRO
   ============================ */
-  .contact-left {
-    max-width: var(--site-max);
+  .contact-inner {
+    max-width: none;
     margin: 0 auto;
-    padding: 4rem var(--content-rail) 5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
   }
 
-  .contact-left h1 {
+  .contact-heading {
+    max-width: none;
+    margin-bottom: 1.75rem;
+  }
+
+  .contact-heading h1 {
     font-family: var(--font-body);
     font-weight: 800;
     font-size: clamp(2rem, 7vw, 6rem);
@@ -81,12 +498,33 @@ import Layout from '../layouts/Layout.astro';
   }
 
   .contact-intro {
+    display: grid;
+    gap: 0.65rem;
+    max-width: 38ch;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-intro p {
     font-size: 1rem;
     line-height: 1.75;
     color: var(--color-black);
     font-weight: 300;
-    max-width: 38ch;
-    margin-bottom: 2.5rem;
+  }
+
+  /* ===========================
+     CONTACT GRID
+  ============================ */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: minmax(220px, 0.8fr) minmax(480px, 1.2fr);
+    gap: clamp(3rem, 9vw, 9rem);
+    align-items: start;
+  }
+
+  .contact-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
 
   .contact-details {
@@ -103,6 +541,7 @@ import Layout from '../layouts/Layout.astro';
     color: var(--color-black);
     margin-bottom: 0.2rem;
     letter-spacing: 0;
+    text-transform: none;
   }
 
   .contact-item a,
@@ -144,17 +583,536 @@ import Layout from '../layouts/Layout.astro';
   }
 
   /* ===========================
+     ASSISTANT
+  ============================ */
+  .assistant-card {
+    width: 100%;
+    max-width: 650px;
+    justify-self: end;
+    border: 1px solid rgba(15, 15, 15, 0.12);
+    background: var(--color-white);
+  }
+
+  .assistant-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.6rem 1rem;
+    align-items: start;
+    padding: clamp(1.05rem, 2vw, 1.45rem);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .assistant-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: var(--font-body);
+    font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+    font-weight: 800;
+    letter-spacing: 0;
+    line-height: 1.15;
+  }
+
+  .spark-icon {
+    width: 1.35rem;
+    height: 1.35rem;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.65;
+  }
+
+  .assistant-badge {
+    border: 1px solid rgba(15, 15, 15, 0.14);
+    color: #4e4e4e;
+    padding: 0.42rem 0.8rem;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background: #fafafa;
+  }
+
+  .assistant-subheading {
+    grid-column: 1 / -1;
+    color: #4b5563;
+    font-size: clamp(0.95rem, 1.4vw, 1.05rem);
+    font-weight: 400;
+    line-height: 1.45;
+  }
+
+  .assistant-body {
+    display: grid;
+    gap: 1rem;
+    padding: clamp(1.05rem, 2vw, 1.45rem);
+  }
+
+  .chat-messages {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .message {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .message--assistant {
+    justify-content: flex-start;
+  }
+
+  .message--user {
+    justify-content: flex-end;
+  }
+
+  .message--user .message-bubble {
+    margin-left: calc(2rem + 0.75rem);
+  }
+
+  .message-avatar {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    flex: 0 0 auto;
+    border: 1px solid rgba(15, 15, 15, 0.13);
+    border-radius: 50%;
+    color: #4e4e4e;
+    background: #fafafa;
+  }
+
+  .message-avatar .spark-icon {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .message-bubble {
+    width: min(100%, 32rem);
+    background: #f4f4f4;
+    color: var(--color-black);
+    border-radius: 6px;
+    padding: 0.95rem 1.05rem;
+    font-size: clamp(0.9rem, 1vw, 0.95rem);
+    line-height: 1.65;
+  }
+
+  .message-bubble p + p {
+    margin-top: 0.7rem;
+  }
+
+  .message--user .message-bubble {
+    background: var(--color-black);
+    color: var(--color-white);
+  }
+
+  .message--thinking .message-bubble {
+    width: auto;
+    min-width: 4.2rem;
+  }
+
+  .message--error .message-bubble {
+    background: #f7f7f7;
+    border: 1px solid rgba(15, 15, 15, 0.14);
+  }
+
+  .thinking-dots {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 1.2rem;
+  }
+
+  .thinking-dots span {
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: #2a2a2a;
+    animation: assistant-thinking 1s ease-in-out infinite;
+  }
+
+  .thinking-dots span:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+
+  .thinking-dots span:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+
+  @keyframes assistant-thinking {
+    0%,
+    80%,
+    100% {
+      opacity: 0.35;
+      transform: translateY(0);
+    }
+
+    40% {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+  }
+
+  .starter-prompts {
+    display: grid;
+    gap: 0.55rem;
+    padding-left: calc(2rem + 0.75rem);
+  }
+
+  .prompt-button {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    width: 100%;
+    min-height: 2.65rem;
+    border: 1px solid rgba(15, 15, 15, 0.12);
+    background: #fbfbfb;
+    color: var(--color-black);
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.35;
+    text-align: left;
+    padding: 0.72rem 0.9rem;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+  }
+
+  .prompt-icon {
+    width: 1rem;
+    height: 1rem;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: #666;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.6;
+  }
+
+  .prompt-button:hover {
+    background: var(--color-white);
+    border-color: rgba(15, 15, 15, 0.36);
+  }
+
+  .prompt-button:disabled,
+  #chat-input:disabled,
+  #chat-send:disabled {
+    cursor: wait;
+    opacity: 0.55;
+  }
+
+  .chat-status {
+    min-height: 0;
+    padding: 0 clamp(1.05rem, 2vw, 1.45rem);
+  }
+
+  .chat-status:has(.chat-status-message) {
+    padding-top: 0.85rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  :global(.assistant-card .message) {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  :global(.assistant-card .message--assistant) {
+    justify-content: flex-start;
+  }
+
+  :global(.assistant-card .message--user) {
+    justify-content: flex-end;
+  }
+
+  :global(.assistant-card .message--user .message-bubble) {
+    margin-left: calc(2rem + 0.75rem);
+    background: var(--color-black);
+    color: var(--color-white);
+  }
+
+  :global(.assistant-card .message-avatar) {
+    display: grid;
+    place-items: center;
+    width: 2rem;
+    height: 2rem;
+    flex: 0 0 auto;
+    border: 1px solid rgba(15, 15, 15, 0.13);
+    border-radius: 50%;
+    color: #4e4e4e;
+    background: #fafafa;
+  }
+
+  :global(.assistant-card .message-avatar .spark-icon) {
+    width: 1rem;
+    height: 1rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.65;
+  }
+
+  :global(.assistant-card .message-bubble) {
+    width: min(100%, 32rem);
+    background: #f4f4f4;
+    color: var(--color-black);
+    border-radius: 6px;
+    padding: 0.95rem 1.05rem;
+    font-size: clamp(0.9rem, 1vw, 0.95rem);
+    line-height: 1.65;
+  }
+
+  :global(.assistant-card .message-bubble p + p) {
+    margin-top: 0.7rem;
+  }
+
+  :global(.assistant-card .message--thinking .message-bubble) {
+    width: auto;
+    min-width: 4.2rem;
+  }
+
+  :global(.assistant-card .thinking-dots) {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 1.2rem;
+  }
+
+  :global(.assistant-card .thinking-dots span) {
+    width: 0.35rem;
+    height: 0.35rem;
+    border-radius: 50%;
+    background: #2a2a2a;
+    animation: assistant-thinking 1s ease-in-out infinite;
+  }
+
+  :global(.assistant-card .thinking-dots span:nth-child(2)) {
+    animation-delay: 0.15s;
+  }
+
+  :global(.assistant-card .thinking-dots span:nth-child(3)) {
+    animation-delay: 0.3s;
+  }
+
+  :global(.assistant-card .chat-status-message) {
+    background: #f7f7f7;
+    border: 1px solid rgba(15, 15, 15, 0.14);
+    color: var(--color-black);
+    font-size: 0.86rem;
+    line-height: 1.6;
+    padding: 0.85rem 0.95rem;
+  }
+
+  .new-enquiry-wrap {
+    padding-top: 0.75rem;
+    padding-left: calc(2rem + 0.75rem);
+  }
+
+  .new-enquiry-button {
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    font-size: 0.85rem;
+    color: #4b5563;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .new-enquiry-button:hover {
+    color: var(--color-black);
+  }
+
+  .send-prompt {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.85rem clamp(1.05rem, 2vw, 1.45rem);
+    border-top: 1px solid var(--color-border);
+    background: #fafafa;
+  }
+
+  .send-prompt[hidden] {
+    display: none;
+  }
+
+  .send-prompt-label {
+    font-size: 0.88rem;
+    color: #4b5563;
+    line-height: 1.4;
+  }
+
+  .send-enquiry-button {
+    flex: 0 0 auto;
+    height: 2.75rem;
+    padding: 0 1.2rem;
+    border: 1px solid var(--color-black);
+    background: var(--color-black);
+    color: var(--color-white);
+    font: inherit;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .send-enquiry-button:hover {
+    background: #2a2a2a;
+  }
+
+  .send-enquiry-button:disabled {
+    cursor: wait;
+    opacity: 0.55;
+  }
+
+  .assistant-composer {
+    display: flex;
+    gap: 0.6rem;
+    padding: 0.85rem clamp(1.05rem, 2vw, 1.45rem);
+    border-top: 1px solid var(--color-border);
+  }
+
+  #chat-input {
+    min-width: 0;
+    flex: 1;
+    height: 2.75rem;
+    border: 1px solid rgba(15, 15, 15, 0.16);
+    border-radius: 0;
+    background: var(--color-white);
+    color: var(--color-black);
+    font: inherit;
+    font-size: 0.9rem;
+    padding: 0 0.9rem;
+  }
+
+  #chat-input::placeholder {
+    color: #8b8b8b;
+  }
+
+  #chat-input:focus {
+    outline: none;
+    border-color: rgba(15, 15, 15, 0.46);
+    box-shadow: 0 0 0 1px rgba(15, 15, 15, 0.16);
+  }
+
+  #chat-send {
+    display: grid;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: 0 0 auto;
+    border: 1px solid var(--color-black);
+    background: var(--color-black);
+    color: var(--color-white);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  #chat-send:hover {
+    background: #2a2a2a;
+  }
+
+  #chat-send:focus-visible,
+  .prompt-button:focus-visible {
+    outline: 1px solid rgba(15, 15, 15, 0.5);
+    outline-offset: 2px;
+  }
+
+  #chat-send svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.6;
+  }
+
+  .assistant-disclaimer {
+    display: grid;
+    gap: 0.65rem;
+    border-top: 1px solid var(--color-border);
+    background: #fafafa;
+    padding: 0.95rem clamp(1.05rem, 2vw, 1.45rem);
+    color: #4b5563;
+    font-size: 0.78rem;
+    line-height: 1.7;
+  }
+
+  .assistant-disclaimer a {
+    color: inherit;
+    text-underline-offset: 3px;
+  }
+
+  /* ===========================
      RESPONSIVE
   ============================ */
+  @media (max-width: 980px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    .assistant-card {
+      max-width: none;
+      justify-self: stretch;
+    }
+  }
+
   @media (max-width: 768px) {
-    .contact-left {
-      padding-top: 3rem;
+    .contact-wrap {
+      padding-top: calc(var(--header-h) + 3rem);
     }
   }
 
   @media (max-width: 480px) {
-    .contact-left {
+    .contact-wrap {
+      padding-inline: 1rem;
       padding-bottom: 4rem;
+    }
+
+    .assistant-header {
+      grid-template-columns: 1fr;
+    }
+
+    .assistant-badge {
+      width: fit-content;
+    }
+
+    .assistant-body {
+      gap: 1rem;
+    }
+
+    .message {
+      gap: 0.55rem;
+    }
+
+    .message-avatar {
+      width: 1.75rem;
+      height: 1.75rem;
+    }
+
+    .starter-prompts {
+      padding-left: 0;
+    }
+
+    .assistant-composer {
+      gap: 0.55rem;
+    }
+
+    #chat-send {
+      width: 3rem;
     }
   }
 </style>
