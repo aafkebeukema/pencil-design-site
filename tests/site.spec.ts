@@ -3,22 +3,41 @@ import { expect, test } from '@playwright/test';
 const basePath = '';
 const gaMeasurementId = 'G-TEST123456';
 
-test('cookie banner reject keeps analytics off and stays hidden on reload', async ({ page }) => {
+const getConsentEvents = async (page) =>
+  page.evaluate(() =>
+    ((window as Window & { dataLayer?: Array<ArrayLike<unknown>> }).dataLayer ?? [])
+      .map((entry) => Array.from(entry))
+      .filter(([command]) => command === 'consent'),
+  );
+
+test('cookie banner reject keeps analytics in denied consent mode and stays hidden on reload', async ({ page }) => {
   await page.goto(`${basePath}/`);
 
   const banner = page.locator('[data-cookie-banner]');
 
   await expect(banner).toBeVisible();
+  await expect(page.locator(`script[src*="${gaMeasurementId}"]`)).toHaveCount(1);
+  expect(await page.evaluate(() => window.__pencilAnalyticsLoaded === true)).toBe(true);
+  expect(await getConsentEvents(page)).toEqual(
+    expect.arrayContaining([
+      ['consent', 'default', expect.objectContaining({ analytics_storage: 'denied' })],
+    ]),
+  );
+
   await page.getByRole('button', { name: 'Reject' }).click();
   await expect(banner).toBeHidden();
   await expect
     .poll(() => page.evaluate(() => document.cookie))
     .toContain('pencil_analytics_consent=rejected');
-  await expect(page.locator(`script[src*="${gaMeasurementId}"]`)).toHaveCount(0);
-  expect(await page.evaluate(() => window.__pencilAnalyticsLoaded === true)).toBe(false);
+  expect(await getConsentEvents(page)).toEqual(
+    expect.arrayContaining([
+      ['consent', 'update', expect.objectContaining({ analytics_storage: 'denied' })],
+    ]),
+  );
 
   await page.reload();
   await expect(banner).toBeHidden();
+  await expect(page.locator(`script[src*="${gaMeasurementId}"]`)).toHaveCount(1);
 });
 
 test('cookie banner accept enables analytics consent and loads the GA script', async ({ page }) => {
@@ -27,6 +46,13 @@ test('cookie banner accept enables analytics consent and loads the GA script', a
   const banner = page.locator('[data-cookie-banner]');
 
   await expect(banner).toBeVisible();
+  await expect(page.locator(`script[src*="${gaMeasurementId}"]`)).toHaveCount(1);
+  expect(await getConsentEvents(page)).toEqual(
+    expect.arrayContaining([
+      ['consent', 'default', expect.objectContaining({ analytics_storage: 'denied' })],
+    ]),
+  );
+
   await page.getByRole('button', { name: 'Accept' }).click();
   await expect(banner).toBeHidden();
   await expect
@@ -34,10 +60,20 @@ test('cookie banner accept enables analytics consent and loads the GA script', a
     .toContain('pencil_analytics_consent=accepted');
   expect(await page.evaluate(() => window.__pencilAnalyticsLoaded === true)).toBe(true);
   await expect(page.locator(`script[src*="${gaMeasurementId}"]`)).toHaveCount(1);
+  expect(await getConsentEvents(page)).toEqual(
+    expect.arrayContaining([
+      ['consent', 'update', expect.objectContaining({ analytics_storage: 'granted' })],
+    ]),
+  );
 
   await page.reload();
   await expect(banner).toBeHidden();
   expect(await page.evaluate(() => window.__pencilAnalyticsLoaded === true)).toBe(true);
+  expect(await getConsentEvents(page)).toEqual(
+    expect.arrayContaining([
+      ['consent', 'default', expect.objectContaining({ analytics_storage: 'granted' })],
+    ]),
+  );
 });
 
 test('mobile menu opens and closes on small screens', async ({ page }) => {
@@ -84,7 +120,7 @@ test('contact assistant sends the not sure yet starter prompt', async ({ page })
 
     expect(body.messages.at(-1)).toEqual({
       role: 'user',
-      content: 'I’m not sure yet',
+      content: 'I\u2019m not sure yet',
     });
 
     await route.fulfill({
@@ -97,9 +133,9 @@ test('contact assistant sends the not sure yet starter prompt', async ({ page })
   });
 
   await page.goto(`${basePath}/contact`);
-  await page.getByRole('button', { name: 'I’m not sure yet' }).click();
+  await page.getByRole('button', { name: /I.m not sure yet/ }).click();
 
-  await expect(page.locator('.message--user .message-bubble').last()).toContainText('I’m not sure yet');
+  await expect(page.locator('.message--user .message-bubble').last()).toContainText(/I.m not sure yet/);
   await expect(page.locator('.message--assistant .message-bubble').last()).toContainText('That is completely fine');
 });
 
@@ -151,14 +187,14 @@ test('contact assistant shows loading state while waiting', async ({ page }) => 
   });
 
   await page.goto(`${basePath}/contact`);
-  await page.getByRole('button', { name: 'I’m planning a renovation' }).click();
+  await page.getByRole('button', { name: /I.m planning a renovation/ }).click();
 
   await expect(page.locator('.message--thinking')).toBeVisible();
   const thinkingIconBox = await page.locator('.message--thinking .message-avatar .spark-icon').boundingBox();
   expect(thinkingIconBox?.width).toBeLessThanOrEqual(20);
   await expect(page.locator('#chat-input')).toBeDisabled();
   await expect(page.locator('#chat-send')).toBeDisabled();
-  await expect(page.getByRole('button', { name: 'I’m not sure yet' })).toBeDisabled();
+  await expect(page.locator('.starter-prompts')).toHaveCount(0);
 
   finishResponse();
 
@@ -186,55 +222,55 @@ test('contact assistant shows a calm error state', async ({ page }) => {
   await expect(page.locator('#chat-send')).toBeEnabled();
 });
 
-test(‘contact assistant explains when the backend is not configured’, async ({ page }) => {
-  await page.route(‘**/api/contact-assistant’, async (route) => {
+test('contact assistant explains when the backend is not configured', async ({ page }) => {
+  await page.route('**/api/contact-assistant', async (route) => {
     await route.fulfill({
       status: 500,
-      contentType: ‘application/json’,
+      contentType: 'application/json',
       body: JSON.stringify({
-        error: ‘The assistant is not configured yet.’,
+        error: 'The assistant is not configured yet.',
       }),
     });
   });
 
   await page.goto(`${basePath}/contact`);
-  await page.getByRole(‘button’, { name: ‘I’m not sure yet’ }).click();
+  await page.getByRole('button', { name: /I.m not sure yet/ }).click();
 
-  await expect(page.locator(‘#chat-status .chat-status-message’)).toContainText(
-    ‘not configured in this environment’,
+  await expect(page.locator('#chat-status .chat-status-message')).toContainText(
+    'not configured in this environment',
   );
-  await expect(page.locator(‘#chat-input’)).toBeEnabled();
-  await expect(page.locator(‘#chat-send’)).toBeEnabled();
+  await expect(page.locator('#chat-input')).toBeEnabled();
+  await expect(page.locator('#chat-send')).toBeEnabled();
 });
 
-test(‘starter prompts disappear after sending a message’, async ({ page }) => {
-  await page.route(‘**/api/contact-assistant’, async (route) => {
+test('starter prompts disappear after sending a message', async ({ page }) => {
+  await page.route('**/api/contact-assistant', async (route) => {
     await route.fulfill({
       status: 200,
-      contentType: ‘application/json’,
-      body: JSON.stringify({ reply: ‘Great, tell me more.’ }),
+      contentType: 'application/json',
+      body: JSON.stringify({ reply: 'Great, tell me more.' }),
     });
   });
 
   await page.goto(`${basePath}/contact`);
-  await expect(page.locator(‘.starter-prompts’)).toBeVisible();
-  await page.getByRole(‘button’, { name: ‘I’m planning a renovation’ }).click();
-  await expect(page.locator(‘.starter-prompts’)).toHaveCount(0);
+  await expect(page.locator('.starter-prompts')).toBeVisible();
+  await page.getByRole('button', { name: /I.m planning a renovation/ }).click();
+  await expect(page.locator('.starter-prompts')).toHaveCount(0);
 });
 
-test(‘contact assistant auto-sends when user confirms after shall I send’, async ({ page }) => {
+test('contact assistant auto-sends when user confirms after shall I send', async ({ page }) => {
   let callCount = 0;
 
-  await page.route(‘**/api/contact-assistant’, async (route) => {
+  await page.route('**/api/contact-assistant', async (route) => {
     callCount += 1;
     const body = route.request().postDataJSON();
 
     if (callCount === 1) {
       await route.fulfill({
         status: 200,
-        contentType: ‘application/json’,
+        contentType: 'application/json',
         body: JSON.stringify({
-          reply: ‘Shall I send this to the Pencil Design team?’,
+          reply: 'Shall I send this to the Pencil Design team?',
           readyToSend: true,
         }),
       });
@@ -242,89 +278,89 @@ test(‘contact assistant auto-sends when user confirms after shall I send’, a
       expect(body.send).toBe(true);
       await route.fulfill({
         status: 200,
-        contentType: ‘application/json’,
+        contentType: 'application/json',
         body: JSON.stringify({ sent: true }),
       });
     }
   });
 
   await page.goto(`${basePath}/contact`);
-  await page.locator(‘#chat-input’).fill(‘renovation in Dulwich’);
-  await page.locator(‘#chat-send’).click();
+  await page.locator('#chat-input').fill('renovation in Dulwich');
+  await page.locator('#chat-send').click();
 
-  await expect(page.locator(‘.message--assistant .message-bubble’).last()).toContainText(‘Shall I send’);
+  await expect(page.locator('.message--assistant .message-bubble').last()).toContainText('Shall I send');
 
-  await page.locator(‘#chat-input’).fill(‘yes please’);
-  await page.locator(‘#chat-send’).click();
+  await page.locator('#chat-input').fill('yes please');
+  await page.locator('#chat-send').click();
 
-  await expect(page.locator(‘.message--assistant .message-bubble’).last()).toContainText(‘Sent — thank you’);
-  await expect(page.locator(‘.assistant-composer’)).toHaveCount(0);
+  await expect(page.locator('.message--assistant .message-bubble').last()).toContainText('Sent');
+  await expect(page.locator('.assistant-composer')).toHaveCount(0);
 });
 
-test(‘contact assistant shows start new enquiry link after sending’, async ({ page }) => {
+test('contact assistant shows start new enquiry link after sending', async ({ page }) => {
   let callCount = 0;
 
-  await page.route(‘**/api/contact-assistant’, async (route) => {
+  await page.route('**/api/contact-assistant', async (route) => {
     callCount += 1;
 
     if (callCount === 1) {
       await route.fulfill({
         status: 200,
-        contentType: ‘application/json’,
+        contentType: 'application/json',
         body: JSON.stringify({
-          reply: ‘Shall I send this to the Pencil Design team?’,
+          reply: 'Shall I send this to the Pencil Design team?',
           readyToSend: true,
         }),
       });
     } else {
       await route.fulfill({
         status: 200,
-        contentType: ‘application/json’,
+        contentType: 'application/json',
         body: JSON.stringify({ sent: true }),
       });
     }
   });
 
   await page.goto(`${basePath}/contact`);
-  await page.locator(‘#chat-input’).fill(‘yes’);
-  await page.locator(‘#chat-send’).click();
-  await page.locator(‘#chat-input’).fill(‘yes’);
-  await page.locator(‘#chat-send’).click();
+  await page.locator('#chat-input').fill('yes');
+  await page.locator('#chat-send').click();
+  await page.locator('#chat-input').fill('yes');
+  await page.locator('#chat-send').click();
 
-  await expect(page.locator(‘.new-enquiry-button’)).toBeVisible();
-  await expect(page.locator(‘.new-enquiry-button’)).toContainText(‘Start a new enquiry’);
+  await expect(page.locator('.new-enquiry-button')).toBeVisible();
+  await expect(page.locator('.new-enquiry-button')).toContainText('Start a new enquiry');
 });
 
-test(‘contact assistant shows error and keeps composer if send fails’, async ({ page }) => {
+test('contact assistant shows error and keeps composer if send fails', async ({ page }) => {
   let callCount = 0;
 
-  await page.route(‘**/api/contact-assistant’, async (route) => {
+  await page.route('**/api/contact-assistant', async (route) => {
     callCount += 1;
 
     if (callCount === 1) {
       await route.fulfill({
         status: 200,
-        contentType: ‘application/json’,
+        contentType: 'application/json',
         body: JSON.stringify({
-          reply: ‘Shall I send this to the Pencil Design team?’,
+          reply: 'Shall I send this to the Pencil Design team?',
           readyToSend: true,
         }),
       });
     } else {
       await route.fulfill({
         status: 502,
-        contentType: ‘application/json’,
-        body: JSON.stringify({ error: ‘The enquiry could not be sent right now. Please try again or email contact@pencil-design.co.uk directly.’ }),
+        contentType: 'application/json',
+        body: JSON.stringify({ error: 'The enquiry could not be sent right now. Please try again or email contact@pencil-design.co.uk directly.' }),
       });
     }
   });
 
   await page.goto(`${basePath}/contact`);
-  await page.locator(‘#chat-input’).fill(‘yes’);
-  await page.locator(‘#chat-send’).click();
-  await page.locator(‘#chat-input’).fill(‘yes’);
-  await page.locator(‘#chat-send’).click();
+  await page.locator('#chat-input').fill('yes');
+  await page.locator('#chat-send').click();
+  await page.locator('#chat-input').fill('yes');
+  await page.locator('#chat-send').click();
 
-  await expect(page.locator(‘#chat-status .chat-status-message’)).toContainText(‘could not be sent’);
-  await expect(page.locator(‘#chat-input’)).toBeEnabled();
+  await expect(page.locator('#chat-status .chat-status-message')).toContainText('could not be sent');
+  await expect(page.locator('#chat-input')).toBeEnabled();
 });
