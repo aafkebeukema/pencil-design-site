@@ -17,7 +17,8 @@ const { measurementId = '', baseUrl } = Astro.props;
   <div class="cookie-banner__copy">
     <p class="cookie-banner__title">Analytics cookies</p>
     <p>
-      We use Google Analytics to understand how people use this site. We only switch it on if you accept.
+      We use Google Analytics with cookies off by default. Limited cookieless signals may be sent until you accept
+      analytics cookies.
       <a href={`${baseUrl}privacy-cookies`}>Privacy &amp; cookies</a>
     </p>
   </div>
@@ -49,11 +50,20 @@ const { measurementId = '', baseUrl } = Astro.props;
     }
   }
 
+  type ConsentState = 'denied' | 'granted';
+
   const banner = document.querySelector<HTMLElement>('[data-cookie-banner]');
   const acceptButton = banner?.querySelector<HTMLButtonElement>('[data-cookie-accept]');
   const rejectButton = banner?.querySelector<HTMLButtonElement>('[data-cookie-reject]');
   const measurementId = banner?.dataset.measurementId ?? '';
   const baseUrl = banner?.dataset.baseUrl ?? '/';
+
+  const buildConsentState = (analyticsStorage: ConsentState) => ({
+    analytics_storage: analyticsStorage,
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+  });
 
   const loadAnalytics = () => {
     if (!measurementId || window.__pencilAnalyticsLoaded) return;
@@ -62,6 +72,12 @@ const { measurementId = '', baseUrl } = Astro.props;
     window.dataLayer = window.dataLayer || [];
     window.gtag = function() { window.dataLayer?.push(arguments); };
 
+    window.gtag(
+      'consent',
+      'default',
+      buildConsentState(hasAcceptedAnalytics(document.cookie) ? 'granted' : 'denied'),
+    );
+
     const script = document.createElement('script');
     script.async = true;
     script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
@@ -69,6 +85,13 @@ const { measurementId = '', baseUrl } = Astro.props;
 
     window.gtag('js', new Date());
     window.gtag('config', measurementId);
+  };
+
+  const updateAnalyticsConsent = (analyticsStorage: ConsentState) => {
+    if (!measurementId) return;
+
+    loadAnalytics();
+    window.gtag?.('consent', 'update', buildConsentState(analyticsStorage));
   };
 
   const hideBanner = () => {
@@ -84,12 +107,15 @@ const { measurementId = '', baseUrl } = Astro.props;
     hideBanner();
 
     if (value === 'accepted') {
-      loadAnalytics();
+      updateAnalyticsConsent('granted');
+    } else {
+      updateAnalyticsConsent('denied');
     }
   };
 
+  loadAnalytics();
+
   if (hasAcceptedAnalytics(document.cookie)) {
-    loadAnalytics();
     hideBanner();
   } else if (!hasStoredAnalyticsConsent(document.cookie)) {
     showBanner();
