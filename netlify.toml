@@ -10,3 +10,13 @@
   from = "/api/contact-assistant"
   to = "/.netlify/functions/contact-assistant"
   status = 200
+
+[[redirects]]
+  from = "/services"
+  to = "/private-clients/"
+  status = 301
+
+[[redirects]]
+  from = "/services/"
+  to = "/private-clients/"
+  status = 301
