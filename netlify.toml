@@ -3,6 +3,9 @@
   publish = "dist"
   functions = "netlify/functions"
 
+[context.staging.environment]
+  PUBLIC_NO_INDEX = "true"
+
 [[redirects]]
   from = "/api/contact-assistant"
   to = "/.netlify/functions/contact-assistant"

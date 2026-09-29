@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import { withBase } from '../lib/with-base';
 
 const baseUrl = import.meta.env.BASE_URL;
-const heroImage = `${baseUrl}images/home-hero-main.jpg`;
+const heroImage = `${baseUrl}images/home-hero-kitchen.jpg`;
 
 const featureSections = [
   {
@@ -33,7 +33,12 @@ const featureSections = [
 ];
 ---
 
-<Layout title="Pencil Design | Construction & Renovation in South East London" ogTitle="Pencil Design — design-first construction in London" transparentHeader={true}>
+<Layout
+  title="Pencil Design | Kitchen Installation & Bespoke Joinery in South East London"
+  ogTitle="Pencil Design — kitchen installation & bespoke joinery in London"
+  description="Custom kitchen installation and bespoke joinery, cabinetry and furniture in South East London."
+  transparentHeader={true}
+>
 
   <!-- =====================
        HERO
@@ -42,10 +47,14 @@ const featureSections = [
     <div class="hero-bg" style={`background-image: url('${heroImage}')`}></div>
 
     <div class="hero-content">
-      <h1>Not your average<br />construction company.</h1>
+      <p class="hero-kicker">Custom Kitchen Installation &amp; Joinery</p>
+      <h1>Designed for your space,<br />crafted beautifully.</h1>
       <div class="hero-copy">
         <p>
-          Pencil Design is a design-led construction and renovation company with a strong foundation in architecture, joinery and design. We build meticulously crafted spaces for homeowners and businesses. From home renovations and new-build projects to bathrooms, kitchens, wardrobes, built-in shelving, cabinetry, and one-off pieces, we design, make, and build work that is tailored to the space, built properly, and made to last.
+          Pencil Design specialises in bespoke joinery, cabinetry and kitchen installation. We create made-to-measure pieces for every part of the home, from fitted wardrobes and living-room storage to bathroom cabinetry, kitchens and one-off furniture. Each project is designed around the space, made with precision and finished with care.
+        </p>
+        <p>
+          We can also support you at the planning stage, helping you review layouts, finishes and practical details before you order from your chosen kitchen supplier.
         </p>
       </div>
       <div class="hero-actions">
@@ -92,7 +101,7 @@ const featureSections = [
     position: absolute;
     inset: 0;
     background-size: cover;
-    background-position: center;
+    background-position: 58% center;
   }
 
   /* Subtle overlay — keep even with a real photo so text stays legible */
@@ -100,12 +109,9 @@ const featureSections = [
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(
-      to top,
-      rgba(0, 0, 0, 0.65) 0%,
-      rgba(0, 0, 0, 0.2) 60%,
-      rgba(0, 0, 0, 0.05) 100%
-    );
+    background:
+      linear-gradient(90deg, rgba(0, 0, 0, 0.66) 0%, rgba(0, 0, 0, 0.36) 38%, rgba(0, 0, 0, 0.03) 72%),
+      linear-gradient(to top, rgba(0, 0, 0, 0.48) 0%, rgba(0, 0, 0, 0.04) 65%);
   }
 
   .hero-content {
@@ -122,6 +128,14 @@ const featureSections = [
     line-height: 0.95;
     letter-spacing: -0.03em;
     margin-bottom: 2.5rem;
+  }
+
+  .hero-kicker {
+    margin-bottom: 1.1rem;
+    font-size: clamp(0.75rem, 1.1vw, 0.95rem);
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
   .hero-copy {

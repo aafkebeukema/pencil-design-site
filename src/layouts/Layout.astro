@@ -21,6 +21,7 @@ const socialTitle = ogTitle ?? title;
 
 const baseUrl = import.meta.env.BASE_URL;
 const googleAnalyticsId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+const noIndex = import.meta.env.PUBLIC_NO_INDEX === 'true';
 const canonicalUrl = Astro.url;
 const socialImageUrl = new URL(`${baseUrl}images/home-hero-main.jpg`, Astro.site ?? Astro.url);
 const structuredData = {
@@ -48,6 +49,7 @@ const structuredData = {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    {noIndex && <meta name="robots" content="noindex, noarchive" />}
     <link rel="canonical" href={canonicalUrl} />
     <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon-pencil.svg`} />
     <link rel="icon" href={`${baseUrl}favicon-pencil.svg`} />
