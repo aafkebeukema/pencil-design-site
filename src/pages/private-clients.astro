@@ -18,8 +18,8 @@ const serviceImageSets = {
     { src: '/images/private-clients-build-05.jpg', alt: 'Workshop build stage for fitted furniture', size: '118%', position: 'center' },
   ],
   finish: [
-    { src: '/images/private-clients-finish-01.png', alt: 'Monochrome bespoke kitchen cabinetry and marble detail' },
-    { src: '/images/private-clients-finish-02.png', alt: 'Monochrome Dulwich Hill kitchen joinery' },
+    { src: '/images/private-clients-finish-01-original.jpg', alt: 'Monochrome bespoke kitchen cabinetry and marble detail', monochrome: true },
+    { src: '/images/private-clients-finish-02-original.jpg', alt: 'Monochrome Dulwich Hill kitchen joinery', monochrome: true },
     { src: '/images/private-clients-finish-03.png', alt: 'Monochrome Hackney Road kitchen joinery' },
     { src: '/images/private-clients-finish-04.png', alt: 'Monochrome Lordship Lane kitchen joinery' },
     { src: '/images/private-clients-finish-05.jpg', alt: 'Final joinery finish and installation detail' },
@@ -85,7 +85,7 @@ Object.values(serviceImageSets).forEach((imageSet) => {
                   alt={image.alt}
                   loading="lazy"
                   decoding="async"
-                  style={`object-position: ${image.position ?? 'center'}; --image-scale: ${image.size ? Number.parseFloat(image.size) / 100 : 1};`}
+                  style={`object-position: ${image.position ?? 'center'}; --image-scale: ${image.size ? Number.parseFloat(image.size) / 100 : 1};${image.monochrome ? ' filter: grayscale(1);' : ''}`}
                 />
               </div>
             ))}
