@@ -3,24 +3,24 @@ import Layout from '../layouts/Layout.astro';
 import { withBase } from '../lib/with-base';
 
 const projects = [
-  { title: 'Dulwich Hill', src: '/images/dulwich-hill-built-01.jpg', alt: 'Bespoke fitted kitchen, Dulwich Hill, South East London' },
-  { title: 'Dulwich Hill', src: '/images/dulwich-hill-built-02.jpg', alt: 'Fitted kitchen detail, Dulwich Hill, South East London' },
-  { title: 'Hackney Road', src: '/images/hackney-road-built-01.jpg', alt: 'Bespoke fitted kitchen with custom joinery, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/hackney-road-built-02.jpg', alt: 'Custom joinery kitchen, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/hackney-road-built-03.jpg', alt: 'Fitted kitchen with custom joinery detail, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/hackney-road-built-04.jpg', alt: 'Bespoke kitchen cabinetry, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/hackney-road-built-05.jpg', alt: 'Custom fitted kitchen, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/hackney-road-built-06.jpg', alt: 'Kitchen joinery and cabinetry, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/hackney-road-built-07.jpg', alt: 'Bespoke kitchen construction, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/hackney-road-built-08.jpg', alt: 'Custom kitchen with integrated joinery, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/hackney-road-built-09-3.jpg', alt: 'Fitted kitchen with custom joinery, Hackney Road' },
+  { title: 'Dulwich Hill', src: '/images/kitchen-dulwich-hill-01.jpg', alt: 'Bespoke fitted kitchen, Dulwich Hill, South East London' },
+  { title: 'Dulwich Hill', src: '/images/kitchen-dulwich-hill-02.jpg', alt: 'Fitted kitchen detail, Dulwich Hill, South East London' },
+  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-01.jpg', alt: 'Bespoke fitted kitchen with custom joinery, Hackney Road' },
+  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-02.jpg', alt: 'Custom joinery kitchen, Hackney Road' },
+  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-03.jpg', alt: 'Fitted kitchen with custom joinery detail, Hackney Road' },
+  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-04.jpg', alt: 'Bespoke kitchen cabinetry, Hackney Road' },
+  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-05.jpg', alt: 'Custom fitted kitchen, Hackney Road' },
+  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-06.jpg', alt: 'Kitchen joinery and cabinetry, Hackney Road' },
+  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-07.jpg', alt: 'Bespoke kitchen construction, Hackney Road' },
+  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-08.jpg', alt: 'Custom kitchen with integrated joinery, Hackney Road' },
+  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-09-3.jpg', alt: 'Fitted kitchen with custom joinery, Hackney Road' },
   { title: 'Hackney Road Bathroom', src: '/images/hackney-road-bathroom-built-01.jpg', alt: 'Bespoke fitted bathroom, Hackney Road' },
   { title: 'Hackney Road Bathroom', src: '/images/hackney-road-bathroom-built-02.jpg', alt: 'Custom bathroom detail, Hackney Road' },
   { title: 'Lordship Lane', src: '/images/lordship-lane-built-01.jpg', alt: 'Full house renovation, lounge and living room, Lordship Lane' },
   { title: 'Lordship Lane', src: '/images/lordship-lane-built-02.jpg', alt: 'Renovated living room with new flooring and decoration, Lordship Lane' },
   { title: 'Lordship Lane', src: '/images/lordship-lane-built-03.jpg', alt: 'House renovation, painted lounge with new flooring, Lordship Lane' },
-  { title: 'Lordship Lane', src: '/images/lordship-lane-built-04.jpg', alt: 'Bespoke fitted kitchen, Lordship Lane' },
-  { title: 'Lordship Lane Kitchen', src: '/images/lordship-lane-kitchen-built-01.jpg', alt: 'Custom fitted kitchen detail, Lordship Lane' },
+  { title: 'Lordship Lane', src: '/images/kitchen-lordship-04.jpg', alt: 'Bespoke fitted kitchen, Lordship Lane' },
+  { title: 'Lordship Lane Kitchen', src: '/images/kitchen-lordship-01.jpg', alt: 'Custom fitted kitchen detail, Lordship Lane' },
   { title: 'Lordship Lane Lounge', src: '/images/lordship-lane-lounge-built-01.jpg', alt: 'Finished lounge with built-in alcove shelving and cupboards, Lordship Lane' },
   { title: 'Napier Road', src: '/images/napier-road-built-01.jpg', alt: 'Custom timber front garden fence and gate, Napier Road' },
   { title: 'Paddock Close Bathroom', src: '/images/paddock-close-bathroom-built-01.jpg', alt: 'Custom bathroom with bespoke tiling and copper welded pipework, Paddock Close' },
@@ -28,31 +28,23 @@ const projects = [
   { title: 'Paddock Close Bathroom', src: '/images/paddock-close-bathroom-built-03.jpg', alt: 'Custom designed bathroom with copper welded taps and fittings, Paddock Close' },
   { title: 'Paddock Close Bathroom', src: '/images/paddock-close-bathroom-built-04.jpg', alt: 'Bespoke tiling and copper pipework bathroom detail, Paddock Close' },
   { title: 'Paddock Close Bathroom', src: '/images/paddock-close-bathroom-built-05.jpg', alt: 'Custom bathroom construction with bespoke copper fittings, Paddock Close' },
-  { title: 'Paddock Close Kitchen', src: '/images/paddock-close-kitchen-built-01.jpg', alt: 'Custom fitted kitchen, Paddock Close' },
-  { title: 'Paddock Close Kitchen', src: '/images/paddock-close-kitchen-built-02.jpg', alt: 'Bespoke fitted kitchen detail, Paddock Close' },
+  { title: 'Paddock Close Kitchen', src: '/images/kitchen-paddock-01.jpg', alt: 'Custom fitted kitchen, Paddock Close' },
+  { title: 'Paddock Close Kitchen', src: '/images/kitchen-paddock-02.jpg', alt: 'Bespoke fitted kitchen detail, Paddock Close' },
   { title: 'Paddock Close Shower', src: '/images/paddock-close-shower-crafted-01.jpg', alt: 'Custom crafted shower with bespoke tiling and copper pipework, Paddock Close' },
   { title: 'Paddock Close Stairs', src: '/images/paddock-close-stairs-built-01.jpg', alt: 'Custom timber staircase, Paddock Close' },
   { title: 'Paddock Close Stairs', src: '/images/paddock-close-stairs-built-02.jpg', alt: 'Bespoke timber staircase detail, Paddock Close' },
   { title: 'Queensville Road', src: '/images/queensville-road-built-01.jpg', alt: 'Full house renovation with custom joinery, Queensville Road' },
   { title: 'Queensville Road', src: '/images/queensville-road-built-02.jpg', alt: 'House renovation with bespoke joinery detail, Queensville Road' },
   { title: 'Queensville Road', src: '/images/queensville-road-built-03.jpg', alt: 'Completed house renovation and custom joinery, Queensville Road' },
-  { title: 'Reigate Road Bathroom', src: '/images/reigate-road-bathroom-built-01.jpg', alt: 'Bespoke fitted bathroom, Reigate Road' },
-  { title: 'Reigate Road Bunkbed', src: '/images/reigate-road-bunkbed-built-01.jpg', alt: 'Custom built bunkbed with walnut details, Reigate Road' },
-  { title: 'Reigate Road Bunkbed', src: '/images/reigate-road-bunkbed-built-02.jpg', alt: 'Bespoke bunkbed joinery with walnut detailing, Reigate Road' },
-  { title: 'Reigate Road Bunkbed', src: '/images/reigate-road-bunkbed-built-03.jpg', alt: 'Custom bunkbed with walnut joinery detail, Reigate Road' },
-  { title: 'Reigate Road Bunkbed', src: '/images/reigate-road-bunkbed-built-04.jpg', alt: 'Fitted bunkbed with bespoke walnut details, Reigate Road' },
-  { title: 'Reigate Road Garden Workshop', src: '/images/reigate-road-garden-workshop-built-01.jpg', alt: 'Custom designed and built garden workshop and office, Reigate Road' },
-  { title: 'Reigate Road Table', src: '/images/reigate-road-table-built-01.jpg', alt: 'Custom concrete, steel and wood dining table made from a tree slab, Reigate Road' },
-  { title: 'Saint Stephens', src: '/images/saint-stephens-built-01.jpg', alt: 'Loft conversion with bathroom, Saint Stephens' },
-  { title: 'Saint Stephens', src: '/images/saint-stephens-built-02.jpg', alt: 'Loft conversion bathroom detail, Saint Stephens' },
-  { title: 'Saint Stephens', src: '/images/saint-stephens-built-03.jpg', alt: 'Bespoke loft conversion with fitted bathroom, Saint Stephens' },
-  { title: 'Saint Stephens', src: '/images/saint-stephens-built-04.jpg', alt: 'Loft conversion construction detail, Saint Stephens' },
-  { title: 'Saint Stephens', src: '/images/saint-stephens-built-05.jpg', alt: 'Completed loft conversion with bathroom, Saint Stephens' },
+  { title: 'Reigate Road Workshop', src: '/images/reigate-road-workshop-built-01.jpg', alt: 'Workshop project, Reigate Road' },
 ];
 
 projects.forEach((project) => {
   project.src = withBase(project.src);
 });
+
+const kitchenProjects = projects.filter((project) => project.src.includes('/images/kitchen-'));
+const otherProjects = projects.filter((project) => !project.src.includes('/images/kitchen-'));
 ---
 
 <Layout
@@ -62,18 +54,38 @@ projects.forEach((project) => {
   <div class="projects-main">
     <div class="page-intro">
       <h1>Our Work</h1>
-      <h2 class="page-subtitle">Bespoke construction and joinery across South East London</h2>
+      <h2 class="page-subtitle">Bespoke construction and joinery across London</h2>
     </div>
 
-    <section class="projects-grid-section">
+    <section class="projects-grid-section" aria-labelledby="kitchens-heading">
+      <h2 id="kitchens-heading" class="projects-section-heading">Kitchens</h2>
       <div class="projects-grid">
-        {projects.map((project, index) => (
+        {kitchenProjects.map((project, index) => (
           <div class="project-item">
             <div class="project-image">
               <img
                 src={project.src}
                 alt={project.alt}
                 loading={index < 6 ? 'eager' : 'lazy'}
+                decoding="async"
+              />
+            </div>
+            <p class="caption-title">{project.title}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="projects-grid-section" aria-labelledby="other-works-heading">
+      <h2 id="other-works-heading" class="projects-section-heading">Other works</h2>
+      <div class="projects-grid">
+        {otherProjects.map((project) => (
+          <div class="project-item">
+            <div class="project-image">
+              <img
+                src={project.src}
+                alt={project.alt}
+                loading="lazy"
                 decoding="async"
               />
             </div>
@@ -144,6 +156,14 @@ projects.forEach((project) => {
     padding: 0 var(--site-gutter) 5rem;
     max-width: var(--site-max);
     margin: 0 auto;
+  }
+
+  .projects-section-heading {
+    margin: 0 0 1.5rem;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
   }
 
   /*

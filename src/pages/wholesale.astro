@@ -4,11 +4,11 @@ import { withBase } from '../lib/with-base';
 
 const serviceImageSets = {
   design: [
-    { src: '/images/wholesale-circle-01.jpeg', alt: 'Joinery design concept illustration' },
-    { src: '/images/wholesale-circle-02.jpg', alt: 'Measured joinery design drawing and planning work' },
-    { src: '/images/wholesale-circle-03.jpg', alt: 'Bespoke joinery design materials and samples' },
-    { src: '/images/wholesale-circle-04.jpg', alt: 'Joinery design detailing for a fitted project' },
-    { src: '/images/wholesale-circle-05.jpg', alt: 'Design development for bespoke fitted furniture' },
+    { src: '/images/wholesale-design-01.jpg', alt: 'Joinery design concept illustration' },
+    { src: '/images/wholesale-design-02.jpeg', alt: 'Measured joinery design drawing and planning work' },
+    { src: '/images/wholesale-design-03.jpg', alt: 'Bespoke joinery design materials and samples' },
+    { src: '/images/wholesale-design-04.jpg', alt: 'Joinery design detailing for a fitted project' },
+    { src: '/images/wholesale-design-05.jpg', alt: 'Design development for bespoke fitted furniture' },
   ],
   build: [
     { src: '/images/wholesale-build-01.jpg', alt: 'Joinery work in progress in the workshop', size: '118%', position: 'center' },
@@ -19,27 +19,27 @@ const serviceImageSets = {
   ],
   finish: [
     { src: '/images/wholesale-finish-01.jpg', alt: 'Finished bespoke joinery detail and paintwork' },
-    { src: '/images/wholesale-finish-02.svg', alt: 'Grey image placeholder' },
-    { src: '/images/wholesale-finish-03.svg', alt: 'Grey image placeholder' },
-    { src: '/images/wholesale-finish-04.svg', alt: 'Grey image placeholder' },
+    { src: '/images/wholesale-finish-02.jpg', alt: 'Finished wholesale joinery detail' },
+    { src: '/images/wholesale-finish-03.jpg', alt: 'Finished wholesale joinery detail' },
+    { src: '/images/wholesale-finish-04.jpg', alt: 'Finished wholesale joinery detail' },
     { src: '/images/wholesale-finish-05.jpg', alt: 'Final joinery finish and installation detail' },
   ],
 };
 
 const services = [
   {
-    label: 'Design it',
-    body: 'Every project begins with a site visit and a thoughtful conversation about what you need. We measure up, discuss materials and finishes, and prepare detailed drawings and a quote before anything is built. There is no commitment until you\'re happy with the plan.',
+    label: 'Receipt of order',
+    body: 'We take stock of the kitchen items and store them safely.',
     images: serviceImageSets.design,
   },
   {
-    label: 'Build it',
-    body: 'Each project is built to suit your space, combining workshop joinery with skilled on-site craftsmanship where needed. Our professional, adaptable team works with care and respect throughout the process, with attention to the build itself, the surrounding environment, and the people around it.',
+    label: 'Bespoke fitting',
+    body: 'We fit most types of kitchens, including plumbing, electrics, tiling and associated flooring works.',
     images: serviceImageSets.build,
   },
   {
-    label: 'Finish it',
-    body: 'We carry the same care and attention through to the final stage of every project, with high standards across both our in-house work and the trusted trades we bring in where needed. Through clear communication we make the journey from design to installation feel smooth and well organised.',
+    label: 'Quality handover',
+    body: 'We ensure every detail meets the customer’s satisfaction, along with any adaptations that arise during the fitting stage.',
     images: serviceImageSets.finish,
   },
 ];
@@ -52,16 +52,16 @@ Object.values(serviceImageSets).forEach((imageSet) => {
 ---
 
 <Layout
-  title="Wholesale | Pencil Design"
-  description="Bespoke joinery services in South East London — design, manufacture, finishing, and installation."
+  title="Retail | Pencil Design"
+  description="Pre-designed kitchen fitting across London, including plumbing, electrics, tiling and flooring works."
 >
 
   <!-- ===========================
        PAGE HEADER — large, centred, bold
   ============================ -->
   <div class="page-header">
-    <h1>Wholesale</h1>
-    <p class="page-tagline">From concept to completion, every stage is led by design and built around your space.</p>
+    <h1>Retail</h1>
+    <p class="page-tagline">We have the capacity to fit pre-designed kitchens to a very high standard across London.</p>
   </div>
 
   <!-- ===========================
@@ -93,37 +93,6 @@ Object.values(serviceImageSets).forEach((imageSet) => {
 
         </div>
       ))}
-    </div>
-  </section>
-
-  <!-- ===========================
-       PROCESS STEPS
-  ============================ -->
-  <section class="process">
-    <div class="process-inner">
-      <p class="section-label">How a project works</p>
-      <div class="process-steps">
-        <div class="step">
-          <p class="step-num">01</p>
-          <h3>Get in touch</h3>
-          <p>Contact us and we'll get back to arrange a face-to-face meeting at a time that suits you.</p>
-        </div>
-        <div class="step">
-          <p class="step-num">02</p>
-          <h3>Site visit &amp; design</h3>
-          <p>We'll come and see you, talk through the design, take measurements, and provide a free quote with no obligation or pressure.</p>
-        </div>
-        <div class="step">
-          <p class="step-num">03</p>
-          <h3>Approve &amp; schedule</h3>
-          <p>Once you're happy with the design and quote, we agree a start date and begin making.</p>
-        </div>
-        <div class="step">
-          <p class="step-num">04</p>
-          <h3>Build &amp; install</h3>
-          <p>Depending on the project, we carry out a mix of workshop making and on-site work, then complete the installation with care and attention to detail.</p>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -275,81 +244,6 @@ Object.values(serviceImageSets).forEach((imageSet) => {
 
     .service-img-wrap--circle {
       width: min(60%, 220px);
-    }
-  }
-
-  /* ===========================
-     PROCESS STEPS
-  ============================ */
-  .process {
-    padding: 5.5rem var(--site-gutter);
-    background: var(--color-off-white);
-  }
-
-  .process-inner {
-    max-width: var(--site-max);
-    margin: 0 auto;
-  }
-
-  .section-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--color-mid);
-    margin-bottom: 2.5rem;
-  }
-
-  .process-steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    border-top: 1px solid var(--color-border);
-    padding-top: 2.5rem;
-  }
-
-  .step {
-    padding-right: 2.5rem;
-  }
-
-  .step-num {
-    font-family: var(--font-heading);
-    font-size: 1rem;
-    color: var(--color-mid);
-    margin-bottom: 0.75rem;
-  }
-
-  .step h3 {
-    font-family: var(--font-heading);
-    font-size: 1.45rem;
-    font-weight: 400;
-    margin-bottom: 0.6rem;
-  }
-
-  .step p {
-    font-size: 0.875rem;
-    color: var(--color-mid);
-    line-height: 1.7;
-    font-weight: 300;
-  }
-
-  @media (max-width: 768px) {
-    .process-steps {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.5rem;
-    }
-
-    .step {
-      padding-right: 0;
-    }
-  }
-
-  @media (max-width: 520px) {
-    .process-steps {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-
-    .step {
-      padding-right: 0;
     }
   }
 

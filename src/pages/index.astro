@@ -21,14 +21,9 @@ const featureSections = [
     linkLabel: 'View projects',
   },
   {
-    title: 'Bespoke.',
+    title: ['Bespoke', 'Unique'],
     image: `${baseUrl}images/home-hero-bespoke.jpg`,
     align: 'right',
-  },
-  {
-    title: 'Unique.',
-    image: `${baseUrl}images/home-hero-unique.jpg`,
-    align: 'left',
   },
 ];
 ---
@@ -51,14 +46,15 @@ const featureSections = [
       <h1>Designed for your space<br />crafted beautifully</h1>
       <div class="hero-copy">
         <p>
-          Pencil Design specialises in bespoke joinery, cabinetry and kitchen installation. We create made-to-measure pieces for every part of the home, from fitted wardrobes and living-room storage to bathroom cabinetry, kitchens and one-off furniture. Each project is designed around the space, made with precision and finished with care.
+          Pencil Design specialises in bespoke kitchen installation, creating considered spaces that bring together cabinetry, worktops, finishes and flooring. Every kitchen is tailored to the way you live, installed with precision and finished with care.
         </p>
         <p>
-          We can also support you at the planning stage, helping you review layouts, finishes and practical details before you order from your chosen kitchen supplier.
+          We can also support you at the planning stage, helping you review layouts, materials and practical details before you order from your chosen kitchen supplier.
         </p>
       </div>
       <div class="hero-actions">
         <a href={withBase('/private-clients')} class="btn-pill">Private Clients</a>
+        <a href={withBase('/wholesale')} class="btn-pill">Retail</a>
       </div>
     </div>
   </section>
@@ -71,7 +67,11 @@ const featureSections = [
       >
         <div class="feature-panel__overlay"></div>
         <div class="feature-panel__content">
-          <h2>{section.title}</h2>
+          <h2>
+            {Array.isArray(section.title)
+              ? section.title.map((line) => <span>{line}</span>)
+              : section.title}
+          </h2>
           {section.body && <p class="feature-panel__copy">{section.body}</p>}
           {section.href && (
             <a href={section.href} class="btn-pill">
@@ -239,6 +239,10 @@ const featureSections = [
     letter-spacing: -0.04em;
     text-transform: uppercase;
     max-width: 8ch;
+  }
+
+  .feature-panel__content h2 span {
+    display: block;
   }
 
   .feature-panel__copy {
