@@ -5,6 +5,7 @@
 
 [context.staging.environment]
   PUBLIC_NO_INDEX = "true"
+  PUBLIC_SOCIAL_BASE_URL = "https://staging.pencil-design.co.uk"
 
 [[redirects]]
   from = "/api/contact-assistant"
