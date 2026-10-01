@@ -131,14 +131,14 @@ const featureSections = [
     object-position: 58% center;
   }
 
-  /* Subtle overlay — keep even with a real photo so text stays legible */
+  /* Directional scrim keeps the photograph visible while protecting text contrast. */
   .hero-bg::after {
     content: '';
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(90deg, rgba(0, 0, 0, 0.52) 0%, rgba(0, 0, 0, 0.26) 35%, rgba(0, 0, 0, 0.03) 64%),
-      linear-gradient(to top, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.02) 60%);
+      linear-gradient(90deg, rgba(20, 14, 10, 0.68) 0%, rgba(20, 14, 10, 0.48) 65%, rgba(20, 14, 10, 0.18) 100%),
+      linear-gradient(to top, rgba(20, 14, 10, 0.24) 0%, rgba(20, 14, 10, 0) 60%);
   }
 
   .hero-content {
@@ -166,17 +166,19 @@ const featureSections = [
   }
 
   .hero-copy {
-    max-width: 42rem;
+    max-width: 32rem;
     display: grid;
     gap: 0.95rem;
     font-size: clamp(1rem, 1.35vw, 1.2rem);
+    font-weight: 400;
     line-height: 1.75;
-    color: rgba(255, 255, 255, 0.88);
+    color: rgba(255, 255, 255, 0.94);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
     margin-bottom: 2.5rem;
   }
 
   .hero-copy p {
-    max-width: 40rem;
+    max-width: 32rem;
   }
 
   .hero-actions {
@@ -287,6 +289,15 @@ const featureSections = [
 
     .hero {
       padding-top: calc(var(--header-h) + 1.75rem);
+    }
+
+    .hero-bg::after {
+      background: linear-gradient(
+        180deg,
+        rgba(20, 14, 10, 0.48) 0%,
+        rgba(20, 14, 10, 0.64) 45%,
+        rgba(20, 14, 10, 0.76) 100%
+      );
     }
 
     .hero-actions {
