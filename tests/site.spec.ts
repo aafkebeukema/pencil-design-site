@@ -96,8 +96,8 @@ test('mobile menu opens and closes on small screens', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'Contact Us' })).toBeVisible();
 });
 
-test('services page CTA routes to the contact page', async ({ page }) => {
-  await page.goto(`${basePath}/services`);
+test('retail page CTA routes to the contact page', async ({ page }) => {
+  await page.goto(`${basePath}/retail`);
 
   await page.getByRole('link', { name: 'Get in touch' }).click();
 
@@ -111,7 +111,90 @@ test('desktop navigation includes a home link back to the homepage', async ({ pa
   await page.locator('#site-nav').getByRole('link', { name: 'Home', exact: true }).click();
 
   await expect(page).toHaveURL(new RegExp(`${basePath}/?$`));
-  await expect(page.getByRole('heading', { name: /Not your average/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Bespoke kitchens designed and crafted beautifully/i })).toBeVisible();
+});
+
+test('desktop navigation uses the requested link order', async ({ page }) => {
+  await page.goto(`${basePath}/`);
+
+  await expect(page.locator('#site-nav a')).toHaveText([
+    'Home',
+    'Projects',
+    'Private Clients',
+    'Retail',
+    'About Us',
+    'Contact',
+  ]);
+});
+
+test('retail services use the current three-stage order', async ({ page }) => {
+  await page.goto(`${basePath}/retail`);
+
+  await expect(page.locator('.service-label')).toHaveText([
+    'Bespoke fitting',
+    'Quality handover',
+    'Duty of care',
+  ]);
+  await expect(page.getByText('Receipt of order', { exact: true })).toHaveCount(0);
+});
+
+test('projects link to indexable project detail pages', async ({ page }) => {
+  await page.goto(`${basePath}/projects`);
+
+  await page.getByRole('link', { name: 'View Dulwich Hill project' }).first().click();
+
+  await expect(page).toHaveURL(new RegExp(`${basePath}/projects/dulwich-hill/?$`));
+  await expect(page.getByRole('heading', { level: 1, name: 'Dulwich Hill' })).toBeVisible();
+});
+
+test('primary pages expose descriptive titles and canonical URLs', async ({ page }) => {
+  const pages = [
+    ['/', 'Pencil Design | Bespoke Kitchen Installation in London'],
+    ['/private-clients', 'Kitchen Design & Installation for Private Clients | Pencil Design'],
+    ['/retail', 'Retail Kitchen Installation in London | Pencil Design'],
+    ['/about', 'About Pencil Design | London Kitchen Fit-Out Company'],
+    ['/contact', 'Contact Pencil Design | Kitchen Installation London'],
+  ];
+
+  for (const [path, title] of pages) {
+    await page.goto(`${basePath}${path}`);
+    await expect(page).toHaveTitle(title);
+    await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /\S+/);
+    await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', new RegExp(`${path === '/' ? '/$' : `${path}/?$`}`));
+  }
+});
+
+test('homepage serves a responsive high-priority hero image', async ({ page }) => {
+  await page.goto(`${basePath}/`);
+
+  await expect(page.locator('.hero-bg source[type="image/avif"]')).toHaveAttribute('srcset', /640w.*960w.*1254w/);
+  await expect(page.locator('.hero-bg img')).toHaveAttribute('fetchpriority', 'high');
+});
+
+test('project galleries load one responsive image eagerly and defer the rest', async ({ page }) => {
+  await page.goto(`${basePath}/projects`);
+
+  const images = page.locator('.project-image img');
+  await expect(images.first()).toHaveAttribute('loading', 'eager');
+  await expect(images.first()).toHaveAttribute('fetchpriority', 'high');
+  await expect(images.nth(1)).toHaveAttribute('loading', 'lazy');
+  await expect(page.locator('.project-image source[type="image/avif"]').first()).toHaveAttribute(
+    'srcset',
+    /480w.*800w.*1200w/,
+  );
+});
+
+test('service galleries use responsive lazy-loaded images with dimensions', async ({ page }) => {
+  await page.goto(`${basePath}/retail`);
+
+  const firstImage = page.locator('.service-img-wrap img').first();
+  await expect(firstImage).toHaveAttribute('loading', 'lazy');
+  await expect(firstImage).toHaveAttribute('width', /\d+/);
+  await expect(firstImage).toHaveAttribute('height', /\d+/);
+  await expect(page.locator('.service-img-wrap source[type="image/avif"]').first()).toHaveAttribute(
+    'srcset',
+    /320w.*540w/,
+  );
 });
 
 test('contact assistant sends the not sure yet starter prompt', async ({ page }) => {

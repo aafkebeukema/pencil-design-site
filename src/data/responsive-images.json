@@ -1,0 +1,2464 @@
+{
+  "/images/hackney-road-bathroom-built-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-01-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-01-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-01-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-01-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-01-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-01-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/hackney-road-bathroom-built-02.jpg": {
+    "width": 1599,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-02-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-02-800.avif",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-02-1200.avif",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-02-1599.avif",
+        "width": 1599,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-02-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-02-800.webp",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-02-1200.webp",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/hackney-road-bathroom-built-02-1599.webp",
+        "width": 1599,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-dulwich-hill-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-01-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-01-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-01-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-01-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-01-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-01-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-dulwich-hill-02.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-02-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-02-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-02-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-02-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-02-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-02-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-02-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-dulwich-hill-02-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-hackney-road-01.jpg": {
+    "width": 1599,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-01-800.avif",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-01-1200.avif",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-01-1599.avif",
+        "width": 1599,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-01-800.webp",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-01-1200.webp",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-01-1599.webp",
+        "width": 1599,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-hackney-road-02.jpg": {
+    "width": 1600,
+    "height": 1599,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-02-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-02-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-02-1200.avif",
+        "width": 1200,
+        "height": 1199
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-02-1600.avif",
+        "width": 1600,
+        "height": 1599
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-02-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-02-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-02-1200.webp",
+        "width": 1200,
+        "height": 1199
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-02-1600.webp",
+        "width": 1600,
+        "height": 1599
+      }
+    ]
+  },
+  "/images/kitchen-hackney-road-03.jpg": {
+    "width": 1600,
+    "height": 1599,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-03-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-03-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-03-1200.avif",
+        "width": 1200,
+        "height": 1199
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-03-1600.avif",
+        "width": 1600,
+        "height": 1599
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-03-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-03-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-03-1200.webp",
+        "width": 1200,
+        "height": 1199
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-03-1600.webp",
+        "width": 1600,
+        "height": 1599
+      }
+    ]
+  },
+  "/images/kitchen-hackney-road-04.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-04-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-04-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-04-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-04-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-04-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-04-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-04-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-04-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-hackney-road-05.jpg": {
+    "width": 1600,
+    "height": 1195,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-05-480.avif",
+        "width": 480,
+        "height": 359
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-05-800.avif",
+        "width": 800,
+        "height": 598
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-05-1200.avif",
+        "width": 1200,
+        "height": 896
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-05-1600.avif",
+        "width": 1600,
+        "height": 1195
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-05-480.webp",
+        "width": 480,
+        "height": 359
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-05-800.webp",
+        "width": 800,
+        "height": 598
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-05-1200.webp",
+        "width": 1200,
+        "height": 896
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-05-1600.webp",
+        "width": 1600,
+        "height": 1195
+      }
+    ]
+  },
+  "/images/kitchen-hackney-road-06.jpg": {
+    "width": 1599,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-06-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-06-800.avif",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-06-1200.avif",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-06-1599.avif",
+        "width": 1599,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-06-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-06-800.webp",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-06-1200.webp",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-06-1599.webp",
+        "width": 1599,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-hackney-road-07.jpg": {
+    "width": 1599,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-07-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-07-800.avif",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-07-1200.avif",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-07-1599.avif",
+        "width": 1599,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-07-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-07-800.webp",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-07-1200.webp",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-07-1599.webp",
+        "width": 1599,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-hackney-road-08.jpg": {
+    "width": 1599,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-08-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-08-800.avif",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-08-1200.avif",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-08-1599.avif",
+        "width": 1599,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-08-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-08-800.webp",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-08-1200.webp",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-08-1599.webp",
+        "width": 1599,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-hackney-road-09-3.jpg": {
+    "width": 1600,
+    "height": 1599,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-09-3-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-09-3-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-09-3-1200.avif",
+        "width": 1200,
+        "height": 1199
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-09-3-1600.avif",
+        "width": 1600,
+        "height": 1599
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-hackney-road-09-3-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-09-3-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-09-3-1200.webp",
+        "width": 1200,
+        "height": 1199
+      },
+      {
+        "src": "/images/responsive/kitchen-hackney-road-09-3-1600.webp",
+        "width": 1600,
+        "height": 1599
+      }
+    ]
+  },
+  "/images/kitchen-lordship-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-lordship-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-lordship-01-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-lordship-01-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-lordship-01-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-lordship-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-lordship-01-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-lordship-01-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-lordship-01-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-lordship-04.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-lordship-04-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-lordship-04-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-lordship-04-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-lordship-04-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-lordship-04-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-lordship-04-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-lordship-04-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-lordship-04-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-paddock-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-paddock-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-paddock-01-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-paddock-01-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-paddock-01-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-paddock-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-paddock-01-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-paddock-01-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-paddock-01-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-paddock-02.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-paddock-02-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-paddock-02-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-paddock-02-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-paddock-02-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-paddock-02-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-paddock-02-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-paddock-02-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-paddock-02-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-queensville-road-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-queensville-road-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-01-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-01-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-01-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-queensville-road-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-01-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-01-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-01-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-queensville-road-02.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-queensville-road-02-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-02-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-02-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-02-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-queensville-road-02-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-02-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-02-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-02-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/kitchen-queensville-road-03.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/kitchen-queensville-road-03-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-03-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-03-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-03-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/kitchen-queensville-road-03-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-03-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-03-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/kitchen-queensville-road-03-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/lordship-lane-built-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/lordship-lane-built-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-01-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-01-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-01-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/lordship-lane-built-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-01-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-01-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-01-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/lordship-lane-built-02.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/lordship-lane-built-02-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-02-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-02-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-02-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/lordship-lane-built-02-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-02-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-02-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-02-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/lordship-lane-built-03.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/lordship-lane-built-03-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-03-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-03-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-03-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/lordship-lane-built-03-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-03-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-03-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/lordship-lane-built-03-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/lordship-lane-lounge-built-01.jpg": {
+    "width": 1600,
+    "height": 1598,
+    "avif": [
+      {
+        "src": "/images/responsive/lordship-lane-lounge-built-01-480.avif",
+        "width": 480,
+        "height": 479
+      },
+      {
+        "src": "/images/responsive/lordship-lane-lounge-built-01-800.avif",
+        "width": 800,
+        "height": 799
+      },
+      {
+        "src": "/images/responsive/lordship-lane-lounge-built-01-1200.avif",
+        "width": 1200,
+        "height": 1199
+      },
+      {
+        "src": "/images/responsive/lordship-lane-lounge-built-01-1600.avif",
+        "width": 1600,
+        "height": 1598
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/lordship-lane-lounge-built-01-480.webp",
+        "width": 480,
+        "height": 479
+      },
+      {
+        "src": "/images/responsive/lordship-lane-lounge-built-01-800.webp",
+        "width": 800,
+        "height": 799
+      },
+      {
+        "src": "/images/responsive/lordship-lane-lounge-built-01-1200.webp",
+        "width": 1200,
+        "height": 1199
+      },
+      {
+        "src": "/images/responsive/lordship-lane-lounge-built-01-1600.webp",
+        "width": 1600,
+        "height": 1598
+      }
+    ]
+  },
+  "/images/napier-road-built-01.jpg": {
+    "width": 1600,
+    "height": 900,
+    "avif": [
+      {
+        "src": "/images/responsive/napier-road-built-01-480.avif",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/images/responsive/napier-road-built-01-800.avif",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/images/responsive/napier-road-built-01-1200.avif",
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "src": "/images/responsive/napier-road-built-01-1600.avif",
+        "width": 1600,
+        "height": 900
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/napier-road-built-01-480.webp",
+        "width": 480,
+        "height": 270
+      },
+      {
+        "src": "/images/responsive/napier-road-built-01-800.webp",
+        "width": 800,
+        "height": 450
+      },
+      {
+        "src": "/images/responsive/napier-road-built-01-1200.webp",
+        "width": 1200,
+        "height": 675
+      },
+      {
+        "src": "/images/responsive/napier-road-built-01-1600.webp",
+        "width": 1600,
+        "height": 900
+      }
+    ]
+  },
+  "/images/paddock-close-bathroom-built-01.jpg": {
+    "width": 1600,
+    "height": 1599,
+    "avif": [
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-01-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-01-1200.avif",
+        "width": 1200,
+        "height": 1199
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-01-1600.avif",
+        "width": 1600,
+        "height": 1599
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-01-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-01-1200.webp",
+        "width": 1200,
+        "height": 1199
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-01-1600.webp",
+        "width": 1600,
+        "height": 1599
+      }
+    ]
+  },
+  "/images/paddock-close-bathroom-built-02.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-02-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-02-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-02-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-02-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-02-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-02-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-02-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-02-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/paddock-close-bathroom-built-03.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-03-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-03-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-03-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-03-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-03-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-03-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-03-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-03-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/paddock-close-bathroom-built-04.jpg": {
+    "width": 1599,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-04-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-04-800.avif",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-04-1200.avif",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-04-1599.avif",
+        "width": 1599,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-04-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-04-800.webp",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-04-1200.webp",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-04-1599.webp",
+        "width": 1599,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/paddock-close-bathroom-built-05.jpg": {
+    "width": 1598,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-05-480.avif",
+        "width": 480,
+        "height": 481
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-05-800.avif",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-05-1200.avif",
+        "width": 1200,
+        "height": 1202
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-05-1598.avif",
+        "width": 1598,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-05-480.webp",
+        "width": 480,
+        "height": 481
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-05-800.webp",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-05-1200.webp",
+        "width": 1200,
+        "height": 1202
+      },
+      {
+        "src": "/images/responsive/paddock-close-bathroom-built-05-1598.webp",
+        "width": 1598,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/paddock-close-shower-crafted-01.jpg": {
+    "width": 1599,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/paddock-close-shower-crafted-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/paddock-close-shower-crafted-01-800.avif",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/paddock-close-shower-crafted-01-1200.avif",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/paddock-close-shower-crafted-01-1599.avif",
+        "width": 1599,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/paddock-close-shower-crafted-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/paddock-close-shower-crafted-01-800.webp",
+        "width": 800,
+        "height": 801
+      },
+      {
+        "src": "/images/responsive/paddock-close-shower-crafted-01-1200.webp",
+        "width": 1200,
+        "height": 1201
+      },
+      {
+        "src": "/images/responsive/paddock-close-shower-crafted-01-1599.webp",
+        "width": 1599,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/paddock-close-stairs-built-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-01-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-01-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-01-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-01-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-01-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-01-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/paddock-close-stairs-built-02.jpg": {
+    "width": 900,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-02-480.avif",
+        "width": 480,
+        "height": 853
+      },
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-02-800.avif",
+        "width": 800,
+        "height": 1422
+      },
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-02-900.avif",
+        "width": 900,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-02-480.webp",
+        "width": 480,
+        "height": 853
+      },
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-02-800.webp",
+        "width": 800,
+        "height": 1422
+      },
+      {
+        "src": "/images/responsive/paddock-close-stairs-built-02-900.webp",
+        "width": 900,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/private-clients-build-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-build-01-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-build-01-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-build-01-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-build-01-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/private-clients-build-02.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-build-02-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-build-02-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-build-02-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-build-02-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/private-clients-build-03.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-build-03-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-build-03-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-build-03-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-build-03-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/private-clients-build-04.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-build-04-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-build-04-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-build-04-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-build-04-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/private-clients-build-05.jpg": {
+    "width": 1600,
+    "height": 1601,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-build-05-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-build-05-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-build-05-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-build-05-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/private-clients-design-01.jpeg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-design-01-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-design-01-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-design-01-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-design-01-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/private-clients-design-02.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-design-02-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-design-02-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-design-02-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-design-02-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/private-clients-design-03.jpg": {
+    "width": 1600,
+    "height": 1636,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-design-03-320.avif",
+        "width": 320,
+        "height": 327
+      },
+      {
+        "src": "/images/responsive/private-clients-design-03-540.avif",
+        "width": 540,
+        "height": 552
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-design-03-320.webp",
+        "width": 320,
+        "height": 327
+      },
+      {
+        "src": "/images/responsive/private-clients-design-03-540.webp",
+        "width": 540,
+        "height": 552
+      }
+    ]
+  },
+  "/images/private-clients-design-04.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-design-04-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-design-04-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-design-04-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-design-04-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/private-clients-design-05.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-design-05-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-design-05-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-design-05-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-design-05-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/private-clients-finish-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-finish-01-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-finish-01-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-finish-01-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-finish-01-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/private-clients-finish-02.jpeg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-finish-02-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-finish-02-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-finish-02-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-finish-02-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/private-clients-finish-03.jpeg": {
+    "width": 1599,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-finish-03-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-finish-03-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-finish-03-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-finish-03-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/private-clients-finish-04.jpeg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-finish-04-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-finish-04-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-finish-04-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-finish-04-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/private-clients-finish-05.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/private-clients-finish-05-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-finish-05-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/private-clients-finish-05-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/private-clients-finish-05-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/reigate-road-workshop-built-01.jpg": {
+    "width": 1600,
+    "height": 1200,
+    "avif": [
+      {
+        "src": "/images/responsive/reigate-road-workshop-built-01-480.avif",
+        "width": 480,
+        "height": 360
+      },
+      {
+        "src": "/images/responsive/reigate-road-workshop-built-01-800.avif",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/images/responsive/reigate-road-workshop-built-01-1200.avif",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/images/responsive/reigate-road-workshop-built-01-1600.avif",
+        "width": 1600,
+        "height": 1200
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/reigate-road-workshop-built-01-480.webp",
+        "width": 480,
+        "height": 360
+      },
+      {
+        "src": "/images/responsive/reigate-road-workshop-built-01-800.webp",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "src": "/images/responsive/reigate-road-workshop-built-01-1200.webp",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "src": "/images/responsive/reigate-road-workshop-built-01-1600.webp",
+        "width": 1600,
+        "height": 1200
+      }
+    ]
+  },
+  "/images/wholesale-build-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-build-01-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-build-01-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-build-01-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-build-01-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/wholesale-build-02.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-build-02-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-build-02-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-build-02-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-build-02-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/wholesale-build-03.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-build-03-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-build-03-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-build-03-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-build-03-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/wholesale-build-04.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-build-04-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-build-04-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-build-04-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-build-04-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/wholesale-build-05.jpg": {
+    "width": 1600,
+    "height": 1601,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-build-05-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-build-05-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-build-05-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-build-05-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/wholesale-design-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-design-01-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-design-01-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-design-01-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-design-01-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/wholesale-design-02.jpeg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-design-02-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-design-02-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-design-02-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-design-02-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/wholesale-design-03.jpg": {
+    "width": 1600,
+    "height": 1636,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-design-03-320.avif",
+        "width": 320,
+        "height": 327
+      },
+      {
+        "src": "/images/responsive/wholesale-design-03-540.avif",
+        "width": 540,
+        "height": 552
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-design-03-320.webp",
+        "width": 320,
+        "height": 327
+      },
+      {
+        "src": "/images/responsive/wholesale-design-03-540.webp",
+        "width": 540,
+        "height": 552
+      }
+    ]
+  },
+  "/images/wholesale-design-04.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-design-04-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-design-04-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-design-04-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-design-04-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/wholesale-design-05.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-design-05-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-design-05-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-design-05-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-design-05-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/wholesale-finish-01.jpg": {
+    "width": 1599,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-finish-01-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-finish-01-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-finish-01-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-finish-01-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/wholesale-finish-02.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-finish-02-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-finish-02-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-finish-02-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-finish-02-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/wholesale-finish-03.jpg": {
+    "width": 1599,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-finish-03-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-finish-03-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-finish-03-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-finish-03-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/wholesale-finish-04.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-finish-04-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-finish-04-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-finish-04-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-finish-04-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  },
+  "/images/wholesale-finish-05.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/wholesale-finish-05-320.avif",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-finish-05-540.avif",
+        "width": 540,
+        "height": 540
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/wholesale-finish-05-320.webp",
+        "width": 320,
+        "height": 320
+      },
+      {
+        "src": "/images/responsive/wholesale-finish-05-540.webp",
+        "width": 540,
+        "height": 540
+      }
+    ]
+  }
+}

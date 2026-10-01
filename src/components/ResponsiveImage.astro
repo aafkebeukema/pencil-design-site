@@ -1,0 +1,69 @@
+---
+import responsiveImages from '../data/responsive-images.json';
+import { withBase } from '../lib/with-base';
+
+interface Props {
+  src: string;
+  alt: string;
+  sizes: string;
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
+  class?: string;
+  objectPosition?: string;
+  scale?: number;
+}
+
+const {
+  src,
+  alt,
+  sizes,
+  loading = 'lazy',
+  fetchpriority = 'auto',
+  class: className,
+  objectPosition = 'center',
+  scale = 1,
+} = Astro.props;
+
+const entry = responsiveImages[src as keyof typeof responsiveImages];
+
+if (!entry) {
+  throw new Error(`No responsive image variants found for ${src}`);
+}
+
+const toSrcset = (variants: typeof entry.webp) =>
+  variants.map((variant) => `${withBase(variant.src)} ${variant.width}w`).join(', ');
+const fallback = entry.webp.at(-1);
+---
+
+<picture class="responsive-picture">
+  <source type="image/avif" srcset={toSrcset(entry.avif)} {sizes} />
+  <source type="image/webp" srcset={toSrcset(entry.webp)} {sizes} />
+  <img
+    class:list={['responsive-image', className]}
+    src={withBase(fallback.src)}
+    {alt}
+    width={entry.width}
+    height={entry.height}
+    {loading}
+    {fetchpriority}
+    decoding="async"
+    style={`object-position: ${objectPosition}; --image-scale: ${scale};`}
+  />
+</picture>
+
+<style>
+  .responsive-picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  .responsive-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(var(--image-scale, 1));
+    transform-origin: center;
+  }
+</style>

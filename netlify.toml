@@ -20,3 +20,13 @@
   from = "/services/"
   to = "/private-clients/"
   status = 301
+
+[[redirects]]
+  from = "/wholesale"
+  to = "/retail/"
+  status = 301
+
+[[redirects]]
+  from = "/wholesale/"
+  to = "/retail/"
+  status = 301

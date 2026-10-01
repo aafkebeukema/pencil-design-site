@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
 import { withBase } from '../lib/with-base';
 
 const serviceImageSets = {
@@ -19,40 +20,35 @@ const serviceImageSets = {
   ],
   finish: [
     { src: '/images/wholesale-finish-01.jpg', alt: 'Finished bespoke joinery detail and paintwork' },
-    { src: '/images/wholesale-finish-02.jpg', alt: 'Finished wholesale joinery detail' },
-    { src: '/images/wholesale-finish-03.jpg', alt: 'Finished wholesale joinery detail' },
-    { src: '/images/wholesale-finish-04.jpg', alt: 'Finished wholesale joinery detail' },
+    { src: '/images/wholesale-finish-02.jpg', alt: 'Finished retail kitchen joinery detail' },
+    { src: '/images/wholesale-finish-03.jpg', alt: 'Completed retail kitchen installation detail' },
+    { src: '/images/wholesale-finish-04.jpg', alt: 'Retail kitchen cabinetry and finishing detail' },
     { src: '/images/wholesale-finish-05.jpg', alt: 'Final joinery finish and installation detail' },
   ],
 };
 
 const services = [
   {
-    label: 'Receipt of order',
-    body: 'We take stock of the kitchen items and store them safely.',
-    images: serviceImageSets.design,
-  },
-  {
     label: 'Bespoke fitting',
-    body: 'We fit most types of kitchens, including plumbing, electrics, tiling and associated flooring works.',
+    body: 'We fit most types of kitchens, including the removal of the old kitchen, and undertake plumbing, electrical, tiling and associated flooring work. We carry out this work in private clients’ homes and at commercial premises, maintaining high health and safety standards.',
     images: serviceImageSets.build,
   },
   {
     label: 'Quality handover',
-    body: 'We ensure every detail meets the customer’s satisfaction, along with any adaptations that arise during the fitting stage.',
+    body: 'We ensure every detail meets the customer’s expectations and address any adaptations that arise during the fitting stage.',
     images: serviceImageSets.finish,
+  },
+  {
+    label: 'Duty of care',
+    body: 'We offer full post-handover support to clients, ensuring lasting quality while maintaining our duty of care.',
+    images: serviceImageSets.design,
   },
 ];
 
-Object.values(serviceImageSets).forEach((imageSet) => {
-  imageSet.forEach((image) => {
-    image.src = withBase(image.src);
-  });
-});
 ---
 
 <Layout
-  title="Retail | Pencil Design"
+  title="Retail Kitchen Installation in London | Pencil Design"
   description="Pre-designed kitchen fitting across London, including plumbing, electrics, tiling and flooring works."
 >
 
@@ -79,13 +75,14 @@ Object.values(serviceImageSets).forEach((imageSet) => {
           <div class="service-circles">
             {service.images.map((image) => (
               <div class="service-img-wrap service-img-wrap--circle">
-                <img
+                <ResponsiveImage
                   class="service-img"
                   src={image.src}
                   alt={image.alt}
+                  sizes="(max-width: 420px) 85vw, (max-width: 640px) 42vw, 270px"
                   loading="lazy"
-                  decoding="async"
-                  style={`object-position: ${image.position ?? 'center'}; --image-scale: ${image.size ? Number.parseFloat(image.size) / 100 : 1};`}
+                  objectPosition={image.position ?? 'center'}
+                  scale={image.size ? Number.parseFloat(image.size) / 100 : 1}
                 />
               </div>
             ))}
@@ -167,15 +164,6 @@ Object.values(serviceImageSets).forEach((imageSet) => {
   }
 
   /* ---- Images ---- */
-  .service-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transform: scale(var(--image-scale, 1));
-    transform-origin: center;
-  }
-
   .service-img-wrap--circle {
     width: min(85%, 270px);
     aspect-ratio: 1 / 1;

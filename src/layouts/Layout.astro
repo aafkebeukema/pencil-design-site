@@ -13,7 +13,7 @@ interface Props {
 const {
   title = "Pencil Design",
   ogTitle,
-  description = "Bespoke joinery and design in South East London.",
+  description = "Bespoke kitchen installation in London, including cabinetry, worktops, finishes and flooring.",
   transparentHeader = false,
 } = Astro.props;
 
@@ -23,23 +23,47 @@ const baseUrl = import.meta.env.BASE_URL;
 const googleAnalyticsId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
 const noIndex = import.meta.env.PUBLIC_NO_INDEX === 'true';
 const canonicalUrl = Astro.url;
+const siteUrl = new URL(baseUrl, Astro.site ?? Astro.url);
 const socialImageUrl = new URL(`${baseUrl}images/home-hero-main.jpg`, Astro.site ?? Astro.url);
+const logoUrl = new URL(`${baseUrl}favicon-pencil.svg`, Astro.site ?? Astro.url);
+const businessId = `${siteUrl}#business`;
 const structuredData = {
   '@context': 'https://schema.org',
-  '@type': 'HomeAndConstructionBusiness',
-  '@id': `${new URL(baseUrl, Astro.site ?? Astro.url)}#business`,
-  name: 'Pencil Design',
-  url: new URL(baseUrl, Astro.site ?? Astro.url).toString(),
-  image: socialImageUrl.toString(),
-  description,
-  telephone: '+44 20 8016 4163',
-  email: 'contact@pencil-design.co.uk',
-  areaServed: 'South East London',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'South East London',
-    addressCountry: 'GB',
-  },
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}#website`,
+      url: siteUrl.toString(),
+      name: 'Pencil Design',
+      publisher: { '@id': businessId },
+    },
+    {
+      '@type': 'HomeAndConstructionBusiness',
+      '@id': businessId,
+      name: 'Pencil Design',
+      url: siteUrl.toString(),
+      logo: logoUrl.toString(),
+      image: socialImageUrl.toString(),
+      description: 'A design-led kitchen fit-out company providing bespoke kitchen installation, planning and retail fit-out services across London.',
+      email: 'contact@pencil-design.co.uk',
+      areaServed: {
+        '@type': 'City',
+        name: 'London',
+      },
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'London',
+        addressCountry: 'GB',
+      },
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'customer enquiries',
+        email: 'contact@pencil-design.co.uk',
+        areaServed: 'GB',
+        availableLanguage: 'English',
+      },
+    },
+  ],
 };
 ---
 

@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import { withBase } from '../lib/with-base';
 
 const baseUrl = import.meta.env.BASE_URL;
-const heroImage = `${baseUrl}images/home-hero-kitchen-upscaled.png`;
 
 const featureSections = [
   {
@@ -29,9 +28,9 @@ const featureSections = [
 ---
 
 <Layout
-  title="Pencil Design | Kitchen Installation & Bespoke Joinery in South East London"
-  ogTitle="Pencil Design — kitchen installation & bespoke joinery in London"
-  description="Custom kitchen installation and bespoke joinery, cabinetry and furniture in South East London."
+  title="Pencil Design | Bespoke Kitchen Installation in London"
+  ogTitle="Pencil Design — bespoke kitchen installation in London"
+  description="Bespoke kitchen installation in London, including cabinetry, worktops, finishes and flooring."
   transparentHeader={true}
 >
 
@@ -39,22 +38,44 @@ const featureSections = [
        HERO
   ====================== -->
   <section class="hero">
-    <div class="hero-bg" style={`background-image: url('${heroImage}')`}></div>
+    <picture class="hero-bg" aria-hidden="true">
+      <source
+        type="image/avif"
+        srcset={`${baseUrl}images/home-hero-kitchen-640.avif 640w, ${baseUrl}images/home-hero-kitchen-960.avif 960w, ${baseUrl}images/home-hero-kitchen-1254.avif 1254w`}
+        sizes="100vw"
+      />
+      <source
+        type="image/webp"
+        srcset={`${baseUrl}images/home-hero-kitchen-640.webp 640w, ${baseUrl}images/home-hero-kitchen-960.webp 960w, ${baseUrl}images/home-hero-kitchen-1254.webp 1254w`}
+        sizes="100vw"
+      />
+      <img
+        src={`${baseUrl}images/home-hero-kitchen-1254.webp`}
+        alt=""
+        width="1254"
+        height="1254"
+        fetchpriority="high"
+        decoding="async"
+      />
+    </picture>
 
     <div class="hero-content">
       <p class="hero-kicker">Custom Kitchen Installation &amp; Joinery</p>
-      <h1>Designed for your space<br />crafted beautifully</h1>
+      <h1>Bespoke kitchens<br />designed and crafted beautifully</h1>
       <div class="hero-copy">
         <p>
           Pencil Design specialises in bespoke kitchen installation, creating considered spaces that bring together cabinetry, worktops, finishes and flooring. Every kitchen is tailored to the way you live, installed with precision and finished with care.
         </p>
         <p>
-          We can also support you at the planning stage, helping you review layouts, materials and practical details before you order from your chosen kitchen supplier.
+          We offer full support throughout your planning journey, helping you to review layout options, materials and all associated details before you either order from your chosen kitchen supplier or have cabinets tailor-made by us.
+        </p>
+        <p>
+          Additionally, we offer fit-out services for retail clients who wish to work with an installation company that puts the client first. For more details, please follow the Retail link below.
         </p>
       </div>
       <div class="hero-actions">
+        <a href={withBase('/retail')} class="btn-pill">Retail</a>
         <a href={withBase('/private-clients')} class="btn-pill">Private Clients</a>
-        <a href={withBase('/wholesale')} class="btn-pill">Retail</a>
       </div>
     </div>
   </section>
@@ -100,8 +121,14 @@ const featureSections = [
   .hero-bg {
     position: absolute;
     inset: 0;
-    background-size: cover;
-    background-position: 58% center;
+    overflow: hidden;
+  }
+
+  .hero-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 58% center;
   }
 
   /* Subtle overlay — keep even with a real photo so text stays legible */

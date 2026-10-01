@@ -1,0 +1,135 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import ResponsiveImage from '../../components/ResponsiveImage.astro';
+import { projectPages, type ProjectPage } from '../../data/project-pages';
+import { withBase } from '../../lib/with-base';
+
+export function getStaticPaths() {
+  return projectPages.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: ProjectPage;
+}
+
+const { project } = Astro.props;
+---
+
+<Layout title={project.metaTitle} description={project.description}>
+  <article class="project-page">
+    <header class="project-header">
+      <a class="back-link" href={withBase('/projects')}>← All projects</a>
+      <h1>{project.title}</h1>
+      <p class="project-intro">{project.intro}</p>
+      <ul class="project-scope" aria-label="Project scope">
+        {project.scope.map((item) => <li>{item}</li>)}
+      </ul>
+    </header>
+
+    <div class="project-gallery">
+      {project.images.map((image, index) => (
+        <figure>
+          <ResponsiveImage
+            src={image.src}
+            alt={image.alt}
+            sizes={index === 0 ? '100vw' : '(max-width: 640px) 100vw, 50vw'}
+            loading={index === 0 ? 'eager' : 'lazy'}
+            fetchpriority={index === 0 ? 'high' : 'auto'}
+          />
+        </figure>
+      ))}
+    </div>
+
+    <section class="project-cta">
+      <h2>Planning a kitchen project?</h2>
+      <p>Explore our approach for private clients or get in touch to discuss your space.</p>
+      <div class="project-actions">
+        <a class="btn" href={withBase('/private-clients')}>Private Clients</a>
+        <a class="btn btn--outline" href={withBase('/contact')}>Get in touch</a>
+      </div>
+    </section>
+  </article>
+</Layout>
+
+<style>
+  .project-page { padding-top: var(--header-h); }
+  .project-header {
+    max-width: var(--site-max);
+    margin: 0 auto;
+    padding: 4rem var(--site-gutter) 3rem;
+  }
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--color-mid);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-underline-offset: 0.2em;
+  }
+  h1 {
+    font-size: clamp(2.5rem, 8vw, 6.5rem);
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+  }
+  .project-intro {
+    max-width: 48rem;
+    margin-top: 1.75rem;
+    font-size: clamp(1.1rem, 2vw, 1.45rem);
+    line-height: 1.55;
+  }
+  .project-scope {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 2rem;
+    padding: 0;
+    list-style: none;
+  }
+  .project-scope li {
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .project-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: var(--site-max);
+    margin: 0 auto;
+    padding: 0 var(--site-gutter) 5rem;
+  }
+  figure { aspect-ratio: 1 / 1; overflow: hidden; background: var(--color-off-white); }
+  figure:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+  .project-cta {
+    padding: 5rem var(--site-gutter);
+    text-align: center;
+    background: var(--color-off-white);
+  }
+  .project-cta h2 { font-family: var(--font-heading); font-size: clamp(2rem, 4vw, 3rem); }
+  .project-cta p { margin: 1rem auto 2rem; color: var(--color-mid); }
+  .project-actions { display: flex; justify-content: center; gap: 0.75rem; flex-wrap: wrap; }
+  .btn {
+    padding: 0.85rem 1.4rem;
+    border: 1px solid var(--color-black);
+    background: var(--color-black);
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .btn--outline { background: transparent; color: var(--color-black); }
+  @media (max-width: 640px) {
+    .project-header { padding-top: 3rem; }
+    .project-gallery { grid-template-columns: 1fr; }
+    figure:first-child { grid-column: auto; aspect-ratio: 1 / 1; }
+  }
+</style>

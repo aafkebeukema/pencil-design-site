@@ -1,77 +1,48 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ResponsiveImage from '../components/ResponsiveImage.astro';
+import { projectPages } from '../data/project-pages';
 import { withBase } from '../lib/with-base';
 
-const projects = [
-  { title: 'Dulwich Hill', src: '/images/kitchen-dulwich-hill-01.jpg', alt: 'Bespoke fitted kitchen, Dulwich Hill, South East London' },
-  { title: 'Dulwich Hill', src: '/images/kitchen-dulwich-hill-02.jpg', alt: 'Fitted kitchen detail, Dulwich Hill, South East London' },
-  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-01.jpg', alt: 'Bespoke fitted kitchen with custom joinery, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-02.jpg', alt: 'Custom joinery kitchen, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-03.jpg', alt: 'Fitted kitchen with custom joinery detail, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-04.jpg', alt: 'Bespoke kitchen cabinetry, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-05.jpg', alt: 'Custom fitted kitchen, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-06.jpg', alt: 'Kitchen joinery and cabinetry, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-07.jpg', alt: 'Bespoke kitchen construction, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-08.jpg', alt: 'Custom kitchen with integrated joinery, Hackney Road' },
-  { title: 'Hackney Road', src: '/images/kitchen-hackney-road-09-3.jpg', alt: 'Fitted kitchen with custom joinery, Hackney Road' },
-  { title: 'Hackney Road Bathroom', src: '/images/hackney-road-bathroom-built-01.jpg', alt: 'Bespoke fitted bathroom, Hackney Road' },
-  { title: 'Hackney Road Bathroom', src: '/images/hackney-road-bathroom-built-02.jpg', alt: 'Custom bathroom detail, Hackney Road' },
-  { title: 'Lordship Lane', src: '/images/lordship-lane-built-01.jpg', alt: 'Full house renovation, lounge and living room, Lordship Lane' },
-  { title: 'Lordship Lane', src: '/images/lordship-lane-built-02.jpg', alt: 'Renovated living room with new flooring and decoration, Lordship Lane' },
-  { title: 'Lordship Lane', src: '/images/lordship-lane-built-03.jpg', alt: 'House renovation, painted lounge with new flooring, Lordship Lane' },
-  { title: 'Lordship Lane', src: '/images/kitchen-lordship-04.jpg', alt: 'Bespoke fitted kitchen, Lordship Lane' },
-  { title: 'Lordship Lane Kitchen', src: '/images/kitchen-lordship-01.jpg', alt: 'Custom fitted kitchen detail, Lordship Lane' },
-  { title: 'Lordship Lane Lounge', src: '/images/lordship-lane-lounge-built-01.jpg', alt: 'Finished lounge with built-in alcove shelving and cupboards, Lordship Lane' },
-  { title: 'Napier Road', src: '/images/napier-road-built-01.jpg', alt: 'Custom timber front garden fence and gate, Napier Road' },
-  { title: 'Paddock Close Bathroom', src: '/images/paddock-close-bathroom-built-01.jpg', alt: 'Custom bathroom with bespoke tiling and copper welded pipework, Paddock Close' },
-  { title: 'Paddock Close Bathroom', src: '/images/paddock-close-bathroom-built-02.jpg', alt: 'Bespoke bathroom with custom copper pipework and shower, Paddock Close' },
-  { title: 'Paddock Close Bathroom', src: '/images/paddock-close-bathroom-built-03.jpg', alt: 'Custom designed bathroom with copper welded taps and fittings, Paddock Close' },
-  { title: 'Paddock Close Bathroom', src: '/images/paddock-close-bathroom-built-04.jpg', alt: 'Bespoke tiling and copper pipework bathroom detail, Paddock Close' },
-  { title: 'Paddock Close Bathroom', src: '/images/paddock-close-bathroom-built-05.jpg', alt: 'Custom bathroom construction with bespoke copper fittings, Paddock Close' },
-  { title: 'Paddock Close Kitchen', src: '/images/kitchen-paddock-01.jpg', alt: 'Custom fitted kitchen, Paddock Close' },
-  { title: 'Paddock Close Kitchen', src: '/images/kitchen-paddock-02.jpg', alt: 'Bespoke fitted kitchen detail, Paddock Close' },
-  { title: 'Paddock Close Shower', src: '/images/paddock-close-shower-crafted-01.jpg', alt: 'Custom crafted shower with bespoke tiling and copper pipework, Paddock Close' },
-  { title: 'Paddock Close Stairs', src: '/images/paddock-close-stairs-built-01.jpg', alt: 'Custom timber staircase, Paddock Close' },
-  { title: 'Paddock Close Stairs', src: '/images/paddock-close-stairs-built-02.jpg', alt: 'Bespoke timber staircase detail, Paddock Close' },
-  { title: 'Queensville Road', src: '/images/queensville-road-built-01.jpg', alt: 'Full house renovation with custom joinery, Queensville Road' },
-  { title: 'Queensville Road', src: '/images/queensville-road-built-02.jpg', alt: 'House renovation with bespoke joinery detail, Queensville Road' },
-  { title: 'Queensville Road', src: '/images/queensville-road-built-03.jpg', alt: 'Completed house renovation and custom joinery, Queensville Road' },
-  { title: 'Reigate Road Workshop', src: '/images/reigate-road-workshop-built-01.jpg', alt: 'Workshop project, Reigate Road' },
-];
+const projects = projectPages.flatMap((project) =>
+  project.images.map((image) => ({
+    ...image,
+    title: project.title,
+    href: withBase(`/projects/${project.slug}`),
+    src: image.src,
+  })),
+);
 
-projects.forEach((project) => {
-  project.src = withBase(project.src);
-});
-
-const kitchenProjects = projects.filter((project) => project.src.includes('/images/kitchen-'));
-const otherProjects = projects.filter((project) => !project.src.includes('/images/kitchen-'));
+const kitchenProjects = projects.filter((project) => project.category === 'kitchens');
+const otherProjects = projects.filter((project) => project.category === 'other');
 ---
 
 <Layout
-  title="Bespoke Construction & Joinery Projects in South East London | Pencil Design"
-  description="Bespoke construction and joinery projects across South East London — kitchens, bathrooms, wardrobes, stairs, and built-in shelving, designed and built by Pencil Design."
+  title="Kitchen Installation Projects in London | Pencil Design"
+  description="Explore Pencil Design’s kitchen installation projects across London, including cabinetry, worktops, finishes and flooring."
 >
   <div class="projects-main">
     <div class="page-intro">
       <h1>Our Work</h1>
-      <h2 class="page-subtitle">Bespoke construction and joinery across London</h2>
+      <h2 class="page-subtitle">Custom Kitchen Installation &amp; Joinery</h2>
     </div>
 
     <section class="projects-grid-section" aria-labelledby="kitchens-heading">
       <h2 id="kitchens-heading" class="projects-section-heading">Kitchens</h2>
       <div class="projects-grid">
         {kitchenProjects.map((project, index) => (
-          <div class="project-item">
+          <a class="project-item" href={project.href} aria-label={`View ${project.title} project`}>
             <div class="project-image">
-              <img
+              <ResponsiveImage
                 src={project.src}
                 alt={project.alt}
-                loading={index < 6 ? 'eager' : 'lazy'}
-                decoding="async"
+                sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 33vw"
+                loading={index === 0 ? 'eager' : 'lazy'}
+                fetchpriority={index === 0 ? 'high' : 'auto'}
               />
             </div>
             <p class="caption-title">{project.title}</p>
-          </div>
+          </a>
         ))}
       </div>
     </section>
@@ -80,17 +51,17 @@ const otherProjects = projects.filter((project) => !project.src.includes('/image
       <h2 id="other-works-heading" class="projects-section-heading">Other works</h2>
       <div class="projects-grid">
         {otherProjects.map((project) => (
-          <div class="project-item">
+          <a class="project-item" href={project.href} aria-label={`View ${project.title} project`}>
             <div class="project-image">
-              <img
+              <ResponsiveImage
                 src={project.src}
                 alt={project.alt}
+                sizes="(max-width: 520px) 100vw, (max-width: 900px) 50vw, 33vw"
                 loading="lazy"
-                decoding="async"
               />
             </div>
             <p class="caption-title">{project.title}</p>
-          </div>
+          </a>
         ))}
       </div>
     </section>
@@ -182,7 +153,11 @@ const otherProjects = projects.filter((project) => !project.src.includes('/image
   .project-item {
     display: flex;
     flex-direction: column;
+    color: inherit;
+    text-decoration: none;
   }
+
+  .project-item:hover :global(.project-image .responsive-image) { transform: scale(1.02); }
 
   .project-image {
     aspect-ratio: 1 / 1;
@@ -191,11 +166,8 @@ const otherProjects = projects.filter((project) => !project.src.includes('/image
     background: var(--color-off-white);
   }
 
-  .project-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  :global(.project-image .responsive-image) {
+    transition: transform 0.25s ease;
   }
 
   .caption-title {
