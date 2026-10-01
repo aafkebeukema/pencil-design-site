@@ -26,6 +26,7 @@ const socialBaseUrl = import.meta.env.PUBLIC_SOCIAL_BASE_URL ?? Astro.site ?? As
 const canonicalUrl = Astro.url;
 const siteUrl = new URL(baseUrl, Astro.site ?? Astro.url);
 const socialImageUrl = new URL(`${baseUrl}images/social-share-kitchen.jpg`, socialBaseUrl);
+const socialPageUrl = new URL(Astro.url.pathname, socialBaseUrl);
 const logoUrl = new URL(`${baseUrl}favicon-pencil.svg`, Astro.site ?? Astro.url);
 const businessId = `${siteUrl}#business`;
 const structuredData = {
@@ -88,8 +89,9 @@ const structuredData = {
     <meta property="og:site_name" content="Pencil Design" />
     <meta property="og:title" content={socialTitle} />
     <meta property="og:description" content={description} />
-    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:url" content={socialPageUrl} />
     <meta property="og:image" content={socialImageUrl} />
+    <meta property="og:image:secure_url" content={socialImageUrl} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:type" content="image/jpeg" />
