@@ -25,7 +25,7 @@ const noIndex = import.meta.env.PUBLIC_NO_INDEX === 'true';
 const socialBaseUrl = import.meta.env.PUBLIC_SOCIAL_BASE_URL ?? Astro.site ?? Astro.url;
 const canonicalUrl = Astro.url;
 const siteUrl = new URL(baseUrl, Astro.site ?? Astro.url);
-const socialImageUrl = new URL(`${baseUrl}images/social-share-kitchen.jpg`, socialBaseUrl);
+const socialImageUrl = new URL(`${baseUrl}images/social-share-kitchen-v2.jpg`, socialBaseUrl);
 const socialPageUrl = new URL(Astro.url.pathname, socialBaseUrl);
 const logoUrl = new URL(`${baseUrl}favicon-pencil.svg`, Astro.site ?? Astro.url);
 const businessId = `${siteUrl}#business`;
