@@ -197,13 +197,24 @@ test('service galleries use responsive lazy-loaded images with dimensions', asyn
   );
 });
 
-test('contact assistant sends the not sure yet starter prompt', async ({ page }) => {
+test('contact assistant presents four retailer-friendly starter prompts', async ({ page }) => {
+  await page.goto(`${basePath}/contact`);
+
+  const prompts = page.locator('.prompt-button');
+  await expect(prompts).toHaveCount(4);
+  await expect(prompts.nth(0)).toContainText('kitchen retailer looking for an installation partner');
+  await expect(prompts.nth(1)).toContainText('I need help with a kitchen');
+  await expect(prompts.nth(2)).toContainText('bespoke fitted kitchen furniture');
+  await expect(prompts.nth(3)).toContainText('Something else / I’m not sure yet');
+});
+
+test('contact assistant sends the combined other or not sure starter prompt', async ({ page }) => {
   await page.route('**/api/contact-assistant', async (route) => {
     const body = route.request().postDataJSON();
 
     expect(body.messages.at(-1)).toEqual({
       role: 'user',
-      content: 'I\u2019m not sure yet',
+      content: 'Something else / I\u2019m not sure yet',
     });
 
     await route.fulfill({
@@ -216,9 +227,9 @@ test('contact assistant sends the not sure yet starter prompt', async ({ page })
   });
 
   await page.goto(`${basePath}/contact`);
-  await page.getByRole('button', { name: /I.m not sure yet/ }).click();
+  await page.getByRole('button', { name: /Something else \/ I.m not sure yet/ }).click();
 
-  await expect(page.locator('.message--user .message-bubble').last()).toContainText(/I.m not sure yet/);
+  await expect(page.locator('.message--user .message-bubble').last()).toContainText(/Something else \/ I.m not sure yet/);
   await expect(page.locator('.message--assistant .message-bubble').last()).toContainText('That is completely fine');
 });
 
@@ -270,7 +281,7 @@ test('contact assistant shows loading state while waiting', async ({ page }) => 
   });
 
   await page.goto(`${basePath}/contact`);
-  await page.getByRole('button', { name: /I.m planning a renovation/ }).click();
+  await page.getByRole('button', { name: /kitchen retailer looking for an installation partner/ }).click();
 
   await expect(page.locator('.message--thinking')).toBeVisible();
   const thinkingIconBox = await page.locator('.message--thinking .message-avatar .spark-icon').boundingBox();
@@ -297,7 +308,7 @@ test('contact assistant shows a calm error state', async ({ page }) => {
   });
 
   await page.goto(`${basePath}/contact`);
-  await page.getByRole('button', { name: 'I need help with a kitchen or bathroom' }).click();
+  await page.getByRole('button', { name: 'I need help with a kitchen' }).click();
 
   await expect(page.locator('#chat-status .chat-status-message')).toContainText('having trouble replying');
   await expect(page.locator('.message--error')).toHaveCount(0);
@@ -317,7 +328,7 @@ test('contact assistant explains when the backend is not configured', async ({ p
   });
 
   await page.goto(`${basePath}/contact`);
-  await page.getByRole('button', { name: /I.m not sure yet/ }).click();
+  await page.getByRole('button', { name: /Something else \/ I.m not sure yet/ }).click();
 
   await expect(page.locator('#chat-status .chat-status-message')).toContainText(
     'not configured in this environment',
@@ -337,7 +348,7 @@ test('starter prompts disappear after sending a message', async ({ page }) => {
 
   await page.goto(`${basePath}/contact`);
   await expect(page.locator('.starter-prompts')).toBeVisible();
-  await page.getByRole('button', { name: /I.m planning a renovation/ }).click();
+  await page.getByRole('button', { name: /kitchen retailer looking for an installation partner/ }).click();
   await expect(page.locator('.starter-prompts')).toHaveCount(0);
 });
 

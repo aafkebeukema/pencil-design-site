@@ -15,10 +15,10 @@ import Layout from '../layouts/Layout.astro';
       <div class="contact-grid">
         <div class="contact-left">
           <div class="contact-intro">
-            <p>Want us to contact you about your project?</p>
+            <p>Want to discuss working with Pencil Design?</p>
             <p>
-              You can email us, or use our AI assistant to tell us a little about what you&rsquo;re
-              planning. We&rsquo;ll use your details to get back to you about your enquiry.
+              You can email us, or use our AI assistant to tell us a little about your installation,
+              kitchen or fitted furniture requirements. We&rsquo;ll use your details to get back to you.
             </p>
           </div>
 
@@ -54,10 +54,10 @@ import Layout from '../layouts/Layout.astro';
                 <path d="M5 17v3"/>
                 <path d="M6.5 18.5h-3"/>
               </svg>
-              Project enquiry assistant
+              Enquiry assistant
             </h2>
             <p class="assistant-badge">AI Assistant</p>
-            <p class="assistant-subheading">For renovation, construction and fitted furniture enquiries</p>
+            <p class="assistant-subheading">For kitchen retailers, kitchen installation and bespoke cabinetry enquiries</p>
           </div>
 
           <div class="assistant-body">
@@ -73,52 +73,44 @@ import Layout from '../layouts/Layout.astro';
                   </svg>
                 </div>
                 <div class="message-bubble">
-                  <p>Hello. I can help you send a project enquiry to Pencil Design.</p>
-                  <p>Tell me what you have in mind, and I&rsquo;ll ask a few quick questions so the team can get back to you.</p>
+                  <p>Hello. I can help you send an enquiry to Pencil Design.</p>
+                  <p>Choose an option below, or briefly describe what you need. I&rsquo;ll ask a few quick questions so the team can get back to you.</p>
                 </div>
               </div>
             </div>
 
-            <div class="starter-prompts" aria-label="Project enquiry starter prompts">
-              <button type="button" class="prompt-button" data-prompt="I&rsquo;m planning a renovation">
+            <div class="starter-prompts" aria-label="Enquiry starter prompts">
+              <button type="button" class="prompt-button" data-prompt="I&rsquo;m a kitchen retailer looking for an installation partner">
                 <svg class="prompt-icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 5l1.45 4.05L17.5 10.5l-4.05 1.45L12 16l-1.45-4.05L6.5 10.5l4.05-1.45L12 5z"/>
                   <path d="M18.5 4.5v3"/>
                   <path d="M20 6h-3"/>
                 </svg>
-                <span>I&rsquo;m planning a renovation</span>
+                <span>I&rsquo;m a kitchen retailer looking for an installation partner</span>
               </button>
-              <button type="button" class="prompt-button" data-prompt="I need help with a kitchen or bathroom">
+              <button type="button" class="prompt-button" data-prompt="I need help with a kitchen">
                 <svg class="prompt-icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 5l1.45 4.05L17.5 10.5l-4.05 1.45L12 16l-1.45-4.05L6.5 10.5l4.05-1.45L12 5z"/>
                   <path d="M18.5 4.5v3"/>
                   <path d="M20 6h-3"/>
                 </svg>
-                <span>I need help with a kitchen or bathroom</span>
+                <span>I need help with a kitchen</span>
               </button>
-              <button type="button" class="prompt-button" data-prompt="I&rsquo;m looking for bespoke fitted furniture">
+              <button type="button" class="prompt-button" data-prompt="I&rsquo;m looking for bespoke fitted kitchen furniture">
                 <svg class="prompt-icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 5l1.45 4.05L17.5 10.5l-4.05 1.45L12 16l-1.45-4.05L6.5 10.5l4.05-1.45L12 5z"/>
                   <path d="M18.5 4.5v3"/>
                   <path d="M20 6h-3"/>
                 </svg>
-                <span>I&rsquo;m looking for bespoke fitted furniture</span>
+                <span>I&rsquo;m looking for bespoke fitted kitchen furniture</span>
               </button>
-              <button type="button" class="prompt-button" data-prompt="I&rsquo;m not sure yet">
+              <button type="button" class="prompt-button" data-prompt="Something else / I&rsquo;m not sure yet">
                 <svg class="prompt-icon" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 5l1.45 4.05L17.5 10.5l-4.05 1.45L12 16l-1.45-4.05L6.5 10.5l4.05-1.45L12 5z"/>
                   <path d="M18.5 4.5v3"/>
                   <path d="M20 6h-3"/>
                 </svg>
-                <span>I&rsquo;m not sure yet</span>
-              </button>
-              <button type="button" class="prompt-button" data-prompt="Something else">
-                <svg class="prompt-icon" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 5l1.45 4.05L17.5 10.5l-4.05 1.45L12 16l-1.45-4.05L6.5 10.5l4.05-1.45L12 5z"/>
-                  <path d="M18.5 4.5v3"/>
-                  <path d="M20 6h-3"/>
-                </svg>
-                <span>Something else</span>
+                <span>Something else / I&rsquo;m not sure yet</span>
               </button>
             </div>
           </div>
@@ -136,10 +128,10 @@ import Layout from '../layouts/Layout.astro';
             <input
               id="chat-input"
               type="text"
-              placeholder="Tell us about your project..."
+              placeholder="Tell us about your enquiry..."
               autocomplete="off"
             />
-            <button id="chat-send" type="button" aria-label="Send project enquiry message">
+            <button id="chat-send" type="button" aria-label="Send enquiry message">
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M22 2L11 13"/>
                 <path d="M22 2l-7 20-4-9-9-4 20-7z"/>
@@ -178,8 +170,8 @@ import Layout from '../layouts/Layout.astro';
   const sendEnquiryButton = document.querySelector('#send-enquiry');
 
   const initialAssistantMessage = [
-    'Hello. I can help you send a project enquiry to Pencil Design.',
-    'Tell me what you have in mind, and I’ll ask a few quick questions so the team can get back to you.',
+    'Hello. I can help you send an enquiry to Pencil Design.',
+    'Choose an option below, or briefly describe what you need. I’ll ask a few quick questions so the team can get back to you.',
   ].join('\n\n');
   const fallbackErrorMessage =
     'Sorry, I’m having trouble replying right now. Please try again, or email contact@pencil-design.co.uk if you’d rather speak directly.';
