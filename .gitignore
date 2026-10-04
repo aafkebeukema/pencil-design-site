@@ -27,3 +27,6 @@ pnpm-debug.log*
 
 # Local Netlify folder
 .netlify
+
+# local-only assets (not committed, not deployed)
+private-assets/
