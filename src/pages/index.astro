@@ -22,7 +22,7 @@ const featureSections = [
   {
     title: ['Bespoke', 'Unique'],
     image: `${baseUrl}images/home-hero-bespoke.jpg`,
-    align: 'right',
+    align: 'split',
   },
 ];
 ---
@@ -274,6 +274,24 @@ const featureSections = [
     display: block;
   }
 
+  .feature-panel--split {
+    align-items: stretch;
+    padding-top: 4.5rem;
+  }
+
+  .feature-panel--split .feature-panel__content h2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    max-width: none;
+  }
+
+  .feature-panel--split .feature-panel__content h2 span:last-child {
+    text-align: right;
+  }
+
   .feature-panel__copy {
     max-width: 42rem;
     font-size: clamp(1rem, 1.35vw, 1.2rem);
@@ -312,6 +330,10 @@ const featureSections = [
 
     .feature-panel {
       padding-bottom: 3rem;
+    }
+
+    .feature-panel--split {
+      padding-top: 3rem;
     }
 
     .feature-panel--right .feature-panel__content {
