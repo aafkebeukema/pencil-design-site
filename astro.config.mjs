@@ -4,6 +4,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.pencil-design.co.uk',
+  site: 'https://pencil-design.co.uk',
   integrations: [sitemap()],
 });

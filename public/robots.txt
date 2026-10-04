@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.pencil-design.co.uk/sitemap-index.xml
+Sitemap: https://pencil-design.co.uk/sitemap-index.xml
