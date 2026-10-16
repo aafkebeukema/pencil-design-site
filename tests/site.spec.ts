@@ -111,7 +111,7 @@ test('desktop navigation includes a home link back to the homepage', async ({ pa
   await page.locator('#site-nav').getByRole('link', { name: 'Home', exact: true }).click();
 
   await expect(page).toHaveURL(new RegExp(`${basePath}/?$`));
-  await expect(page.getByRole('heading', { name: /Bespoke kitchens designed and crafted beautifully/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Bespoke kitchens,\s*beautifully designed and crafted/i })).toBeVisible();
 });
 
 test('desktop navigation uses the requested link order', async ({ page }) => {
@@ -133,7 +133,7 @@ test('retail services use the current three-stage order', async ({ page }) => {
   await expect(page.locator('.service-label')).toHaveText([
     'Bespoke fitting',
     'Quality handover',
-    'Duty of care',
+    'Ongoing support',
   ]);
   await expect(page.getByText('Receipt of order', { exact: true })).toHaveCount(0);
 });
