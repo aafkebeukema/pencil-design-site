@@ -2,18 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 import ResponsiveImage from '../components/ResponsiveImage.astro';
 import { projectPages } from '../data/project-pages';
+import { orderFeaturedKitchenProjects } from '../lib/project-ordering';
 import { withBase } from '../lib/with-base';
 
 const projects = projectPages.flatMap((project) =>
   project.images.map((image) => ({
     ...image,
+    slug: project.slug,
     title: project.title,
     href: withBase(`/projects/${project.slug}`),
     src: image.src,
   })),
 );
 
-const kitchenProjects = projects.filter((project) => project.category === 'kitchens');
+const kitchenProjects = orderFeaturedKitchenProjects(
+  projects.filter((project) => project.category === 'kitchens'),
+);
 const otherProjects = projects.filter((project) => project.category === 'other');
 ---
 

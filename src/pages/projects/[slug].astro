@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import ResponsiveImage from '../../components/ResponsiveImage.astro';
 import { projectPages, type ProjectPage } from '../../data/project-pages';
+import { orderImagesKitchensFirst, orderScopeKitchenFirst } from '../../lib/project-ordering';
 import { withBase } from '../../lib/with-base';
 
 export function getStaticPaths() {
@@ -16,6 +17,8 @@ interface Props {
 }
 
 const { project } = Astro.props;
+const scope = orderScopeKitchenFirst(project.scope);
+const images = orderImagesKitchensFirst(project.images);
 ---
 
 <Layout title={project.metaTitle} description={project.description}>
@@ -25,12 +28,12 @@ const { project } = Astro.props;
       <h1>{project.title}</h1>
       <p class="project-intro">{project.intro}</p>
       <ul class="project-scope" aria-label="Project scope">
-        {project.scope.map((item) => <li>{item}</li>)}
+        {scope.map((item) => <li>{item}</li>)}
       </ul>
     </header>
 
     <div class="project-gallery">
-      {project.images.map((image, index) => (
+      {images.map((image, index) => (
         <figure>
           <ResponsiveImage
             src={image.src}
