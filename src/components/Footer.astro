@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-brand">
-      <p class="footer-logo">Pencil Design</p>
+      <img class="footer-logo" src={withBase('/brand/pencil-design-logo-main-white.svg')} alt="Pencil Design" width="697" height="172" />
       <p class="footer-tagline">
         Custom Kitchen Installation &amp; Joinery
       </p>
@@ -61,11 +61,10 @@ const year = new Date().getFullYear();
   }
 
   .footer-logo {
-    font-family: var(--font-heading);
-    font-size: 1.6rem;
-    font-weight: 500;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+    display: block;
+    width: 200px;
+    max-width: 100%;
+    height: auto;
     margin-bottom: 1rem;
   }
 
