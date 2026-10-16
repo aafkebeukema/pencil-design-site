@@ -8,6 +8,7 @@ interface Props {
   ogTitle?: string;
   description?: string;
   transparentHeader?: boolean;
+  breadcrumbs?: { name: string; path: string }[];
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   ogTitle,
   description = "Bespoke kitchen installation in London, including cabinetry, worktops, finishes and flooring.",
   transparentHeader = false,
+  breadcrumbs,
 } = Astro.props;
 
 const socialTitle = ogTitle ?? title;
@@ -27,7 +29,7 @@ const canonicalUrl = Astro.url;
 const siteUrl = new URL(baseUrl, Astro.site ?? Astro.url);
 const socialImageUrl = new URL(`${baseUrl}images/social-share-kitchen-v2.jpg`, socialBaseUrl);
 const socialPageUrl = new URL(Astro.url.pathname, socialBaseUrl);
-const logoUrl = new URL(`${baseUrl}favicon-pencil.svg`, Astro.site ?? Astro.url);
+const logoUrl = new URL(`${baseUrl}brand/pencil-design-logo-main-black.svg`, Astro.site ?? Astro.url);
 const businessId = `${siteUrl}#business`;
 const structuredData = {
   '@context': 'https://schema.org',
@@ -66,6 +68,19 @@ const structuredData = {
         availableLanguage: 'English',
       },
     },
+    ...(breadcrumbs
+      ? [
+          {
+            '@type': 'BreadcrumbList',
+            itemListElement: breadcrumbs.map((crumb, index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              name: crumb.name,
+              item: new URL(crumb.path.replace(/^\//, ''), siteUrl).toString(),
+            })),
+          },
+        ]
+      : []),
   ],
 };
 ---

@@ -57,6 +57,7 @@ const services = [
   ============================ -->
   <div class="page-header">
     <h1>Private Clients</h1>
+    <p class="page-subtitle">Kitchen design &amp; installation in London</p>
     <p class="page-tagline">From concept to completion, every stage is led by design and built around your space.</p>
   </div>
 
@@ -130,7 +131,7 @@ const services = [
   <section class="cta">
     <div class="cta-inner">
       <h2>Ready to get started?</h2>
-      <p>Get in touch and we'll arrange a free, no-obligation consultation to discuss your project.</p>
+      <p>Get in touch and we'll arrange a free, no-obligation consultation to discuss your project, or <a href={withBase('/projects')}>see our projects</a>.</p>
       <a href={withBase('/contact')} class="btn">Get in touch</a>
     </div>
   </section>
@@ -157,6 +158,15 @@ const services = [
     letter-spacing: -0.03em;
     line-height: 0.95;
     margin-bottom: 1.75rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    font-weight: 400;
+    margin: -0.75rem 0 1.75rem;
   }
 
   .page-tagline {

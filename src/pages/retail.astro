@@ -41,6 +41,7 @@ const services = [
   {
     label: 'Ongoing support',
     body: 'Our support continues beyond project completion. We remain available to answer questions and help with anything relating to the work we have delivered.',
+    contactLink: 'answer questions',
     images: serviceImageSets.design,
   },
 ];
@@ -57,6 +58,7 @@ const services = [
   ============================ -->
   <div class="page-header">
     <h1>Retail</h1>
+    <p class="page-subtitle">Kitchen installation for retailers &amp; suppliers</p>
     <p class="page-tagline">We have the capacity to fit pre-designed kitchens to a very high standard across London.</p>
   </div>
 
@@ -69,7 +71,15 @@ const services = [
         <div class="service-col">
           <div class="service-body">
             <p class="service-label">{service.label}</p>
-            <p class="service-desc">{service.body}</p>
+            <p class="service-desc">
+              {service.contactLink ? (
+                <>
+                  {service.body.split(service.contactLink)[0]}
+                  <a href={withBase('/contact')}>{service.contactLink}</a>
+                  {service.body.split(service.contactLink)[1]}
+                </>
+              ) : service.body}
+            </p>
           </div>
 
           <div class="service-circles">
@@ -126,6 +136,15 @@ const services = [
     letter-spacing: -0.03em;
     line-height: 0.95;
     margin-bottom: 1.75rem;
+  }
+
+  .page-subtitle {
+    font-size: 0.85rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-mid);
+    font-weight: 400;
+    margin: -0.75rem 0 1.75rem;
   }
 
   .page-tagline {

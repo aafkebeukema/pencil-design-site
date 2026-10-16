@@ -21,7 +21,15 @@ const scope = orderScopeKitchenFirst(project.scope);
 const images = orderImagesKitchensFirst(project.images);
 ---
 
-<Layout title={project.metaTitle} description={project.description}>
+<Layout
+  title={project.metaTitle}
+  description={project.description}
+  breadcrumbs={[
+    { name: 'Home', path: '/' },
+    { name: 'Projects', path: '/projects/' },
+    { name: project.title, path: `/projects/${project.slug}/` },
+  ]}
+>
   <article class="project-page">
     <header class="project-header">
       <a class="back-link" href={withBase('/projects')}>← All projects</a>
