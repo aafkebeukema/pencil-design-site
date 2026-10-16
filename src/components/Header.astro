@@ -19,7 +19,10 @@ const mainLinks = [
 
 <header class:list={['site-header', { 'header--transparent': transparent }]}>
   <div class="header-inner">
-    <a href={withBase('/')} class="logo">Pencil Design</a>
+    <a href={withBase('/')} class="logo" aria-label="Pencil Design – home">
+      <img class="logo-img logo-img--dark" src={withBase('/brand/pencil-design-logo-main-black.svg')} alt="" width="697" height="172" />
+      <img class="logo-img logo-img--light" src={withBase('/brand/pencil-design-logo-main-white.svg')} alt="" width="697" height="172" />
+    </a>
 
     <button class="menu-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="site-nav">
       <span></span>
@@ -108,18 +111,20 @@ const mainLinks = [
   }
 
   .logo {
-    display: inline-block;
-    font-family: var(--font-heading);
-    font-size: clamp(1.45rem, 1.8vw, 1.8rem);
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--color-black);
-    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
     flex-shrink: 0;
-    transition: color 0.3s;
+    line-height: 0;
   }
+
+  .logo-img {
+    display: block;
+    height: clamp(28px, 2.6vw, 36px);
+    width: auto;
+    max-width: 100%;
+  }
+
+  .logo-img--light { display: none; }
 
   /* ── Nav links ── */
   .site-nav {
@@ -173,7 +178,9 @@ const mainLinks = [
     border-bottom-color: transparent;
   }
 
-  .header--transparent:not(.header--scrolled) .logo,
+  .header--transparent:not(.header--scrolled) .logo-img--dark { display: none; }
+  .header--transparent:not(.header--scrolled) .logo-img--light { display: block; }
+
   .header--transparent:not(.header--scrolled) .site-nav > a {
     color: var(--color-white);
   }
