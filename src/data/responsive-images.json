@@ -1043,6 +1043,438 @@
       }
     ]
   },
+  "/images/projects/leytonstone/leytonstone-bathroom-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/leytonstone-bathroom-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-01-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-01-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-01-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/leytonstone-bathroom-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-01-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-01-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-01-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/projects/leytonstone/leytonstone-bathroom-02.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/leytonstone-bathroom-02-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-02-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-02-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-02-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/leytonstone-bathroom-02-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-02-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-02-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-02-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/projects/leytonstone/leytonstone-bathroom-03.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/leytonstone-bathroom-03-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-03-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-03-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-03-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/leytonstone-bathroom-03-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-03-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-03-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-03-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/projects/leytonstone/leytonstone-bathroom-04.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/leytonstone-bathroom-04-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-04-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-04-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-04-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/leytonstone-bathroom-04-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-04-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-04-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-bathroom-04-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/projects/leytonstone/leytonstone-hallway-joinery-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-01-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-01-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-01-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-01-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-01-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-01-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/projects/leytonstone/leytonstone-hallway-joinery-02.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-02-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-02-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-02-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-02-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-02-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-02-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-02-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-hallway-joinery-02-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/projects/leytonstone/leytonstone-kitchen-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/leytonstone-kitchen-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-kitchen-01-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-kitchen-01-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-kitchen-01-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/leytonstone-kitchen-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-kitchen-01-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-kitchen-01-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-kitchen-01-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/projects/leytonstone/leytonstone-kitchen-02.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/leytonstone-kitchen-02-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-kitchen-02-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-kitchen-02-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-kitchen-02-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/leytonstone-kitchen-02-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-kitchen-02-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-kitchen-02-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-kitchen-02-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
+  "/images/projects/leytonstone/leytonstone-study-01.jpg": {
+    "width": 1600,
+    "height": 1600,
+    "avif": [
+      {
+        "src": "/images/responsive/leytonstone-study-01-480.avif",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-study-01-800.avif",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-study-01-1200.avif",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-study-01-1600.avif",
+        "width": 1600,
+        "height": 1600
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/responsive/leytonstone-study-01-480.webp",
+        "width": 480,
+        "height": 480
+      },
+      {
+        "src": "/images/responsive/leytonstone-study-01-800.webp",
+        "width": 800,
+        "height": 800
+      },
+      {
+        "src": "/images/responsive/leytonstone-study-01-1200.webp",
+        "width": 1200,
+        "height": 1200
+      },
+      {
+        "src": "/images/responsive/leytonstone-study-01-1600.webp",
+        "width": 1600,
+        "height": 1600
+      }
+    ]
+  },
   "/images/projects/lordship-lane/kitchen-lordship-01.jpg": {
     "width": 1600,
     "height": 1600,
