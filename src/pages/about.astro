@@ -48,6 +48,7 @@ import { withBase } from '../lib/with-base';
           </div>
           <div class="team-text">
             <h3>Sam</h3>
+            <p class="team-role">Design &amp; Installation</p>
             <p>
               Sam comes from an architecture, design and construction background and brings a strong practical understanding of how spaces should work as well as how they should be built. He has worked across house renovations, kitchens, bathrooms, bespoke furniture and larger building projects, combining hands-on experience with a strong eye for detail. His ability to understand a project from both the design and construction side is a big part of what he brings to Pencil Design.
             </p>
@@ -65,8 +66,27 @@ import { withBase } from '../lib/with-base';
           </div>
           <div class="team-text">
             <h3>Alexander</h3>
+            <p class="team-role">Project Management &amp; Delivery</p>
             <p>
               Alexander comes from an engineering management background and brings a large amount of organisational talent and a keen eye for design. He has worked on major design &amp; build projects in lead functions, yet never lost his sense of how to do house renovations, or bespoke kitchen works himself. His talent to pull things together and to keep projects on track is only one of many he brings to Pencil Design.
+            </p>
+          </div>
+        </div>
+        <div class="team-member">
+          <div class="team-photo-wrap">
+            <img
+              class="team-photo"
+              src={withBase('/images/about-aafke.jpg')}
+              alt="Aafke, of Pencil Design"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+          <div class="team-text">
+            <h3>Aafke</h3>
+            <p class="team-role">Business Development &amp; Operations</p>
+            <p>
+              Aafke looks after business development and operations at Pencil Design. She builds relationships with clients and industry partners, supports new business opportunities, and helps shape the company’s digital presence and day-to-day systems. Her background in product, technology and quality helps keep the business organised, responsive and focused on building long-term partnerships.
             </p>
           </div>
         </div>
@@ -156,14 +176,14 @@ import { withBase } from '../lib/with-base';
 
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 560px));
-    justify-content: center;
-    gap: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2.5rem;
   }
 
   .team-member {
     display: flex;
-    gap: 1.75rem;
+    flex-direction: column;
+    gap: 1.5rem;
     align-items: flex-start;
   }
 
@@ -204,10 +224,23 @@ import { withBase } from '../lib/with-base';
     font-weight: 300;
   }
 
-  @media (max-width: 800px) {
+  .team-member .team-role {
+    font-size: 0.72rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+  }
+
+  @media (max-width: 1000px) {
     .team-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 560px);
+      justify-content: center;
       gap: 2rem;
+    }
+
+    .team-member {
+      flex-direction: row;
+      gap: 1.75rem;
     }
   }
 
